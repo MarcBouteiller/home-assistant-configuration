@@ -1,0 +1,11 @@
+- name: Home
+  latitude: !secret zone.home.latitude
+  longitude: !secret zone.home.longitude
+  radius: 250
+  icon: mdi:home
+
+- name: SII
+  latitude: 48.12861
+  longitude: -1.6277653
+  radius: 250
+  icon: mdi:briefcase

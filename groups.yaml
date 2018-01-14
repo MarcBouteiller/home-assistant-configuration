@@ -1,0 +1,20 @@
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - sensor.google_travel_time__driving
+    - group.all_lights
+    - group.all_medias
+
+equipement:
+  view: yes
+  icon: mdi:server
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - zone.home
+
+all_medias:
+  entities:
+    - media_player.chromecast_salon
+  
