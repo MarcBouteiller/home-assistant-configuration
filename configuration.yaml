@@ -61,6 +61,10 @@ sensor:
     name: Trajet Aller SII
 
   - platform: speedtest
+    minute: 30
+    hour:
+      - 8
+      - 18
     monitored_conditions:
       - ping
       - download
