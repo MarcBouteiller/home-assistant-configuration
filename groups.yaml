@@ -2,7 +2,7 @@ default_view:
   view: yes
   icon: mdi:home 
   entities:
-    - sensor.google_travel_time__driving
+    - sensor.trajet_aller_sii
     - group.all_lights
     - group.all_medias
 
