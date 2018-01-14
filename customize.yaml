@@ -2,3 +2,6 @@ light.yeelight_rgb_34ce008bc436:
   friendly_name: Salon
 light.yeelight_rgb_34ce008d0087:
   friendly_name: Chambre Axelle
+
+group.all_lights:
+  hidden: false
