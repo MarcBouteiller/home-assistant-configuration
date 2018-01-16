@@ -3,6 +3,7 @@ default_view:
   icon: mdi:home 
   entities:
     - sensor.trajet_aller_sii
+    - group.all_covers
     - group.all_lights
     - group.all_medias
 
