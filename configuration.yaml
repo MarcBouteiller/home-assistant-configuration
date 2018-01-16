@@ -78,7 +78,7 @@ tts:
 cloud:
 
 zwave:
-  usb_path: /dev/ttyAMA0
+  usb_path: /dev/ttyACM0
 
 group: !include groups.yaml
 automation: !include automations.yaml
