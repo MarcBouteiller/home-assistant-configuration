@@ -1,1 +1,8 @@
-[]
+- alias: 'Fermeture des volets - Coucher de soleil'
+  trigger:
+    platform: sun    
+    event: sunset    
+    offset: '00:25:00'
+  action:
+    service: cover.open_cover
+    entity_id: group.all_covers
