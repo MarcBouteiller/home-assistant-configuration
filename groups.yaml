@@ -5,6 +5,7 @@ default_view:
     - sensor.trajet_aller_sii
     - group.all_covers
     - group.all_lights
+    - group.all_switches
     - group.all_medias
 
 equipement:
