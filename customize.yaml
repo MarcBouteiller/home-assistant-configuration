@@ -10,3 +10,7 @@ group.all_lights:
 group.all_covers:
   hidden: false
   friendly_name: Volets
+  
+group.all_switches:
+  hidden: false
+  friendly_name: Interrupteurs
