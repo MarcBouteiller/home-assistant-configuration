@@ -4,5 +4,5 @@
     event: sunset    
     offset: '00:25:00'
   action:
-    service: cover.open_cover
+    service: cover.close_cover
     entity_id: group.all_covers
