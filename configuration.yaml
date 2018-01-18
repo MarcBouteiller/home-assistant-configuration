@@ -80,7 +80,7 @@ cloud:
 camera:
   - platform: generic
     name: Salon
-    still_image_url: 192.168.0.8/image.jpg
+    still_image_url: http://192.168.0.8/image.jpg
 
 zwave:
   usb_path: /dev/ttyACM0
