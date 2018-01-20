@@ -90,6 +90,10 @@ input_boolean:
     name: Mode nuit
     initial: off
     icon: mdi:weather-night
+  away_mode:
+    name: Absence
+    initial: off
+    icon: mdi: mdi:account-remove
 
 group: !include groups.yaml
 automation: !include automations.yaml
