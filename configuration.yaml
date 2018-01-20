@@ -85,6 +85,12 @@ camera:
 zwave:
   usb_path: /dev/ttyACM0
 
+input_boolean:
+  night_mode:
+    name: Mode nuit
+    initial: off
+    icon: mdi:moon
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
