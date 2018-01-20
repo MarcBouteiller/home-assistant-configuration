@@ -2,6 +2,7 @@ default_view:
   view: yes
   icon: mdi:home 
   entities:
+    - sensor.sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.trajet_aller_sii
     - group.all_covers
     - group.all_lights
