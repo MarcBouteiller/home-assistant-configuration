@@ -93,7 +93,7 @@ input_boolean:
   away_mode:
     name: Absence
     initial: off
-    icon: mdi: mdi:account-remove
+    icon: mdi:account-remove
 
 group: !include groups.yaml
 automation: !include automations.yaml
