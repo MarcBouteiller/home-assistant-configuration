@@ -36,7 +36,7 @@
   alias: Mode nuit
   trigger:
     platform: state
-    entity: input_boolean.night_mode
+    entity_id: input_boolean.night_mode
     to: 'on'
   action:
     - service: light.turn_off
