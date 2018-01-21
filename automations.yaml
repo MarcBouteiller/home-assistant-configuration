@@ -1,4 +1,5 @@
-- alias: 'Fermeture des volets - Coucher de soleil'
+- id: coucher_de_soleil
+  alias: Coucher de soleil
   trigger:
     platform: sun    
     event: sunset    
