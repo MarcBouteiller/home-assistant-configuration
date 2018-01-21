@@ -8,8 +8,7 @@ default_view:
     - group.all_switches
     - group.all_medias
     - camera.salon
-    - input_boolean.night_mode
-    - input_boolean.away_mode
+    - group.modes
 
 equipement:
   view: yes
@@ -22,4 +21,9 @@ equipement:
 all_medias:
   entities:
     - media_player.chromecast_salon
+
+modes:
+  entities:
+    - input_boolean.night_mode
+    - input_boolean.away_mode
   

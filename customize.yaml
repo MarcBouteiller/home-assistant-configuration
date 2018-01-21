@@ -14,3 +14,6 @@ group.all_covers:
 group.all_switches:
   hidden: false
   friendly_name: Interrupteurs
+
+group.modes:
+  friendly_name: Modes
