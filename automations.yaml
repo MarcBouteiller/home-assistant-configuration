@@ -18,8 +18,15 @@
   - condition: state
     entity_id: input_boolean.night_mode
     state: 'on'
+  - condition: state
+    entity_id: light.yeelight_rgb_34ce008bc436
+    state: 'off'
   action:
-    service: light.turn_on
-    data:
-      entity_id: light.yeelight_rgb_34ce008bc436
-      brightness: 25
+    - service: light.turn_on
+      data:
+        entity_id: light.yeelight_rgb_34ce008bc436
+        brightness: 25
+    - delay: 00:03:00
+    - service: light.turn_off
+      data:
+        entity_id: light.yeelight_rgb_34ce008bc436
