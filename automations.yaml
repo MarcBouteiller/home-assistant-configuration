@@ -7,6 +7,7 @@
   action:
     service: cover.close_cover
     entity_id: group.all_covers
+
 - id: veilleuse
   alias: Veilleuse
   trigger:
@@ -30,3 +31,17 @@
     - service: light.turn_off
       data:
         entity_id: light.yeelight_rgb_34ce008bc436
+
+- id: night_mode_on
+  alias: Mode nuit
+  trigger:
+    platform: state
+    entity: input_boolean.night_mode
+    to: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.yeelight_rgb_34ce008bc436
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch
