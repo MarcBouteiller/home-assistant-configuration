@@ -23,6 +23,7 @@ all_medias:
     - media_player.chromecast_salon
 
 modes:
+  view: no
   entities:
     - input_boolean.night_mode
     - input_boolean.away_mode
