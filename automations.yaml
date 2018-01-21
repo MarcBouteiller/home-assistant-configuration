@@ -7,3 +7,19 @@
   action:
     service: cover.close_cover
     entity_id: group.all_covers
+- id: veilleuse
+  alias: Veilleuse
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.night_mode
+    state: 'on'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.salon
+      brightness: 1
