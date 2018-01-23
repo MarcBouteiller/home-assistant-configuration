@@ -31,7 +31,13 @@ cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2:
   friendly_name: Porte cuisine
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3:
-  friendly_name: Chambre RDC  
+  friendly_name: Chambre RDC
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4:
+  friendly_name: Cuisine  
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5:
+  friendly_name: Séjour
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6:
+  friendly_name: Escalier
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
   friendly_name: Pano salon
 
