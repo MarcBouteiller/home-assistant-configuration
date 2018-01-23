@@ -51,9 +51,7 @@ map:
 sun:
 
 # Weather prediction
-sensor:
-  - platform: yr
-  
+sensor:  
   - platform: google_travel_time
     api_key: !secret google_map_api_key
     origin: zone.Home

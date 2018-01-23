@@ -5,7 +5,7 @@
   icon: mdi:home
 
 - name: SII
-  latitude: 48.12861
-  longitude: -1.6277653
+  latitude: 48.1285727
+  longitude: -1.622917
   radius: 250
   icon: mdi:briefcase
