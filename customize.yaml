@@ -1,8 +1,16 @@
+# Lights
+group.all_lights:
+  hidden: false
+  friendly_name: Lumières
 light.yeelight_rgb_34ce008bc436:
   friendly_name: Salon
 light.yeelight_rgb_34ce008d0087:
   friendly_name: Chambre Axelle
 
+# Switchs
+group.all_switches:
+  hidden: false
+  friendly_name: Interrupteurs
 switch.neo_coolcam_power_plug_12a_switch:
   friendly_name: Lumière Martin
 switch.neo_coolcam_power_plug_12a_switch_2:
@@ -14,17 +22,15 @@ switch.switch:
 switch.switch_2:
   hidden: true
 
-group.all_lights:
-  hidden: false
-  friendly_name: Lumières
-
+# Covers
 group.all_covers:
   hidden: false
   friendly_name: Volets
-  
-group.all_switches:
-  hidden: false
-  friendly_name: Interrupteurs
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
+  friendly_name: Baie salon  
+cover.level:
+  friendly_name: Pano salon
+
 
 group.modes:
   friendly_name: Modes
