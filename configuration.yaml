@@ -58,7 +58,7 @@ sensor:
     api_key: !secret google_map_api_key
     origin: zone.Home
     destination: zone.SII
-    name: Trajet Aller SII
+    name: to SII
 
   - platform: speedtest
     minute: 30
