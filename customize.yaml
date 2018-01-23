@@ -27,10 +27,11 @@ group.all_covers:
   hidden: false
   friendly_name: Volets
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
-  friendly_name: Baie salon  
-cover.level:
+  friendly_name: Baie salon
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3:
+  friendly_name: Chambre RDC  
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
   friendly_name: Pano salon
-
 
 group.modes:
   friendly_name: Modes
