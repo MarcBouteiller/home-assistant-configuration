@@ -56,7 +56,7 @@ sensor:
     api_key: !secret google_map_api_key
     origin: zone.Home
     destination: zone.SII
-    name: to SII
+    name: vers SII
 
   - platform: speedtest
     minute: 30
