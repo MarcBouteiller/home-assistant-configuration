@@ -57,6 +57,16 @@ sensor:
     origin: zone.Home
     destination: zone.SII
     name: vers SII
+  - platform: google_travel_time
+    api_key: !secret google_map_api_key
+    origin: zone.Home
+    destination: CA St Martin
+    name: vers St Martin
+  - platform: google_travel_time
+    api_key: !secret google_map_api_key
+    origin: zone.Home
+    destination: CA Bourg L'Evêque
+    name: vers Bourg L'Evêque
 
   - platform: speedtest
     minute: 30
