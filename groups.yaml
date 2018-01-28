@@ -3,6 +3,8 @@ default_view:
   icon: mdi:home 
   entities:
     - sensor.vers_sii
+    - sensor.vers_st_martin
+    - sensor.vers_bourg_leveque
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - group.all_covers
     - group.all_lights
