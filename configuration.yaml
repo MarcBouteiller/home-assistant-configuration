@@ -78,8 +78,6 @@ sensor:
       - download
       - upload
 
-  - platform: light
-
 light:
   - platform: yeelight
     devices:
