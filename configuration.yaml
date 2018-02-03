@@ -78,6 +78,16 @@ sensor:
       - download
       - upload
 
+  - platform: light
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.0.9:
+        name: Chambre Axelle
+      192.168.0.2:
+        name: Salon
+
 # Text to speech
 tts:
   - platform: google
