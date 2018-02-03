@@ -20,17 +20,17 @@
     entity_id: input_boolean.night_mode
     state: 'on'
   - condition: state
-    entity_id: light.yeelight_rgb_34ce008bc436
+    entity_id: light.salon
     state: 'off'
   action:
     - service: light.turn_on
       data:
-        entity_id: light.yeelight_rgb_34ce008bc436
-        brightness: 25
-    - delay: 00:03:00
+        entity_id: light.salon
+        brightness: 10
+    - delay: 00:02:30
     - service: light.turn_off
       data:
-        entity_id: light.yeelight_rgb_34ce008bc436
+        entity_id: light.salon
 
 - id: night_mode_on
   alias: Mode nuit
@@ -41,7 +41,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.yeelight_rgb_34ce008bc436
+        entity_id: light.salon
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
