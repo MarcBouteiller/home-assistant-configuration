@@ -7,12 +7,12 @@ default_view:
     - sensor.vers_bourg_leveque
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - group.all_scripts
-    - group.all_covers
-    - group.all_lights
-    - group.all_switches
-    - group.all_medias
     - group.modes
+    - group.all_lights
+    - group.all_covers
+    - group.all_switches
     - camera.salon
+    - group.all_medias
 
 equipement:
   view: yes
