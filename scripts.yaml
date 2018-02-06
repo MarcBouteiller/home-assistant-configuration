@@ -1,13 +1,12 @@
-ouverture_volets:
-  alias: Ouverture volets
-  sequence:
-    - service: cover.open_cover
-      data:
-        entity_id: group.all_covers
-
 fermeture_volets:
   alias: Fermeture volets
   sequence:
     - service: cover.close_cover
+      data:
+        entity_id: group.all_covers
+ouverture_volets:
+  alias: Ouverture volets
+  sequence:
+    - service: cover.open_cover
       data:
         entity_id: group.all_covers
