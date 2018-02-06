@@ -1,0 +1,11 @@
+ouverture_volets:
+  alias: Ouverture volets
+  service: cover.open_cover
+  data:
+    entity_id: group.all_covers
+
+fermeture_volets:
+  alias: Fermeture volets
+  service: cover.close_cover
+  data:
+    entity_id: group.all_covers
