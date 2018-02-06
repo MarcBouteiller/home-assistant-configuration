@@ -25,6 +25,8 @@ group.all_scripts:
 
 group.modes:
   friendly_name: Modes
+group.actions
+  friendly_name: Actions
 
 # Covers
 group.all_covers:
