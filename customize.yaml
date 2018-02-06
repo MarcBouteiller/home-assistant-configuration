@@ -20,7 +20,12 @@ switch.switch_2:
 
 group.all_scripts:
   hidden: false
+  friendly_name: Actions
   order: 1
+
+group.modes:
+  friendly_name: Modes
+  order: 2
 
 # Covers
 group.all_covers:
@@ -44,7 +49,3 @@ cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
 # Sensors
 sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
-
-group.modes:
-  friendly_name: Modes
-  order: 2
