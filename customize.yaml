@@ -2,10 +2,6 @@
 group.all_lights:
   hidden: false
   friendly_name: Lumières
-light.yeelight_rgb_34ce008bc436:
-  friendly_name: Salon
-light.yeelight_rgb_34ce008d0087:
-  friendly_name: Chambre Axelle
 
 # Switchs
 group.all_switches:
@@ -21,6 +17,10 @@ switch.switch:
   hidden: true
 switch.switch_2:
   hidden: true
+
+group.all_scripts:
+  hidden: false
+  order: 1
 
 # Covers
 group.all_covers:
