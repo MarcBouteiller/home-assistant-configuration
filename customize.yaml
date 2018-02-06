@@ -48,3 +48,8 @@ cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
 # Sensors
 sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
+
+script.fermeture_volets:
+  icon: mdi:arrow-down-bold-box
+script.ouverture_volets:
+  icon: mdi:arrow-up-bold-box
