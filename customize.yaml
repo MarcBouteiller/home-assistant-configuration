@@ -23,11 +23,6 @@ group.all_scripts:
   friendly_name: Actions
   control: hidden
 
-group.modes:
-  friendly_name: Modes
-group.actions
-  friendly_name: Actions
-
 # Covers
 group.all_covers:
   hidden: false
