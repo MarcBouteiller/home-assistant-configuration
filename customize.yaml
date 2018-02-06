@@ -23,6 +23,9 @@ group.all_scripts:
   friendly_name: Actions
   control: hidden
 
+group.actions:
+  control: hidden
+
 # Covers
 group.all_covers:
   hidden: false
