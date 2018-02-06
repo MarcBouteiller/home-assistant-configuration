@@ -21,11 +21,10 @@ switch.switch_2:
 group.all_scripts:
   hidden: false
   friendly_name: Actions
-  order: 1
+  control: hidden
 
 group.modes:
   friendly_name: Modes
-  order: 2
 
 # Covers
 group.all_covers:
