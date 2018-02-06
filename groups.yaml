@@ -28,12 +28,14 @@ all_medias:
 
 modes:
   view: no
+  name: Modes
   entities:
     - input_boolean.night_mode
     - input_boolean.away_mode
  
 actions:
   view: no
+  name: Actions
   entities:
     - script.ouverture_volets
     - script.fermeture_volets
