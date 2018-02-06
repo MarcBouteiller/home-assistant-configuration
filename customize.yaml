@@ -50,6 +50,6 @@ sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
 
 script.fermeture_volets:
-  icon: mdi:arrow-down-bold-box
+  icon: mdi:arrow-collapse-down
 script.ouverture_volets:
-  icon: mdi:arrow-up-bold-box
+  icon: mdi:arrow-collapse-up
