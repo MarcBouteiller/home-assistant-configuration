@@ -6,7 +6,7 @@ default_view:
     - sensor.vers_st_martin
     - sensor.vers_bourg_leveque
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
-    - group.all_scripts
+    - group.actions
     - group.modes
     - group.all_lights
     - group.all_covers
@@ -31,4 +31,10 @@ modes:
   entities:
     - input_boolean.night_mode
     - input_boolean.away_mode
+ 
+group.actions:
+  view: no
+  entities:
+    - script.ouverture_volets
+    - script.fermeture_volets
   
