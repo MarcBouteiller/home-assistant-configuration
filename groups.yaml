@@ -32,7 +32,7 @@ modes:
     - input_boolean.night_mode
     - input_boolean.away_mode
  
-group.actions:
+actions:
   view: no
   entities:
     - script.ouverture_volets
