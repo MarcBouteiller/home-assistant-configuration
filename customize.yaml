@@ -47,3 +47,4 @@ sensor.fibaro_system_fgms001_motion_sensor_temperature:
 
 group.modes:
   friendly_name: Modes
+  order: 2
