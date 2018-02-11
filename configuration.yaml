@@ -113,6 +113,10 @@ input_boolean:
     initial: off
     icon: mdi:account-remove
 
+binary_sensor:
+  - platform: workday
+    country: FRA
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

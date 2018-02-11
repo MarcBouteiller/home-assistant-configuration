@@ -45,3 +45,19 @@
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+
+- id: night_mode_off
+  trigger:
+    platform: time
+    at: '07:00:00'
+  condition:
+    condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.salon
+    - service: switch.turn_on
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
