@@ -50,6 +50,9 @@ map:
 # Track the sun
 sun:
 
+device_tracker:
+  - platform: gpslogger
+
 # Weather prediction
 sensor:  
   - platform: google_travel_time
@@ -116,6 +119,7 @@ input_boolean:
 binary_sensor:
   - platform: workday
     country: FRA
+
 
 group: !include groups.yaml
 automation: !include automations.yaml
