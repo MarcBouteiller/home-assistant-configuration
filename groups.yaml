@@ -39,4 +39,3 @@ actions:
   entities:
     - script.ouverture_volets
     - script.fermeture_volets
-  

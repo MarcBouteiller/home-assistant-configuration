@@ -50,6 +50,8 @@ map:
 # Track the sun
 sun:
 
+mqtt: 
+
 device_tracker:
   - platform: gpslogger
 
@@ -80,6 +82,14 @@ sensor:
       - ping
       - download
       - upload
+
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: processor_use
+      - type: load_15m
 
 light:
   - platform: yeelight
