@@ -21,6 +21,7 @@ equipement:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - zone.home
+    - group.ha_monitor
 
 all_medias:
   entities:
@@ -39,3 +40,12 @@ actions:
   entities:
     - script.ouverture_volets
     - script.fermeture_volets
+
+ha_monitor:
+  view: no
+  name: Monitor
+  entities:
+    - sensor.disk_use_percent_
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    - sensor.sensor.load_15m
