@@ -83,6 +83,11 @@ sensor:
       - download
       - upload
 
+  - platform: fastdotcom
+    hour:
+      - 9
+      - 19
+
   - platform: systemmonitor
     resources:
       - type: disk_use_percent

@@ -1,13 +1,12 @@
 - id: coucher_de_soleil
   alias: Coucher de soleil
   trigger:
-    platform: sun    
-    event: sunset    
-    offset: '00:25:00'
+  - event: sunset
+    offset: 00:20:00
+    platform: sun
   action:
+  - entity_id: group.all_covers
     service: cover.close_cover
-    entity_id: group.all_covers
-
 - id: veilleuse
   alias: Veilleuse
   trigger:
@@ -23,15 +22,14 @@
     entity_id: light.salon
     state: 'off'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.salon
-        brightness: 10
-    - delay: 00:02:30
-    - service: light.turn_off
-      data:
-        entity_id: light.salon
-
+  - service: light.turn_on
+    data:
+      entity_id: light.salon
+      brightness: 10
+  - delay: 00:02:30
+  - service: light.turn_off
+    data:
+      entity_id: light.salon
 - id: night_mode_on
   alias: Mode nuit
   trigger:
@@ -39,25 +37,24 @@
     entity_id: input_boolean.night_mode
     to: 'on'
   action:
-    - service: light.turn_off
-      data:
-        entity_id: light.salon
-    - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
-
+  - service: light.turn_off
+    data:
+      entity_id: light.salon
+  - service: switch.turn_off
+    data:
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 - id: night_mode_off
   trigger:
     platform: time
-    at: '07:00:00'
+    at: 07:00:00
   condition:
     condition: state
-    entity_id: 'binary_sensor.workday_sensor'
+    entity_id: binary_sensor.workday_sensor
     state: 'on'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.salon
-    - service: switch.turn_on
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+  - service: light.turn_on
+    data:
+      entity_id: light.salon
+  - service: switch.turn_on
+    data:
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
