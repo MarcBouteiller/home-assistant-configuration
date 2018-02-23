@@ -5,11 +5,25 @@ default_view:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - group.actions
     - group.modes
-    - group.all_lights
+    - group.lights
     - group.all_covers
-    - group.all_switches
+    - group.switches
     - camera.salon
     - group.all_medias
+
+lights:
+  view: no
+  entities:
+    - light.salon
+    - switch.neo_coolcam_power_plug_12a_switch_3
+    - switch.neo_coolcam_power_plug_12a_switch
+    - light.chambre_axelle
+    - light.bandeau_led
+
+switches:
+  view: no
+  entities:
+    - switch.neo_coolcam_power_plug_12a_switch_2
 
 car:
   view: yes
