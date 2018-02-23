@@ -7,6 +7,7 @@
   action:
   - entity_id: group.all_covers
     service: cover.close_cover
+
 - id: veilleuse
   alias: Veilleuse
   trigger:
@@ -30,6 +31,7 @@
   - service: light.turn_off
     data:
       entity_id: light.salon
+
 - id: night_mode_on
   alias: Mode nuit
   trigger:
@@ -43,7 +45,9 @@
   - service: switch.turn_off
     data:
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+
 - id: night_mode_off
+  alias: Lever
   trigger:
     platform: time
     at: 07:00:00
@@ -55,6 +59,10 @@
   - service: light.turn_on
     data:
       entity_id: light.salon
+      brightness: 25
   - service: switch.turn_on
     data:
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.night_mode
