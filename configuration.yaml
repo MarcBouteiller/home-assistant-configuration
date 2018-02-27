@@ -113,7 +113,13 @@ cloud:
 camera:
   - platform: generic
     name: Salon
-    still_image_url: http://192.168.0.8/image.jpg
+    still_image_url: >
+      {% if is_state('switch.neo_coolcam_power_plug_12a_switch','on') %}
+        http://192.168.0.8/image.jpg
+      {% else %}
+        http://127.0.0.1:8123/local/camera-off.png
+      {% endif %}
+    limit_refetch_to_url_change: true
 
 zwave:
   usb_path: /dev/ttyACM0
