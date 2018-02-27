@@ -60,6 +60,7 @@ modes:
   entities:
     - input_boolean.night_mode
     - input_boolean.away_mode
+    - input_boolean.holiday_mode
  
 actions:
   view: no

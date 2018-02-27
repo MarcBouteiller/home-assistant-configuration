@@ -127,6 +127,10 @@ input_boolean:
     name: Absence
     initial: off
     icon: mdi:account-remove
+  holiday_mode:
+    name: Congés
+    initial: off
+    icon: mdi:sunglasses
 
 binary_sensor:
   - platform: workday

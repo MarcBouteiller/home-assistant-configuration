@@ -52,9 +52,12 @@
     platform: time
     at: 07:00:00
   condition:
-    condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: 'on'
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.holiday_mode
+      state: 'off'
   action:
   - service: light.turn_on
     data:
