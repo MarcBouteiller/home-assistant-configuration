@@ -119,7 +119,7 @@ camera:
       {% else %}
         http://127.0.0.1:8123/local/camera-off.png
       {% endif %}
-    limit_refetch_to_url_change: true
+    limit_refetch_to_url_change: false
 
 zwave:
   usb_path: /dev/ttyACM0
