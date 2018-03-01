@@ -49,6 +49,7 @@ recorder:
       - light
       - media_player
       - sun
+      - device_tracker
     entities:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
@@ -70,6 +71,7 @@ logbook:
       - light
       - media_player
       - sun
+      - device_tracker
     entities:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
