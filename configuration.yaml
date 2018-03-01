@@ -147,15 +147,12 @@ zwave:
 input_boolean:
   night_mode:
     name: Mode nuit
-    initial: off
     icon: mdi:weather-night
   away_mode:
     name: Absence
-    initial: off
     icon: mdi:account-remove
   holiday_mode:
     name: Congés
-    initial: off
     icon: mdi:sunglasses
 
 binary_sensor:
