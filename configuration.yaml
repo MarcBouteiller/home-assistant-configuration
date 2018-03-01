@@ -81,7 +81,7 @@ logbook:
       - sensor.fibaro_system_fgms001_motion_sensor_temperature
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
-      
+
 # Enables a map showing the location of tracked devices
 map:
 
@@ -89,6 +89,9 @@ map:
 sun:
 
 mqtt: 
+
+device_tracker:
+  - platform: owntracks
 
 # Weather prediction
 sensor:  
