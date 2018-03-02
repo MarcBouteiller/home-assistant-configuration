@@ -4,8 +4,8 @@
   radius: 250
   icon: mdi:home
 - name: SII
-  latitude: 48.1285727
-  longitude: -1.622917
+  latitude: 48.1289107
+  longitude: -1.6255767
   radius: 250
   icon: mdi:briefcase
 - name: CA St Martin
