@@ -28,12 +28,20 @@ switches:
   view: no
   entities:
     - switch.neo_coolcam_power_plug_12a_switch_2
+    - switch.prise_voiture
 
 car:
   view: yes
   icon: mdi:car-side
   entities:
+    - group.car_switch
     - group.travel
+
+car_switch:
+  view: no
+  name: Energie
+  entities:
+    - switch.prise_voiture
 
 travel:
   name: Trajets
