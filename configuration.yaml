@@ -136,6 +136,11 @@ sensor:
       - type: processor_use
       - type: load_15m
 
+  - platform: broadlink_power
+    host: 192.168.0.52
+    mac: '34:EA:34:9D:27:5C'
+    name: Prise voiture
+
 light:
   - platform: yeelight
     devices:
@@ -145,6 +150,13 @@ light:
         name: Salon
       192.168.0.26:
         name: Bandeau LED
+
+switch:
+  - platform: broadlink
+    host: 192.168.0.52
+    mac: '34:EA:34:9D:27:5C'
+    type: sp3
+    friendly_name: Prise voiture
 
 # Text to speech
 tts:
