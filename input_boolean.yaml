@@ -1,0 +1,9 @@
+  night_mode:
+    name: Mode nuit
+    icon: mdi:weather-night
+  away_mode:
+    name: Absence
+    icon: mdi:account-remove
+  holiday_mode:
+    name: Congés
+    icon: mdi:sunglasses

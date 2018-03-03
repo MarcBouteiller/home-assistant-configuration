@@ -1,0 +1,44 @@
+- platform: google_travel_time
+  api_key: !secret google_map_api_key
+  origin: zone.Home
+  destination: zone.SII
+  name: vers SII
+
+- platform: google_travel_time
+  api_key: !secret google_map_api_key
+  origin: zone.Home
+  destination: CA St Martin
+  name: vers St Martin
+- platform: google_travel_time
+  api_key: !secret google_map_api_key
+  origin: zone.Home
+  destination: CA Bourg L'Evêque
+  name: vers Bourg L'Evêque
+
+- platform: speedtest
+  minute: 30
+  hour:
+    - 8
+    - 18
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: fastdotcom
+  hour:
+    - 9
+    - 19
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_use_percent
+    - type: processor_use
+    - type: load_15m
+
+- platform: broadlink_power
+  host: 192.168.0.25
+  mac: '34:EA:34:9D:27:5C'
+  name: Prise voiture

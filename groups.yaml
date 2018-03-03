@@ -34,6 +34,7 @@ car:
   view: yes
   icon: mdi:car-side
   entities:
+    - sensor.prise_voiture
     - group.car_switch
     - group.travel
 
@@ -42,6 +43,7 @@ car_switch:
   name: Energie
   entities:
     - switch.prise_voiture
+    - sensor.prise_voiture
 
 travel:
   name: Trajets
