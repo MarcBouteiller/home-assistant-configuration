@@ -86,7 +86,7 @@
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
 
 - id: coming_home
-  alias: Départ
+  alias: Retour
   trigger:
     platform: zone
     entity_id: device_tracker.homeassistant_marcohonor
