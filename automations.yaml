@@ -84,3 +84,18 @@
     - service: switch.turn_on
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+
+- id: coming_home
+  alias: Départ
+  trigger:
+    platform: zone
+    entity_id: device_tracker.homeassistant_marcohonor
+    zone: zone.home
+    event: enter
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.away_mode
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_2

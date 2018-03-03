@@ -194,6 +194,12 @@ binary_sensor:
   - platform: workday
     country: FRA
 
+panel_iframe:
+  terminal:
+    title: Terminal
+    icon: mdi:console
+    url: http://192.168.0.24:7681
+
 
 group: !include groups.yaml
 automation: !include automations.yaml
