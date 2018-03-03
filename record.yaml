@@ -1,0 +1,21 @@
+include:
+    domains:
+      - automation
+      - input_boolean
+      - light
+      - media_player
+      - sun
+      - device_tracker
+    entities:
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+      - sensor.fibaro_system_fgms001_motion_sensor_temperature
+      - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+      - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+      - sensor.prise_voiture
+      - switch.prise_voiture
