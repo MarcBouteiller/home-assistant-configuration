@@ -46,7 +46,14 @@
 - platform: template
   sensors:
     garage_plug:
-      friendly_name: "Garage"
+      friendly_name_template: >-
+        {% if states('swith.prise_garage', 'off') %}
+          Garage
+        {% elif states('sensor.prise_garage')|float > 2000 %}
+          Voiture
+        {% else %}
+          Garage
+        {% endif %}
       unit_of_measurement: 'charge'
       icon_template: >-
         {% if states('swith.prise_garage', 'off') %}
@@ -58,9 +65,9 @@
         {% endif %}
       value_template: >-
         {% if states('swith.prise_garage', 'off') %}
-          Off
+          Rien
         {% elif states('sensor.prise_garage')|float > 2000 %}
           Voiture
         {% else %}
           Chargé
-        {% endif %}
+        {% endif %}        
