@@ -54,7 +54,6 @@
         {% else %}
           Garage
         {% endif %}
-      unit_of_measurement: 'charge'
       icon_template: >-
         {% if states('swicth.prise_garage', 'off') %}
           mdi:power-plug-off
