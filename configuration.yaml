@@ -103,7 +103,7 @@ binary_sensor:
     sensors:
       car_charging:
         friendly_name: "En charge"
-        value_template: {{ states('sensor.prise_voiture')|float > 1700}}
+        value_template: "{{ states('sensor.prise_voiture')|float > 1700}}"
 
 panel_iframe:
   terminal:
