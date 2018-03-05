@@ -5,7 +5,7 @@ default_view:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
     - device_tracker.homeassistant_marcohonor
-    - binary_sensor.car_charging
+    - sensor.garage_plug
     - group.actions
     - group.modes
     - group.lights
@@ -29,13 +29,13 @@ switches:
   view: no
   entities:
     - switch.neo_coolcam_power_plug_12a_switch_2
-    - switch.prise_voiture
+    - switch.prise_garage
 
 car:
   view: yes
   icon: mdi:car-side
   entities:    
-    - binary_sensor.car_charging
+    - sensor.garage_plug 
     - group.car_switch
     - group.travel
 
@@ -43,8 +43,8 @@ car_switch:
   view: no
   name: Energie
   entities:
-    - switch.prise_voiture
-    - sensor.prise_voiture
+    - switch.prise_garage
+    - sensor.prise_garage
 
 travel:
   name: Trajets

@@ -17,5 +17,5 @@ include:
       - sensor.fibaro_system_fgms001_motion_sensor_temperature
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
-      - sensor.prise_voiture
-      - switch.prise_voiture
+      - sensor.prise_garage
+      - switch.prise_garage
