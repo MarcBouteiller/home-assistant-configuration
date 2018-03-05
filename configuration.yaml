@@ -99,6 +99,12 @@ binary_sensor:
   - platform: workday
     country: FRA
 
+  - platform: template
+    sensors:
+      car_charging:
+        friendly_name: "En charge"
+        value_template: {{ states('sensor.prise_voiture')|float > 1700}}
+
 panel_iframe:
   terminal:
     title: Terminal
