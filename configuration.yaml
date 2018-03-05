@@ -104,11 +104,11 @@ binary_sensor:
       car_charging:
         friendly_name: "En charge"
         icon_template: >-
-        {% if states('sensor.prise_voiture')|float > 2000 %}
-          mdi:battery-charging-30
-        {% else %}
-          mdi:battery-charging
-        {% end %}
+          {% if states('sensor.prise_voiture')|float > 2000 %}
+            mdi:battery-charging-30
+          {% else %}
+            mdi:battery-charging
+          {% endif %}
         value_template: "{{ states('sensor.prise_voiture')|float > 2000}}"
 
 panel_iframe:
