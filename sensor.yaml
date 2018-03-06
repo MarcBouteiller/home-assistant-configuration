@@ -63,6 +63,8 @@
           Eteint
         {% elif states('sensor.prise_garage')|float > 2000 %}
           Voiture
+        {% elif states('sensor.prise_garage')|float == 0 %}
+          Attente
         {% else %}
           Chargée
         {% endif %}        
