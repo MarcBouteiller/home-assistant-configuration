@@ -58,6 +58,6 @@
           Voiture
         {% elif states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
           Chargée
-        {% elif %}
+        {% else %}
           On
         {% endif %}
