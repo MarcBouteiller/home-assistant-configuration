@@ -54,11 +54,10 @@
       value_template: >-
         {% if is_state('switch.prise_garage', 'off') %}
           Off        
-        {% else %}
-          On
-        {% endif %}
-        {% if states('sensor.prise_garage')|float > 2000 %}
+        {% elif states('sensor.prise_garage')|float > 2000 %}
           Voiture
         {% elif states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
           Chargée
+        {% elif %}
+          On
         {% endif %}
