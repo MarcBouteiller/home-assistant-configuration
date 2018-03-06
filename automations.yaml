@@ -134,6 +134,7 @@
     platform: state
     entity_id: sensor.garage_plug
     to: 'Chargée'
+    offset: '00:05:00'
   action:
     - service: switch.turn_off
       data:
