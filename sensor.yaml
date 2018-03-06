@@ -61,7 +61,7 @@
       value_template: >-
         {% if is_state('switch.prise_garage', 'off') %}
           Eteint        
-        {% elif states('sensor.prise_garage')|float == 0 %}
+        {% elif states('sensor.prise_garage')|float >= 0 %}
           Attente
         {% elif states('sensor.prise_garage')|float > 2000 %}
           Voiture
