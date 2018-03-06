@@ -17,18 +17,13 @@
 
 - platform: speedtest
   minute: 30
-  hour:
-    - 8
-    - 18
   monitored_conditions:
     - ping
     - download
     - upload
 
 - platform: fastdotcom
-  hour:
-    - 9
-    - 19
+  minute: 45
 
 - platform: systemmonitor
   resources:
