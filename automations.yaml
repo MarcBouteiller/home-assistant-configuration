@@ -124,17 +124,25 @@
     platform: time
     at: '22:00:00'
   action:
-    - service: automation.turn_off
-      data:
-        entity_id: automation.car_charged
     - service: switch.turn_on
       data:
         entity_id: switch.prise_garage
+
+- id: garage_plug_triggered
+  alias: Prise garage active
+  trigger:
+    platform: state
+    entity_id: switch.prise_garage
+    to: 'on'
+  action:
+    - service: automation.turn_off
+      data:
+        entity_id: automation.car_charged
     - delay: '00:02:00'
     - service: automation.turn_on
       data:
           entity_id: automation.car_charged
-
+          
 - id: car_charged
   alias: Voiture chargée
   trigger:
@@ -145,3 +153,4 @@
     - service: switch.turn_off
       data:
         entity_id: switch.prise_garage
+
