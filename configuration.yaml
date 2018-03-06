@@ -105,6 +105,13 @@ panel_iframe:
     icon: mdi:console
     url: http://192.168.0.24:7681
 
+input_number:
+  tv_timer:
+    name: Minuteur
+    min: 0
+    max: 90
+    unit_of_measurement: min
+    step: 1
 
 input_boolean: !include input_boolean.yaml
 sensor:  !include sensor.yaml
