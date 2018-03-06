@@ -136,4 +136,5 @@
     to: 'Chargée'
   action:
     - service: switch.turn_off
-      entity_id: switch.prise_garage
+      data:
+        entity_id: switch.prise_garage
