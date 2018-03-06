@@ -42,14 +42,7 @@
   sensors:
     garage_plug:
       unit_of_measurement: charge
-      friendly_name_template: >-
-        {% if is_state('switch.prise_garage', 'off') %}
-          Garage
-        {% elif states('sensor.prise_garage')|float > 2000 %}
-          Voiture
-        {% else %}
-          Garage
-        {% endif %}
+      friendly_name: Garage
       icon_template: >-
         {% if is_state('swicth.prise_garage', 'off') %}
           mdi:power-plug-off
@@ -60,11 +53,12 @@
         {% endif %}
       value_template: >-
         {% if is_state('switch.prise_garage', 'off') %}
-          Eteint        
-        {% elif states('sensor.prise_garage')|float >= 0 %}
-          Attente
-        {% elif states('sensor.prise_garage')|float > 2000 %}
+          Off        
+        {% else %}
+          On
+        {% endif %}
+        {% if states('sensor.prise_garage')|float > 2000 %}
           Voiture
-        {% elif states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
+        {% if states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
           Chargée
-        {% endif %}        
+        {% endif %}
