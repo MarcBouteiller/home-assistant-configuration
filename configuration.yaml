@@ -108,6 +108,7 @@ panel_iframe:
 input_number:
   tv_timer:
     name: Minuteur
+    icon: mdi:timer
     min: 0
     max: 90
     unit_of_measurement: min
