@@ -59,6 +59,6 @@
         {% endif %}
         {% if states('sensor.prise_garage')|float > 2000 %}
           Voiture
-        {% if states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
+        {% elif states('sensor.garage_plug', 'Voiture') and states('sensor.prise_garage')|float < 1000 %}
           Chargée
         {% endif %}
