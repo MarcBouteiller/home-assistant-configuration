@@ -124,9 +124,16 @@
     platform: time
     at: '22:00:00'
   action:
+    - service: automation.turn_off
+      data:
+        entity_id: automation.car_charged
     - service: switch.turn_on
       data:
         entity_id: switch.prise_garage
+    - delay: '00:02:00'
+    - service: automation.turn_on
+      data:
+          entity_id: automation.car_charged
 
 - id: car_charged
   alias: Voiture chargée
@@ -134,7 +141,6 @@
     platform: state
     entity_id: sensor.garage_plug
     to: 'Chargée'
-    offset: '00:05:00'
   action:
     - service: switch.turn_off
       data:
