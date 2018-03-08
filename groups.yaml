@@ -4,7 +4,7 @@ default_view:
   entities:    
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
-    - device_tracker.homeassistant_marcohonor
+    - device_tracker.honor_marc
     - sensor.garage_plug
     - group.actions
     - group.modes

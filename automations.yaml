@@ -74,7 +74,7 @@
   alias: Départ
   trigger:
     platform: zone
-    entity_id: device_tracker.homeassistant_marcohonor
+    entity_id: device_tracker.honor_marc
     zone: zone.home
     event: leave
   action:
@@ -89,7 +89,7 @@
   alias: Retour
   trigger:
     platform: zone
-    entity_id: device_tracker.homeassistant_marcohonor
+    entity_id: device_tracker.honor_marc
     zone: zone.home
     event: enter
   action:
