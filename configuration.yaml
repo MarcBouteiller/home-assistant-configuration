@@ -57,7 +57,8 @@ sun:
 mqtt: 
 
 device_tracker:
-  - platform: owntracks
+  - platform: gpslogger
+    password: !secret gpslogger_password
 
 light:
   - platform: yeelight
