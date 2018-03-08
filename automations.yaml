@@ -5,8 +5,8 @@
     offset: 00:20:00
     platform: sun
   action:
-  - entity_id: group.all_covers
-    service: cover.close_cover
+    - entity_id: group.all_covers
+      service: cover.close_cover
 
 - id: veilleuse
   alias: Veilleuse
@@ -23,14 +23,14 @@
     entity_id: light.salon
     state: 'off'
   action:
-  - service: light.turn_on
-    data:
-      entity_id: light.salon
-      brightness: 10
-  - delay: 00:02:30
-  - service: light.turn_off
-    data:
-      entity_id: light.salon
+    - service: light.turn_on
+      data:
+        entity_id: light.salon
+        brightness: 10
+    - delay: 00:02:30
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
 
 - id: night_mode_on
   alias: Mode nuit
@@ -39,12 +39,12 @@
     entity_id: input_boolean.night_mode
     to: 'on'
   action:
-  - service: light.turn_off
-    data:
-      entity_id: light.salon
-  - service: switch.turn_off
-    data:
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 
 - id: night_mode_off
   alias: Lever
@@ -139,3 +139,15 @@
       data:
         entity_id: switch.prise_garage
 
+- id: main_cover_opened
+  trigger:
+    platform: state
+    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+    to: 'open'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
