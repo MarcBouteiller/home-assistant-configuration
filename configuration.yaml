@@ -21,8 +21,8 @@ http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
   base_url: !secret base_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+  #ssl_certificate: /ssl/fullchain.pem
+  #ssl_key: /ssl/privkey.pem
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 
 # Checks for available updates
@@ -91,7 +91,7 @@ camera:
       {% if is_state('switch.neo_coolcam_power_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
-        http://127.0.0.1:8123/local/camera-off.png
+        https://127.0.0.1:8123/local/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
 
