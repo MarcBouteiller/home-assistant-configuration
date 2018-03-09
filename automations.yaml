@@ -140,6 +140,7 @@
         entity_id: switch.prise_garage
 
 - id: main_cover_opened
+  alias: Eteindre lumière
   trigger:
     platform: state
     entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
