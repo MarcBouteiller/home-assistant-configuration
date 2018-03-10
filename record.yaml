@@ -19,3 +19,6 @@ include:
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
       - sensor.prise_garage
       - switch.prise_garage
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.fastcom_download
