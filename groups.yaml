@@ -43,6 +43,7 @@ car:
   icon: mdi:car-side
   entities:    
     - sensor.garage_plug 
+    - input_boolean.garage_charging
     - group.car_switch
     - group.travel
 
@@ -64,8 +65,7 @@ travel:
 equipement:
   view: yes
   icon: mdi:server
-  entities:
-    - sensor.speedtest_download
+  entities:    
     - group.internet
     - group.ha_monitor
 

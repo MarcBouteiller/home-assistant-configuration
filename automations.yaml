@@ -118,8 +118,8 @@
         entity_id: input_number.tv_timer
         value: 0
 
-- id: start_charging
-  alias: Recharge voiture
+- id: start_power
+  alias: Allumage prise
   trigger:
     platform: time
     at: '22:00:00'
@@ -127,17 +127,28 @@
     - service: switch.turn_on
       data:
         entity_id: switch.prise_garage
-          
+
+- id: car_charging
+  alias: Recharge voiture
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.prise_garage
+    above: 1500
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.garage_charging
+    
 - id: car_charged
   alias: Voiture chargée
   trigger:
-    platform: state
-    entity_id: sensor.garage_plug
-    to: 'Chargée'
+    platform: numeric_state
+    entity_id: sensor.prise_garage
+    below: 500
   action:
-    - service: switch.turn_off
+    - service: input_boolean.turn_off
       data:
-        entity_id: switch.prise_garage
+        entity_id: input_boolean.garage_charging
 
 - id: main_cover_opened
   alias: Eteindre lumière
