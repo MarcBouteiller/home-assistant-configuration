@@ -118,6 +118,7 @@ input_number:
     step: 1
 
 input_boolean: !include input_boolean.yaml
+input_numbers: !include input_number.yaml
 sensor:  !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml

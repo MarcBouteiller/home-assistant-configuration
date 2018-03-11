@@ -106,4 +106,10 @@ internet:
     - sensor.speedtest_ping
     - sensor.fastcom_download
 
+settings:
+  view: yes
+  icon: mdi:settings
+  name: Paramètres
+  entities:
+    - input_number.elec_price
   
