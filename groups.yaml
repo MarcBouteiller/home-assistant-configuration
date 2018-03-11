@@ -111,5 +111,19 @@ settings:
   icon: mdi:settings
   name: Paramètres
   entities:
+    - group.times
+    - group.prices
+
+times:
+  view: no
+  icon: mdi:clock
+  name: Temps
+  entities:
+    - input_number.sunset_offset
+
+prices:
+  view: no
+  icon: mdi:currency-eur
+  name: Prix
+  entities:
     - input_number.elec_price
-  

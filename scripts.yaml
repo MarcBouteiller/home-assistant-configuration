@@ -4,9 +4,20 @@ fermeture_volets:
     - service: cover.close_cover
       data:
         entity_id: group.all_covers
+
 ouverture_volets:
   alias: Ouverture volets
   sequence:
     - service: cover.open_cover
       data:
         entity_id: group.all_covers
+
+eteindre_prise_garage:
+  alias: Eteindre prise du garage
+  sequence:
+    - condition: numeric_state
+      entity_id: sensor.prise_garage
+      below: 10
+    - service: switch.turn_off
+      data:
+        entity_id: switch.prise_garage

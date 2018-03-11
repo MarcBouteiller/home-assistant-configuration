@@ -15,3 +15,11 @@ tv_timer:
   max: 90
   unit_of_measurement: min
   step: 1
+
+sunset_offset:
+  name: Offset couché de soleil
+  icon: mdi:timer
+  min: 0
+  max: 90
+  unit_of_measurement: min
+  step: 1
