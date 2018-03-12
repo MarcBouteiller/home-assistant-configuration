@@ -73,10 +73,8 @@
 - id: leave_home
   alias: Départ
   trigger:
-    platform: zone
-    entity_id: device_tracker.honor_marc
-    zone: zone.home
-    event: leave
+    platform: template
+    value_template: "{{ is_state('device_tracker.honor_marc', 'away') and is_state('device_tracker.honor_eva', 'away') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
   action:
     - service: input_boolean.turn_on
       data:
@@ -88,10 +86,14 @@
 - id: coming_home
   alias: Retour
   trigger:
-    platform: zone
-    entity_id: device_tracker.honor_marc
-    zone: zone.home
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.honor_marc
+      zone: zone.home
+      event: enter
+    - platform: zone
+      entity_id: device_tracker.honor_eva
+      zone: zone.home
+      event: enter
   action:
     - service: input_boolean.turn_off
       data:
