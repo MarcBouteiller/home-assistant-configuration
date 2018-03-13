@@ -153,6 +153,8 @@
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.garage_charging
+    - delay: 00:01:00
+    - service: script.eteindre_prise_garage
 
 - id: main_cover_opened
   alias: Eteindre lumière
