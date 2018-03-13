@@ -106,8 +106,8 @@ panel_iframe:
   terminal:
     title: Terminal
     icon: mdi:console
-    url: http://192.168.0.24:7681
-
+    url: !secret term_url
+    
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 sensor:  !include sensor.yaml
