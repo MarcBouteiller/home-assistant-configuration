@@ -182,3 +182,25 @@
       data:
         message: "Marc is leaving SII"
         title: "Bye !"    
+
+- id: ha_start
+  alias: Démarrage Home Assistant
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.html5
+      data:
+        message: "Starting..."
+        title: "HomeAssistant"
+
+- id: ha_stop
+  alias: Arrêt Home Assistant
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    - service: notify.html5
+      data:
+        message: "Stopping !"
+        title: "HomeAssistant"
