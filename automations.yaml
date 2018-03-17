@@ -204,3 +204,18 @@
       data:
         message: "Stopping !"
         title: "HomeAssistant"
+
+- id: notify_away
+  alias: Notification absence
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.html5
+      data:
+        title: "Home Assistant"
+        message: "Absence activée"
+        target: 
+          - "Honor Marc"
