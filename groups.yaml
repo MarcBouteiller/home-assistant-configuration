@@ -4,7 +4,6 @@ default_view:
   entities:    
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
-    - weather.meteo
     - device_tracker.honor_marc
     - device_tracker.honor_eva
     - sensor.garage_plug
@@ -63,6 +62,12 @@ travel:
     - sensor.vers_sii
     - sensor.vers_st_martin
     - sensor.vers_bourg_leveque
+
+meteo:
+  name: Météo
+  view: yes
+  entities:
+    - weather.meteo
 
 equipement:
   view: yes
