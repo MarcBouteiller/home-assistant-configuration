@@ -4,6 +4,7 @@ default_view:
   entities:    
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+    - weather.meteo
     - device_tracker.honor_marc
     - device_tracker.honor_eva
     - sensor.garage_plug
