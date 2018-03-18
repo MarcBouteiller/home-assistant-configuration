@@ -66,6 +66,7 @@ travel:
 meteo:
   name: Météo
   view: yes
+  icon: mdi:weather-partlycloudy
   entities:
     - weather.meteo
 
