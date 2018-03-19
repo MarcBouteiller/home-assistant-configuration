@@ -170,19 +170,6 @@
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 
-- id: leaving_sii
-  alias: test leave sii
-  trigger:
-    - platform: zone
-      entity_id: device_tracker.honor_marc
-      zone: zone.sii
-      event: leave
-  action:
-    - service: notify.html5
-      data:
-        message: "Marc is leaving SII"
-        title: "Bye !"    
-
 - id: ha_start
   alias: Démarrage Home Assistant
   trigger:
