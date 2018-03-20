@@ -54,12 +54,6 @@ map:
 # Track the sun
 sun:
 
-weather:
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    name: Météo
-
-
 mqtt: 
 
 device_tracker:
