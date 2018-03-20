@@ -50,6 +50,8 @@ sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
 sensor.fibaro_system_fgsd002_smoke_sensor_temperature:
   friendly_name: Etage
+sensor.dark_sky_apparent_temperature:
+  friendly_name: Temp. ressentie
 
 script.fermeture_volets:
   icon: mdi:arrow-collapse-down
