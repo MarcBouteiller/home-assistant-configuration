@@ -82,6 +82,15 @@
     - service: switch.turn_on
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+    - service: notify.html5
+      data:
+        title: "Home Assistant"
+        message: "Vous partez ?"
+        actions:
+          - action: "activate"
+            title: "Activer"
+          - action: "deactivate"
+            title: "Desactiver"
 
 - id: coming_home
   alias: Retour
