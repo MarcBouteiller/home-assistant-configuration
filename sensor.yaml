@@ -63,3 +63,18 @@
         {% else %}
           On
         {% endif %}
+
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+    - apparent_temperature
+    - humidity
+    - precip_probability
+    - wind_speed
+    - cloud_cover
+    - temperature_max
+    - temperature_min
+  update_interval: '00:05'
