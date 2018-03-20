@@ -71,10 +71,10 @@
       entity_id: input_boolean.night_mode
 
 - id: leave_home
-  alias: Départ
+  alias: Absence
   trigger:
     platform: template
-    value_template: "{{not (is_state('device_tracker.honor_marc', 'home') or is_state('device_tracker.honor_eva', 'home')) and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
+    value_template: "{{not is_state('device_tracker.honor_marc', 'home') and not is_state('device_tracker.honor_eva', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
   action:
     - service: input_boolean.turn_on
       data:
