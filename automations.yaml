@@ -204,5 +204,3 @@
       data:
         title: "Home Assistant"
         message: "Absence activée"
-        target: 
-          - "Honor Marc"
