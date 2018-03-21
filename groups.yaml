@@ -7,6 +7,7 @@ default_view:
     - device_tracker.honor_marc
     - device_tracker.honor_eva
     - sensor.garage_plug
+    - sensor.dark_sky_summary
     - sensor.dark_sky_apparent_temperature
     - group.actions
     - group.modes
