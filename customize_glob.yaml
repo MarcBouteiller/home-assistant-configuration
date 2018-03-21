@@ -11,7 +11,7 @@
 "sensor.dark_sky_precip_probability*":
   friendly_name: Proba. Précipation 
 "sensor.dark_sky_summary*":
-  friendly_name: Résumé
+  friendly_name: Temps
 "sensor.dark_sky_temperature*":
   friendly_name: Température 
 "sensor.dark_sky_wind_speed*":
