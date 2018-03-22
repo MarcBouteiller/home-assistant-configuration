@@ -83,3 +83,12 @@
     - temperature_max
     - temperature_min
   update_interval: '00:05'
+
+- platform: history_stats
+  name: Voiture en charge
+  entity_id: input_boolean.garage_charging
+  state: 'on'
+  type: time
+  end: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    duration:
+      days: 30
