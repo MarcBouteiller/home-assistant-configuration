@@ -103,3 +103,4 @@
 
 - platform: statistics
   entity_id: sensor.prise_garage  
+  name: prise_garage
