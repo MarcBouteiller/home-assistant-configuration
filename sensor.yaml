@@ -100,3 +100,6 @@
   end: '{{ now() }}'
   duration:
     hours: 24
+
+- platform: statistics
+  entity_id: sensor.prise_garage  
