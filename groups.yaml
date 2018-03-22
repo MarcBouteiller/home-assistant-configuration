@@ -78,7 +78,7 @@ car_switch:
     - sensor.price_day_car_charge
     - sensor.value_month_car_charge
     - sensor.price_month_car_charge
-    
+
 travel:
   name: Trajets
   view: no
@@ -96,6 +96,7 @@ meteo:
     - group.weather_today
     - group.weather_tomorrow
     - group.weather_after_tomorrow
+    - group.sun
 
 weather_today:
   name: Aujourd'hui
@@ -110,6 +111,7 @@ weather_today:
     - sensor.dark_sky_precip_probability
     - sensor.dark_sky_temperature
     - sensor.dark_sky_wind_speed
+
 weather_tomorrow:
   name: Demain
   view: no
@@ -120,6 +122,7 @@ weather_tomorrow:
     - sensor.dark_sky_humidity_1
     - sensor.dark_sky_precip_probability_1
     - sensor.dark_sky_wind_speed_1
+
 weather_after_tomorrow:
   name: Après demain
   view: no
@@ -130,6 +133,13 @@ weather_after_tomorrow:
     - sensor.dark_sky_humidity_2
     - sensor.dark_sky_precip_probability_2
     - sensor.dark_sky_wind_speed_2
+
+sun:
+  name: Soleil
+  view: no
+  entities:
+    - sensor.sunrise
+    - sensor.sunset
 
 #### HARDWARE
 equipement:

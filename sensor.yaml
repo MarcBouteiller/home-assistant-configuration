@@ -67,12 +67,20 @@
       friendly_name: Coût de recharge
       unit_of_measurement: €
       icon_template: mdi:currency-eur
-      value_template: "{{states.sensor.day_car_charge.state|float * states.input_number.elec_price.state|float * 2.3}}"
+      value_template: "{{(states.sensor.day_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
     price_month_car_charge:
       friendly_name: Coût de recharge mensuel
       icon_template: mdi:currency-eur
       unit_of_measurement: €
-      value_template: "{{states.sensor.month_car_charge.state|float * states.input_number.elec_price.state|float * 2.3}}"
+      value_template: "{{(states.sensor.month_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
+    sunset:
+      friendly_name: Coucher du soleil
+      icon_template: mdi:weather-sunset-down
+      value_template: "{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
+    sunrise:
+      friendly_name: Lever du soleil
+      icon_template: mdi:weather-sunset-up
+      value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
 
 - platform: darksky
   api_key: !secret darksky_api_key
