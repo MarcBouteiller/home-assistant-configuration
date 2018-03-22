@@ -148,6 +148,7 @@ equipement:
   entities:    
     - group.internet
     - group.ha_monitor
+    - group.battery
 
 ha_monitor:
   view: no
@@ -156,7 +157,7 @@ ha_monitor:
     - sensor.processor_use
     - sensor.memory_use_percent
     - sensor.load_15m
-    - sensor.disk_use_percent
+    - sensor.disk_use_percent_
 
 internet:
   view: no
@@ -166,6 +167,12 @@ internet:
     - sensor.speedtest_upload
     - sensor.speedtest_ping
     - sensor.fastcom_download
+
+battery:
+  view: no
+  name: Batteries
+  entities:
+    - sensor.smoke_sensor_upstair_battery
 
 #### SETTINGS
 settings:
