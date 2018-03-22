@@ -40,12 +40,31 @@ tv:
   entities:
     - input_number.tv_timer
 
+all_medias:
+  entities:
+    - media_player.chromecast_salon
+
+modes:
+  view: no
+  name: Modes
+  entities:
+    - input_boolean.night_mode
+    - input_boolean.away_mode
+    - input_boolean.holiday_mode
+ 
+actions:
+  view: no
+  name: Actions
+  entities:
+    - script.ouverture_volets
+    - script.fermeture_volets
+
+#### GARAGE/VOITURE
 car:
   view: yes
   icon: mdi:car-side
   entities:    
     - sensor.garage_plug 
-    - input_boolean.garage_charging
     - group.car_switch
     - group.travel
 
@@ -55,6 +74,8 @@ car_switch:
   entities:
     - switch.prise_garage
     - sensor.prise_garage
+    - sensor.month_car_charge
+    - sensor.day_car_charge
 
 travel:
   name: Trajets
@@ -64,6 +85,7 @@ travel:
     - sensor.vers_st_martin
     - sensor.vers_bourg_leveque
 
+#### METEO
 meteo:
   name: Météo
   view: yes
@@ -107,31 +129,13 @@ weather_after_tomorrow:
     - sensor.dark_sky_precip_probability_2
     - sensor.dark_sky_wind_speed_2
 
+#### HARDWARE
 equipement:
   view: yes
   icon: mdi:server
   entities:    
     - group.internet
     - group.ha_monitor
-
-all_medias:
-  entities:
-    - media_player.chromecast_salon
-
-modes:
-  view: no
-  name: Modes
-  entities:
-    - input_boolean.night_mode
-    - input_boolean.away_mode
-    - input_boolean.holiday_mode
- 
-actions:
-  view: no
-  name: Actions
-  entities:
-    - script.ouverture_volets
-    - script.fermeture_volets
 
 ha_monitor:
   view: no
@@ -151,6 +155,7 @@ internet:
     - sensor.speedtest_ping
     - sensor.fastcom_download
 
+#### SETTINGS
 settings:
   view: yes
   icon: mdi:settings

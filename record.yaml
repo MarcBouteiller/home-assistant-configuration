@@ -22,3 +22,5 @@ include:
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.fastcom_download
+      - sensor.month_car_charge
+      - sensor.day_car_charge

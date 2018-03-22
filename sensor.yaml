@@ -85,10 +85,18 @@
   update_interval: '00:05'
 
 - platform: history_stats
-  name: Voiture en charge
+  name: month_car_charge
   entity_id: input_boolean.garage_charging
   state: 'on'
   type: time
-  end: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  start: '{{ now().replace(day=1).replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
+
+- platform: history_stats
+  name: day_car_charge
+  entity_id: input_boolean.garage_charging
+  state: 'on'
+  type: time
+  end: '{{ now() }}'
   duration:
-    days: 30
+    hours: 24

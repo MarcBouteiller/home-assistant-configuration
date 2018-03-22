@@ -50,6 +50,12 @@ sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
 sensor.fibaro_system_fgsd002_smoke_sensor_temperature:
   friendly_name: Etage
+sensor.month_car_charge:
+  friendly_name: Temps de charge mensuel
+sensor.day_car_charge:
+  friendly_name: Durée recharge
+
+
 
 script.fermeture_volets:
   icon: mdi:arrow-collapse-down
