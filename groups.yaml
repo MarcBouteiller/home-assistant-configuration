@@ -74,9 +74,11 @@ car_switch:
   entities:
     - switch.prise_garage
     - sensor.prise_garage
-    - sensor.day_car_charge
-    - sensor.month_car_charge
-
+    - sensor.value_day_car_charge
+    - sensor.price_day_car_charge
+    - sensor.value_month_car_charge
+    - sensor.price_month_car_charge
+    
 travel:
   name: Trajets
   view: no
