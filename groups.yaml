@@ -76,8 +76,14 @@ car_switch:
     - sensor.prise_garage
     - sensor.value_day_car_charge
     - sensor.price_day_car_charge
+
+car_switch_month:
+  view: no
+  name: Energie Mensuelle
+  entities:
     - sensor.value_month_car_charge
     - sensor.price_month_car_charge
+    - sensor.month_count_car_charge
 
 travel:
   name: Trajets
