@@ -66,6 +66,7 @@ car:
   entities:    
     - sensor.garage_plug 
     - group.car_switch
+    - group.car_switch_month
     - group.travel
 
 car_switch:
