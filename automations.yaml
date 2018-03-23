@@ -2,9 +2,9 @@
   alias: Coucher de soleil
   trigger:
   - event: sunset
-    offset: 00:20:00
     platform: sun
   action:
+    - delay: "00:00:{% if states.sensor.dark_sky_cloud_coverage.state|int > 50 %}10{% else %}20{% endif %}"
     - entity_id: group.all_covers
       service: cover.close_cover
 
