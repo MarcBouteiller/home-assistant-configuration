@@ -9,8 +9,8 @@
   radius: 250
   icon: mdi:briefcase
 - name: CA St Martin
-  latitude: 48.1228487
-  longitude: -1.6868182
+  latitude: 48.1228966
+  longitude: -1.6844452
   radius: 250
   icon: mdi:bank
 - name: CA Bourg L'Evêque
