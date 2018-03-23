@@ -180,6 +180,7 @@ battery:
   name: Batteries
   entities:
     - sensor.smoke_sensor_upstair_battery
+    - sensor.motion_sensor_battery
 
 #### SETTINGS
 settings:
