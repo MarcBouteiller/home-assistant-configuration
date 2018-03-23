@@ -188,15 +188,15 @@ settings:
   icon: mdi:settings
   name: Paramètres
   entities:
-    - group.times
     - group.prices
+    - group.tresholds
 
-times:
+tresholds:
   view: no
-  icon: mdi:clock
-  name: Temps
+  icon: mdi:debug-step-over
+  name: Seuils
   entities:
-    - input_number.sunset_offset
+    - input_number.cloud_treshold
 
 prices:
   view: no
