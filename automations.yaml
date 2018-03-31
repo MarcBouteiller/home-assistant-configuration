@@ -133,7 +133,7 @@
   alias: Allumage prise
   trigger:
     platform: time
-    at: '22:00:00'
+    at: '00:00:00'
   action:
     - service: switch.turn_on
       data:
@@ -185,7 +185,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5
+    - service: notify.html5_honor_marc
       data:
         message: "Starting..."
         title: "HomeAssistant"
@@ -196,7 +196,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5
+    - service: notify.html5_honor_marc
       data:
         message: "Stopping !"
         title: "HomeAssistant"
