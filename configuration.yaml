@@ -7,10 +7,7 @@ homeassistant:
   time_zone: Europe/Paris
   # Customization file
   customize: !include customize.yaml
-  customize_glob: !include customize_glob.yaml  
-  whitelist_external_dirs:
-    - /config/tmp
-
+  customize_glob: !include customize_glob.yaml
 # Show links to resources in log and frontend
 # introduction:
 
