@@ -25,9 +25,9 @@ eteindre_prise_garage:
 turn_off_tv:
   alias: Minuteur Chromecast
   sequence:
-    - condition:
-      - condition: template
-        value_template: '{{ states.input_number.tv_timer.state | int != 0 }}'
+    - condition: numeric_state
+      entity_id: input_number.tv_timer
+      above: 0
     - delay: '00:{{ states.input_number.tv_timer.state | int }}:00'  
     - service: media_player.turn_off
       data:
