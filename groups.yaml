@@ -144,6 +144,7 @@ sun:
 #### MEDIA
 media: 
   view: yes
+  icon: mdi:cast
   entities:
     - group.tv
     - group.all_medias
