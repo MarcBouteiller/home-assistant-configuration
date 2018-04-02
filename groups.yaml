@@ -13,7 +13,6 @@ default_view:
     - group.lights
     - group.all_covers
     - group.switches
-    - group.tv
     - camera.salon
     - group.all_medias
 
@@ -33,12 +32,6 @@ switches:
   entities:
     - switch.neo_coolcam_power_plug_12a_switch_2
     - switch.prise_garage
-
-tv:
-  name: TV
-  view: no
-  entities:
-    - input_number.tv_timer
 
 all_medias:
   entities:
@@ -147,6 +140,20 @@ sun:
   entities:
     - sensor.sunrise
     - sensor.sunset
+
+#### MEDIA
+media: 
+  view: yes
+  entities:
+    - group.tv
+    - group.all_medias
+
+tv:
+  name: TV
+  view: no
+  entities:
+    - input_number.tv_timer
+    - script.turn_off_tv
 
 #### HARDWARE
 equipement:

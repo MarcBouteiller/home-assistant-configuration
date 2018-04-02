@@ -111,24 +111,6 @@
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
 
-- id: timer_chromecast
-  alias: Minuteur Chromecast
-  trigger:
-    platform: state
-    entity_id: input_number.tv_timer
-  condition:
-    - condition: template
-      value_template: '{{ states.input_number.tv_timer.state | int != 0 }}'
-  action:
-    - delay: '00:{{ states.input_number.tv_timer.state | int }}:00'
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.chromecast_salon 
-    - service: input_number.set_value
-      data:
-        entity_id: input_number.tv_timer
-        value: 0
-
 - id: start_power
   alias: Allumage prise
   trigger:
