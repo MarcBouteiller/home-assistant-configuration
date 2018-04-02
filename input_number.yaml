@@ -13,6 +13,7 @@ tv_timer:
   icon: mdi:timer
   min: 0
   max: 90
+  initial: 30
   unit_of_measurement: min
   step: 1
 

@@ -35,4 +35,4 @@ turn_off_tv:
     - service: input_number.set_value
       data:
         entity_id: input_number.tv_timer
-        value: 0
+        value: 30

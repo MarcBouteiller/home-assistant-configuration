@@ -57,3 +57,5 @@ script.fermeture_volets:
   icon: mdi:arrow-collapse-down
 script.ouverture_volets:
   icon: mdi:arrow-collapse-up
+script.turn_off_tv:
+  icon: mdi:camera-timer
