@@ -2,9 +2,9 @@
   alias: Coucher de soleil
   trigger:
   - event: sunset
-    offset: 00:20:00
     platform: sun
   action:
+    - delay: "00:{% if states.sensor.dark_sky_cloud_coverage.state|int > states.input_number.cloud_treshold.state|int %}10{% else %}20{% endif %}"
     - entity_id: group.all_covers
       service: cover.close_cover
 
@@ -111,29 +111,11 @@
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
 
-- id: timer_chromecast
-  alias: Minuteur Chromecast
-  trigger:
-    platform: state
-    entity_id: input_number.tv_timer
-  condition:
-    - condition: template
-      value_template: '{{ states.input_number.tv_timer.state | int != 0 }}'
-  action:
-    - delay: '00:{{ states.input_number.tv_timer.state | int }}:00'
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.chromecast_salon 
-    - service: input_number.set_value
-      data:
-        entity_id: input_number.tv_timer
-        value: 0
-
 - id: start_power
   alias: Allumage prise
   trigger:
     platform: time
-    at: '22:00:00'
+    at: '00:00:00'
   action:
     - service: switch.turn_on
       data:
@@ -185,7 +167,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5
+    - service: notify.html5_honor_marc
       data:
         message: "Starting..."
         title: "HomeAssistant"
@@ -196,7 +178,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5
+    - service: notify.html5_honor_marc
       data:
         message: "Stopping !"
         title: "HomeAssistant"

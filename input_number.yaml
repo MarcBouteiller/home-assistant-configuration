@@ -13,15 +13,16 @@ tv_timer:
   icon: mdi:timer
   min: 0
   max: 90
+  initial: 30
   unit_of_measurement: min
   step: 1
 
-sunset_offset:
-  name: Offset couché de soleil
-  icon: mdi:timer
+cloud_treshold:
+  name: Seuil couverture nuageuse
+  icon: mdi:weather-partlycloudy
   mode: box
-  initial: 20
-  min: -60
-  max: 60
-  unit_of_measurement: min
+  initial: 50
+  min: 0
+  max: 100
+  unit_of_measurement: '%'
   step: 1

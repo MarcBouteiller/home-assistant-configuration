@@ -8,6 +8,8 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
+  whitelist_external_dirs:
+    - /config/tmp
 # Show links to resources in log and frontend
 # introduction:
 
@@ -43,10 +45,54 @@ conversation:
 # Enables support for tracking state changes over time
 history:
 
-recorder: !include record.yaml
+recorder:
+  purge_keep_days: 60
+  include:
+    domains:
+      - automation
+      - input_boolean
+      - light
+      - media_player
+      - sun
+      - device_tracker
+    entities:
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+      - sensor.fibaro_system_fgms001_motion_sensor_temperature
+      - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+      - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+      - sensor.prise_garage
+      - switch.prise_garage
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.fastcom_download
+      - sensor.month_car_charge
+      - sensor.day_car_charge
 
 # View all events in a logbook
-logbook: !include record.yaml
+logbook:
+  include:
+    domains:
+      - automation
+      - input_boolean
+      - light
+      - media_player
+      - sun
+      - device_tracker
+    entities:
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+      - switch.prise_garage
 
 # Enables a map showing the location of tracked devices
 map:

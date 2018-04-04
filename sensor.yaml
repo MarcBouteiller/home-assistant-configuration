@@ -82,6 +82,7 @@
       icon_template: mdi:weather-sunset-up
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
     smoke_sensor_upstair_battery:
+      friendly_name: Batterie détecteur fumée étage
       value_template: "{{states.zwave.fibaro_system_fgsd002_smoke_sensor.attributes.battery_level}}"
       unit_of_measurement: '%'
       icon_template: >-
@@ -92,6 +93,19 @@
         {% else %}
           mdi:battery-{{(states.zwave.fibaro_system_fgsd002_smoke_sensor.attributes.battery_level|int // 10) * 10}}
         {% endif %}
+    motion_sensor_battery:
+      friendly_name: Batterie Motion Sensor
+      value_template: "{{states.zwave.fibaro_system_fgms001_motion_sensor.attributes.battery_level}}"
+      unit_of_measurement: '%'
+      icon_template: >-
+        {% if states.zwave.fibaro_system_fgms001_motion_sensor.attributes.battery_level|int < 10 %}
+          mdi:battery-alert
+        {% elif is_state_attr('zwave.fibaro_system_fgms001_motion_sensor', 'battery_level', 100) %}
+          mdi:battery
+        {% else %}
+          mdi:battery-{{(states.zwave.fibaro_system_fgms001_motion_sensor.attributes.battery_level|int // 10) * 10}}
+        {% endif %}
+    
 
 - platform: darksky
   api_key: !secret darksky_api_key
