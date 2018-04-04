@@ -213,3 +213,24 @@
       data:
         title: "Home Assistant"
         message: "Absence activée"
+
+- id: presence_detection
+  alias: Detection de présence
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'on'
+  action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.salon
+        filename: "tmp/snap_{{now()}}.jpg"
+    - service: notify.html5
+      data:
+        title: "Alerte /!\\"
+        message: "Presence détectée"
