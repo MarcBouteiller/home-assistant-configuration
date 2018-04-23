@@ -58,4 +58,4 @@ script.fermeture_volets:
 script.ouverture_volets:
   icon: mdi:arrow-collapse-up
 script.turn_off_tv:
-  icon: mdi:camera-timer
+  icon: mdi:clock-start
