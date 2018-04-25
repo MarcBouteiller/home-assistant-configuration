@@ -19,7 +19,7 @@
   radius: 250
   icon: mdi:bank
 - name: OF
-  latitude: 48.093312
-  longitude: -1.6295282
-  radius: 200
+  latitude: 48.0936905
+  longitude: -1.6283874
+  radius: 150
   icon: mdi:newspaper
