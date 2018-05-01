@@ -36,7 +36,7 @@
 - platform: broadlink_power
   host: 192.168.0.25
   mac: '34:EA:34:9D:27:5C'
-  name: Prise garage
+  friendly_name: Prise garage
 
 - platform: template
   sensors:
