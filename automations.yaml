@@ -216,3 +216,15 @@
       data:
         title: "Alerte /!\\"
         message: "Presence détectée"
+
+- id: ouverture_volets_matin_quand_absent
+  alias: Ouverture matinale des volets (Absence)
+  trigger:
+    platform: time
+    at: '09:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'on'
+  action:
+      - service: script.ouverture_volets
