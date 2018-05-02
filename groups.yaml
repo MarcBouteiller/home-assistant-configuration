@@ -67,7 +67,7 @@ car_switch:
   name: Energie
   entities:
     - switch.prise_garage
-    - sensor.prise_garage
+    - sensor.broadlink_spx_power_sensor
     - sensor.value_day_car_charge
     - sensor.price_day_car_charge
 
