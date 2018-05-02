@@ -5,7 +5,7 @@ default_view:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
     - device_tracker.honor_marc
-      - device_tracker.honor_eva
+    - device_tracker.honor_eva
     - sensor.dark_sky_apparent_temperature
     - group.actions
     - group.modes
