@@ -6,7 +6,6 @@ default_view:
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
     - device_tracker.honor_marc
     - device_tracker.honor_eva
-    - sensor.garage_plug
     - sensor.dark_sky_apparent_temperature
     - group.actions
     - group.modes
@@ -57,7 +56,6 @@ car:
   view: yes
   icon: mdi:car-side
   entities:    
-    - sensor.garage_plug 
     - group.car_switch
     - group.car_switch_month
     - group.travel
