@@ -44,10 +44,10 @@
       unit_of_measurement: charge
       friendly_name: Garage
       value_template: >-
-        {% if is_state('switch.prise_garage', 'off') %}
+        {% if is_state('switch.sensor.broadlink_spx_power_sensor', 'off') %}
           Off        
         {% elif is_state('input_boolean.garage_charging','true') %}          
-          {% if states('sensor.prise_garage')|float > 1500 %}
+          {% if states('sensorsensor.broadlink_spx_power_sensor')|float > 1500 %}
             Voiture
           {% else %}
             Attente
@@ -153,5 +153,5 @@
     hours: 24
 
 - platform: statistics
-  entity_id: sensor.prise_garage  
+  entity_id: sensor.broadlink_spx_power_sensor  
   name: prise_garage

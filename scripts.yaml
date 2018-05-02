@@ -16,7 +16,7 @@ eteindre_prise_garage:
   alias: Eteindre prise du garage
   sequence:
     - condition: numeric_state
-      entity_id: sensor.prise_garage
+      entity_id: sensor.broadlink_spx_power_sensor
       below: 10
     - service: switch.turn_off
       data:

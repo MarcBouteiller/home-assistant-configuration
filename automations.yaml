@@ -127,7 +127,7 @@
   alias: Recharge voiture
   trigger:
     platform: numeric_state
-    entity_id: sensor.prise_garage
+    entity_id: sensor.broadlink_spx_power_sensor
     above: 1500
   action:
     - service: input_boolean.turn_on
@@ -138,7 +138,7 @@
   alias: Voiture chargée
   trigger:
     platform: numeric_state
-    entity_id: sensor.prise_garage
+    entity_id: sensor.broadlink_spx_power_sensor
     below: 500
   action:
     - service: input_boolean.turn_off
