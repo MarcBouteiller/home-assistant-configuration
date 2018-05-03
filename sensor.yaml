@@ -139,3 +139,9 @@
 - platform: statistics
   entity_id: sensor.broadlink_spx_power_sensor  
   name: prise_garage
+
+- platform: waze_travel_time
+  origin: Nouvoitou, France
+  destination: rue du breil, Rennes, France
+  region: 'EU'
+  name: 'Waze Ouest France'
