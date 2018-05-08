@@ -60,6 +60,7 @@ car:
     - group.car_switch
     - group.car_switch_month
     - group.travel
+    - sensor.waze_ouest_france
 
 car_switch:
   view: no
@@ -82,6 +83,7 @@ travel:
   name: Trajets
   view: no
   entities:
+    - sensor.waze_ouest_france
     - sensor.vers_sii
     - sensor.vers_st_martin
     - sensor.vers_bourg_leveque
