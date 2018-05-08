@@ -148,6 +148,9 @@
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.night_mode
 
 - id: ha_start
   alias: Démarrage Home Assistant
