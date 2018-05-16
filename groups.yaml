@@ -83,7 +83,7 @@ travel:
   name: Trajets
   view: no
   entities:
-    - sensor.waze_ouest_france
+    - sensor.waze_duree_ouest_france
     - sensor.ouest_france_roads
 
 #### METEO

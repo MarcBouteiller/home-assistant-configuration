@@ -93,7 +93,7 @@
     ouest_france_roads:
       friendly_name: Routes Ouest France
       icon_template: mdi:road-variant
-      value_template: "{{ states.sensor.waze_ouest_france.attributes.route }}"
+      value_template: "{{ states.sensor.waze_duree_ouest_france.attributes.route }}"
 
 - platform: darksky
   api_key: !secret darksky_api_key
@@ -148,4 +148,4 @@
   origin: Nouvoitou, France
   destination: rue du breil, Rennes, France
   region: 'EU'
-  name: 'Durée Ouest France'
+  name: 'Waze Durée Ouest France'
