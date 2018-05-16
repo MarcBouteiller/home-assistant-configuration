@@ -84,7 +84,7 @@ travel:
   view: no
   entities:
     - sensor.waze_ouest_france
-    - ouest_france_roads
+    - sensor.ouest_france_roads
 
 #### METEO
 meteo:
