@@ -89,7 +89,11 @@
           mdi:battery
         {% else %}
           mdi:battery-{{(state_attr('zwave.fibaro_system_fgms001_motion_sensor','battery_level')|int // 10) * 10}}
-        {% endif %}    
+        {% endif %}
+    ouest_france_roads:
+      friendly_name: Routes Ouest France
+      icon_template: mdi:road-variant
+      value_template: "{{ states.sensor.waze_ouest_france.attributes.route }}"
 
 - platform: darksky
   api_key: !secret darksky_api_key
@@ -144,4 +148,4 @@
   origin: Nouvoitou, France
   destination: rue du breil, Rennes, France
   region: 'EU'
-  name: 'Waze Ouest France'
+  name: 'Durée Ouest France'

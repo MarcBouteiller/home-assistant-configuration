@@ -84,9 +84,7 @@ travel:
   view: no
   entities:
     - sensor.waze_ouest_france
-    - sensor.vers_sii
-    - sensor.vers_st_martin
-    - sensor.vers_bourg_leveque
+    - ouest_france_roads
 
 #### METEO
 meteo:
