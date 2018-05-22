@@ -223,5 +223,8 @@
     - condition: state
       entity_id: input_boolean.away_mode
       state: 'on'
+    - condition: state
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      state: 'closed'
   action:
       - service: script.ouverture_volets
