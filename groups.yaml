@@ -7,6 +7,7 @@ default_view:
     - device_tracker.honor_marc
     - device_tracker.honor_eva
     - sensor.dark_sky_apparent_temperature
+    - sensor.ouest_france_roads
     - group.actions
     - group.modes
     - group.lights
