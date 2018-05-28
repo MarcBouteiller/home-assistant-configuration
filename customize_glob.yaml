@@ -1,5 +1,5 @@
 "sensor.dark_sky_apparent_temperature*":
-  friendly_name: Temp. ressentie
+  friendly_name: Temp ext.
 "sensor.dark_sky_cloud_coverage*":
   friendly_name: Couverture nuageuse
 "sensor.dark_sky_daily_high_temperature*":
