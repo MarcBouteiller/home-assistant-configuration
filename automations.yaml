@@ -3,6 +3,10 @@
   trigger:
   - event: sunset
     platform: sun
+  condition:
+    - condition: state
+      entity_id: input_boolean.cover_mode
+      state: 'on'
   action:
     - delay: "00:{% if states.sensor.dark_sky_cloud_coverage.state|int > states.input_number.cloud_treshold.state|int %}10{% else %}20{% endif %}"
     - entity_id: group.all_covers
