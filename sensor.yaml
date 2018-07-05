@@ -23,6 +23,7 @@
 
 - platform: template
   sensors:
+    ## CAR CHARGE
     value_day_car_charge:
       friendly_name: Durée de recharge
       icon_template: mdi:timer-sand
@@ -41,6 +42,8 @@
       icon_template: mdi:currency-eur
       unit_of_measurement: €
       value_template: "{{(states.sensor.month_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
+    
+    ## SUN ##
     sunset:
       friendly_name: Coucher du soleil
       icon_template: mdi:weather-sunset-down
@@ -49,6 +52,8 @@
       friendly_name: Lever du soleil
       icon_template: mdi:weather-sunset-up
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
+
+    ## BATTERIES ##
     smoke_sensor_upstair_battery:
       friendly_name: Batterie détecteur fumée étage
       value_template: "{{ state_attr('zwave.fibaro_system_fgsd002_smoke_sensor','battery_level') }}"
@@ -73,6 +78,20 @@
         {% else %}
           mdi:battery-{{(state_attr('zwave.fibaro_system_fgms001_motion_sensor','battery_level')|int // 10) * 10}}
         {% endif %}
+    remote_hank_battery:
+      friendly_name: Batterie Télécommande
+      value_template: "{{ state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')}}"
+      unit_of_measurement: '%'
+      icon_template: >-
+        {% if state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')|int < 10 %}
+          mdi:battery-alert
+        {% elif is_state_attr('zwave.hank_hkzwscn04_scene_controller', 'battery_level', 100) %}
+          mdi:battery
+        {% else %}
+          mdi:battery-{{(state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')|int // 10) * 10}}
+        {% endif %}
+
+    ## WAZE
     ouest_france_roads:
       friendly_name: Routes Ouest France
       icon_template: mdi:road-variant
