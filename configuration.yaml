@@ -1,4 +1,6 @@
 homeassistant:
+  latitude: !secret zone.home.latitude
+  longitude: !secret zone.home.longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   # metric for Metric, imperial for Imperial
