@@ -127,11 +127,15 @@ switch:
     type: sp3
     friendly_name: Prise garage
 
-media_player:
-  - platform: cast
-    host: 192.168.0.40
-  - platform: cast
-    host: 192.168.0.41
+# media_player:
+#   - platform: cast
+#     host: 192.168.0.40
+#   - platform: cast
+#     host: 192.168.0.41
+cast:
+  media_player:
+    - host: 192.168.0.40
+    - host: 192.168.0.41
 
 # Text to speech
 tts:
