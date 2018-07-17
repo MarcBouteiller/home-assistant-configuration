@@ -18,7 +18,7 @@ positionner_volets:
     - service: cover.set_cover_position
       data:
         entity_id: group.all_covers
-        position: {{ position }}
+        position: "{{ position }}"
 
 eteindre_prise_garage:
   alias: Eteindre prise du garage
