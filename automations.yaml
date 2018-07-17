@@ -78,7 +78,7 @@
   alias: Absence
   trigger:
     platform: template
-    value_template: "{{not is_state('device_tracker.honor_marc', 'home') and not is_state('device_tracker.honor_eva', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
+    value_template: "{{not is_state('device_tracker.honor_7_marc', 'home') and not is_state('device_tracker.honor_7_eva', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
   action:
     - service: input_boolean.turn_on
       data:
@@ -88,11 +88,11 @@
   alias: Retour
   trigger:
     - platform: zone
-      entity_id: device_tracker.honor_marc
+      entity_id: device_tracker.honor_7_marc
       zone: zone.home
       event: enter
     - platform: zone
-      entity_id: device_tracker.honor_eva
+      entity_id: device_tracker.honor_7_eva
       zone: zone.home
       event: enter
   action:
@@ -162,7 +162,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5_honor_marc
+    - service: notify.html5_honor_7_marc
       data:
         message: "Starting..."
         title: "HomeAssistant"
@@ -173,7 +173,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5_honor_marc
+    - service: notify.html5_honor_7_marc
       data:
         message: "Stopping !"
         title: "HomeAssistant"

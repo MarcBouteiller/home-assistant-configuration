@@ -2,8 +2,8 @@ default_view:
   view: yes
   icon: mdi:home 
   entities:    
-    - device_tracker.honor_marc
-    - device_tracker.honor_eva
+    - device_tracker.honor_7_marc
+    - device_tracker.honor_7_eva
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
     - sensor.dark_sky_apparent_temperature
