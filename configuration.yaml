@@ -42,6 +42,8 @@ updater:
 discovery:
   ignore:
     - google_cast
+    - cast
+    - freebox
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -107,8 +109,10 @@ sun:
 mqtt: 
 
 device_tracker:
-  - platform: gpslogger
-    password: !secret gpslogger_password
+  - platform: freebox
+    host: !secret freebox_host
+    port: !secret freebox_port
+    track_new_devices: false
 
 light:
   - platform: yeelight
@@ -127,11 +131,6 @@ switch:
     type: sp3
     friendly_name: Prise garage
 
-# media_player:
-#   - platform: cast
-#     host: 192.168.0.40
-#   - platform: cast
-#     host: 192.168.0.41
 cast:
   media_player:
     - host: 192.168.0.40
