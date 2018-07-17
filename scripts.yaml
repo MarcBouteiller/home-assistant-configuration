@@ -14,6 +14,7 @@ ouverture_volets:
 
 positionner_volets:
   alias: Positionner les volets
+  sequence:
     - service: cover.set_cover_position
       data:
         entity_id: group.all_covers
