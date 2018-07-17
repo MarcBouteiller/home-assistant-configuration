@@ -2,9 +2,9 @@
   friendly_name: Temp ext.
 "sensor.dark_sky_cloud_coverage*":
   friendly_name: Couverture nuageuse
-"sensor.dark_sky_daily_high_temperature*":
+"sensor.dark_sky_daytime_high_temperature*":
   friendly_name: Température Max
-"sensor.dark_sky_daily_low_temperature*":
+"sensor.dark_sky_daytime_low_temperature*":
   friendly_name: Température Min
 "sensor.dark_sky_humidity*":
   friendly_name: Humidité
