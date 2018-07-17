@@ -205,6 +205,7 @@ tresholds:
   name: Seuils
   entities:
     - input_number.cloud_treshold
+    - input_number.open_cover_temperature_treshold
 
 prices:
   view: no

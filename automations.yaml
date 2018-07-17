@@ -218,7 +218,7 @@
         title: "Alerte /!\\"
         message: "Presence détectée"
 
-- id: ouverture_volets_matin_quand_absent
+- id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)
   trigger:
     platform: time
@@ -230,5 +230,17 @@
     - condition: state
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       state: 'closed'
+    - condition: state
+      entity_id: input_boolean.cover_mode
+      state: 'on'
   action:
       - service: script.ouverture_volets
+        condition:
+          - condition: template
+            value_template: '{{ states.sensor.dark_sky_daytime_high_temperature.state | float < states.input_number.open_cover_temperature_treshold.state | float }}'
+      - service: script.positionner_volets
+        data_template:
+          position: 18 
+        condition: 
+          - condition: template
+            value_template: '{{ states.sensor.dark_sky_daytime_high_temperature.state | float >= states.input_number.open_cover_temperature_treshold.state | float }}'

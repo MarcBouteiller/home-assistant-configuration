@@ -12,6 +12,14 @@ ouverture_volets:
       data:
         entity_id: group.all_covers
 
+positionner_volets:
+  alias: Positionner les volets
+  sequence:
+    - service: cover.set_cover_position
+      data:
+        entity_id: group.all_covers
+        position: {{ position }}
+
 eteindre_prise_garage:
   alias: Eteindre prise du garage
   sequence:
