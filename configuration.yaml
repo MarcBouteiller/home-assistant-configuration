@@ -42,8 +42,6 @@ updater:
 discovery:
   ignore:
     - google_cast
-    - cast
-    - freebox
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
