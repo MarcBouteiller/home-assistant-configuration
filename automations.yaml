@@ -237,7 +237,6 @@
       - service: script.positionner_volets
         data_template:
           position: 18 
-      - condition:
-        condition: template
-          value_template: '{{ states.sensor.dark_sky_daytime_high_temperature.state|float < 22 }}'
+      - condition: template
+        value_template: '{{ states.sensor.dark_sky_daytime_high_temperature.state|float < 22 }}'
       - service: script.ouverture_volets
