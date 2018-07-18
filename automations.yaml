@@ -99,9 +99,6 @@
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.away_mode
-    - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_2
 
 - id: start_power
   alias: Allumage prise
@@ -196,6 +193,22 @@
     - service: homeassistant.turn_off
       data:
         entity_id: group.all_lights
+
+- id: away_mode_deactivate
+  alias: Absence désactivée
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+    - service: notify.html5
+      data:
+        title: "Home Assistant"
+        message: "Absence désactivée"
 
 - id: presence_detection
   alias: Detection de présence
