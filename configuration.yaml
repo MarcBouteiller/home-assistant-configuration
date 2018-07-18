@@ -154,7 +154,7 @@ camera:
       {% if is_state('switch.neo_coolcam_power_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
-        !secret camera_off_url
+        https://192.168.0.24:8123/local/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
 
@@ -173,7 +173,7 @@ panel_iframe:
     
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
-sensor:  !include sensor.yaml
+sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
