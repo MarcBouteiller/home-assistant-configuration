@@ -162,7 +162,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5_honor_7_marc
+    - service: notify.html5_honor_marc
       data:
         message: "Starting..."
         title: "HomeAssistant"
@@ -173,7 +173,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5_honor_7_marc
+    - service: notify.html5_honor_marc
       data:
         message: "Stopping !"
         title: "HomeAssistant"
