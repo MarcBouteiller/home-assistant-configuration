@@ -251,5 +251,5 @@
         data_template:
           position: 18 
       - condition: template
-        value_template: '{{ states.sensor.dark_sky_daytime_high_temperature.state|float < 22 }}'
+        value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
       - service: script.ouverture_volets
