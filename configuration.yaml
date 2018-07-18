@@ -154,7 +154,7 @@ camera:
       {% if is_state('switch.neo_coolcam_power_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
-        https://127.0.0.1:8123/local/camera-off.png
+        !secret camera_off_url
       {% endif %}
     limit_refetch_to_url_change: false
 
