@@ -86,15 +86,13 @@
 
 - id: coming_home
   alias: Retour
-  trigger:
-    - platform: zone
+  trigger:   
+    - platform: state
       entity_id: device_tracker.honor_7_marc
-      zone: zone.home
-      event: enter
-    - platform: zone
+      to: 'home'
+    - platform: state
       entity_id: device_tracker.honor_7_eva
-      zone: zone.home
-      event: enter
+      to: 'home'
   action:
     - service: input_boolean.turn_off
       data:
