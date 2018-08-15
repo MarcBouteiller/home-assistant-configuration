@@ -106,12 +106,6 @@ sun:
 
 mqtt: 
 
-device_tracker:
-  - platform: freebox
-    host: !secret freebox_host
-    port: !secret freebox_port
-    track_new_devices: false
-
 light:
   - platform: yeelight
     devices:
