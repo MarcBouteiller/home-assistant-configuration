@@ -148,7 +148,7 @@ camera:
       {% if is_state('switch.neo_coolcam_power_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
-        http://localhost:8123/local/camera-off.png
+        https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
 
