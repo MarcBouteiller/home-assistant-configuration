@@ -43,6 +43,9 @@ discovery:
   ignore:
     - google_cast
 
+device_tracker:
+  - platform: bluetooth_tracker
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
