@@ -89,6 +89,12 @@ recorder:
       - sensor.fastcom_download
       - sensor.month_car_charge
       - sensor.day_car_charge
+      - sensor.processor_use
+      - sensor.memory_use_percent
+      - sensor.load_15m
+      - sensor.disk_use_percent_
+      - sensor.smoke_sensor_upstair_battery
+      - sensor.motion_sensor_battery
 
 # View all events in a logbook
 logbook:
