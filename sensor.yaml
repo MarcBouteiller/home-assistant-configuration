@@ -148,7 +148,13 @@
   name: prise_garage
 
 - platform: waze_travel_time
-  origin: Nouvoitou, France
+  origin: !secret waze_home_origin
   destination: rue du breil, Rennes, France
   region: 'EU'
-  name: 'Waze Durée Ouest France'
+  name: 'Durée Waze'
+
+- platform: waze_travel_time
+  origin: !secret waze_home_origin
+  destination: Avenue Belle Fontaine, Cesson Sevigné, France
+  region: 'EU'
+  name: 'Durée Waze'
