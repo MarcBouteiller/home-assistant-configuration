@@ -95,7 +95,12 @@
     ouest_france_roads:
       friendly_name: Routes Ouest France
       icon_template: mdi:road-variant
-      value_template: "{{ states.sensor.waze_duree_ouest_france.attributes.route }}"
+      value_template: "{{ states.sensor.duree_waze_of.attributes.route }}"
+    
+    sii_roads:
+      friendly_name: Routes SII
+      icon_template: mdi:road-variant
+      value_template: "{{ states.sensor.duree_waze_sii.attributes.route }}"
 
 - platform: darksky
   api_key: !secret darksky_api_key
@@ -151,10 +156,10 @@
   origin: !secret waze_home_origin
   destination: rue du breil, Rennes, France
   region: 'EU'
-  name: 'Durée Waze'
+  name: 'Durée Waze OF'
 
 - platform: waze_travel_time
   origin: !secret waze_home_origin
   destination: Avenue Belle Fontaine, Cesson Sevigné, France
   region: 'EU'
-  name: 'Durée Waze'
+  name: 'Durée Waze SII'
