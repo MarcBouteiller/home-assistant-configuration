@@ -62,7 +62,7 @@ conversation:
 history:
 
 recorder:
-  purge_keep_days: 60
+  purge_keep_days: 90
   include:
     domains:
       - automation
@@ -80,6 +80,7 @@ recorder:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
       - sensor.fibaro_system_fgms001_motion_sensor_temperature
+      - sensor.fibaro_system_fgms001_motion_sensor_luminance
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
       - sensor.broadlink_spx_power_sensor
@@ -95,6 +96,7 @@ recorder:
       - sensor.disk_use_percent_
       - sensor.smoke_sensor_upstair_battery
       - sensor.motion_sensor_battery
+      - sensor.remote_hank_battery
 
 # View all events in a logbook
 logbook:
