@@ -36,3 +36,11 @@ open_cover_temperature_treshold:
   max: 30
   unit_of_measurement: '°C'
   step: 0.5
+
+covers_position:
+  name: Position volets
+  icon: mdi:percent
+  mode: slider
+  unit_of_measurement: '%'
+  min: 0
+  max: 100
