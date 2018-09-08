@@ -42,5 +42,6 @@ covers_position:
   icon: mdi:percent
   mode: slider
   unit_of_measurement: '%'
+  initial: 15
   min: 0
   max: 100
