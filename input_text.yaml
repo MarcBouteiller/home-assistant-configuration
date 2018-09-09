@@ -1,0 +1,23 @@
+notifications_ha_start:
+  name: Message au démarrage
+
+notifications_ha_stop:
+  name: Message à l'extinction
+
+notifications_title_presence:
+  name: Titre notification de présence
+notifications_message_presence:
+  name: Message de présence
+
+notifications_title_away_mode_on:
+  name: Titre notification mode absence ON 
+notifications_message_away_mode_on:
+  name: Message mode absence ON
+
+notifications_title_away_mode_off:
+  name: Titre notification mode absence OFF
+notifications_away_mode_off:
+  name: Message mode absence OFF
+
+notifications_generic_title:
+  name: Titre générique de notification

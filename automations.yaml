@@ -158,8 +158,8 @@
   action:
     - service: notify.html5_honor_marc
       data:
-        message: "Starting..."
-        title: "HomeAssistant"
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_ha_start.state }}"
 
 - id: ha_stop
   alias: Arrêt Home Assistant
@@ -169,8 +169,8 @@
   action:
     - service: notify.html5_honor_marc
       data:
-        message: "Stopping !"
-        title: "HomeAssistant"
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_ha_stop.state }}"
 
 - id: away_mode_activate
   alias: Absence activée
@@ -182,8 +182,8 @@
   action:
     - service: notify.html5
       data:
-        title: "Home Assistant"
-        message: "Absence activée"
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_message_away_mode_on.state }}"
     - service: switch.turn_on
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
@@ -204,8 +204,8 @@
         entity_id: switch.neo_coolcam_power_plug_12a_switch_2
     - service: notify.html5
       data:
-        title: "Home Assistant"
-        message: "Absence désactivée"
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_message_away_mode_off.state }}"
 
 - id: presence_detection
   alias: Detection de présence
@@ -228,8 +228,8 @@
       state: 'on'
     - service: notify.html5
       data:
-        title: "Alerte /!\\"
-        message: "Presence détectée"
+        title: "{{ states.input_text.notifications_title_presence.state }}"
+        message: "{{ states.input_text.notifications_message_presence.state }}"
 
 - id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)

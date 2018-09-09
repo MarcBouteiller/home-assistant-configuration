@@ -67,6 +67,8 @@ recorder:
     domains:
       - automation
       - input_boolean
+      - input_text
+      - input_number
       - light
       - media_player
       - sun
@@ -189,6 +191,7 @@ panel_iframe:
     
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
+input_text: !include input_text.yaml
 sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml

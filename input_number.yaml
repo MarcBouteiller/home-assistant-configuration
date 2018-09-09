@@ -1,7 +1,6 @@
 elec_price:
     name: Prix électricité
     icon: mdi:currency-eur
-    initial: 0.134
     unit_of_measurement: €/kWh
     mode: box
     min: 0
