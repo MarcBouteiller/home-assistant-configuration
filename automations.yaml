@@ -223,6 +223,9 @@
       data:
         entity_id: camera.salon
         filename: "tmp/snap_{{now()}}.jpg"
+    - condition: state
+      entity_id: input_boolean.notifications
+      state: 'on'
     - service: notify.html5
       data:
         title: "Alerte /!\\"

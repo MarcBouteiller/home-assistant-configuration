@@ -14,3 +14,7 @@ cover_mode:
 garage_charging:
   name: En charge
   icon: mdi:battery-charging-30
+notifications:
+  name: Notifications
+  icon: mdi:message-alert
+  initial: on
