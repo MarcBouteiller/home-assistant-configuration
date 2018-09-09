@@ -16,7 +16,7 @@ notifications_message_away_mode_on:
 
 notifications_title_away_mode_off:
   name: Titre notification mode absence OFF
-notifications_away_mode_off:
+notifications_message_away_mode_off:
   name: Message mode absence OFF
 
 notifications_generic_title:
