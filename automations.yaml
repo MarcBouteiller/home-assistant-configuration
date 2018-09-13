@@ -253,19 +253,275 @@
       - condition: template
         value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
       - service: script.ouverture_volets
-  - id: netflix_mode
-    alias: Mode Netflix
-    trigger:
-      platform: state
-      entity_id: sensor.cast_app_name
-      to: 'Netflix'
-    condition:
-      condition: time
-      after: '20:30:00'
-    action:
-      - service: light.turn_off
-        data:
-          entity_id: light.salon
-      - service: switch.turn_on
-        data:
-          entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+- id: coucher_de_soleil
+  alias: Coucher de soleil
+  trigger:
+  - event: sunset
+    platform: sun  
+  action:
+    - delay: "00:{% if states.sensor.dark_sky_cloud_coverage.state|int > states.input_number.cloud_treshold.state|int %}10{% else %}20{% endif %}"
+    - condition: state
+      entity_id: input_boolean.cover_mode
+      state: 'on'
+    - entity_id: group.all_covers
+      service: cover.close_cover
+
+- id: veilleuse
+  alias: Veilleuse
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.night_mode
+    state: 'on'
+  - condition: state
+    entity_id: light.salon
+    state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.salon
+        brightness: 10
+    - delay: 00:02:30
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+
+- id: night_mode_on
+  alias: Mode nuit
+  trigger:
+    platform: state
+    entity_id: input_boolean.night_mode
+    to: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+
+- id: night_mode_off
+  alias: Lever
+  trigger:
+    platform: time
+    at: '07:00:00'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.holiday_mode
+      state: 'off'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.salon
+      brightness: 25
+  - service: switch.turn_on
+    data:
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.night_mode
+
+# - id: leave_home
+#   alias: Absence
+#   trigger:
+#     platform: template
+#     value_template: "{{not is_state('device_tracker.honor_7_marc', 'home') and not is_state('device_tracker.honor_7_eva', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
+#   action:
+#     - service: input_boolean.turn_on
+#       data:
+#         entity_id: input_boolean.away_mode
+
+# - id: coming_home
+#   alias: Retour
+#   trigger:   
+#     - platform: state
+#       entity_id: device_tracker.honor_7_marc
+#       to: 'home'
+#     - platform: state
+#       entity_id: device_tracker.honor_7_eva
+#       to: 'home'
+#   action:
+#     - service: input_boolean.turn_off
+#       data:
+#         entity_id: input_boolean.away_mode
+
+- id: start_power
+  alias: Allumage prise
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.prise_garage
+    - delay: 00:05:00
+    - service: script.eteindre_prise_garage
+
+- id: car_charging
+  alias: Recharge voiture
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.broadlink_spx_power_sensor
+    above: 1500
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.garage_charging
+    
+- id: car_charged
+  alias: Voiture chargée
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.broadlink_spx_power_sensor
+    below: 500
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.garage_charging
+    - delay: 00:01:00
+    - service: script.eteindre_prise_garage
+
+- id: main_cover_opened
+  alias: Eteindre lumière
+  trigger:
+    platform: state
+    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+    to: 'open'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.night_mode
+
+- id: ha_start
+  alias: Démarrage Home Assistant
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.html5_honor_marc
+      data:
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_ha_start.state }}"
+
+- id: ha_stop
+  alias: Arrêt Home Assistant
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    - service: notify.html5_honor_marc
+      data:
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_ha_stop.state }}"
+
+- id: away_mode_activate
+  alias: Absence activée
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.html5
+      data:
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_message_away_mode_on.state }}"
+    - service: switch.turn_on
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.all_lights
+
+- id: away_mode_deactivate
+  alias: Absence désactivée
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+    - service: notify.html5
+      data:
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "{{ states.input_text.notifications_message_away_mode_off.state }}"
+
+- id: presence_detection
+  alias: Detection de présence
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'on'
+  action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.salon
+        filename: "tmp/snap_{{now()}}.jpg"
+    - condition: state
+      entity_id: input_boolean.notifications
+      state: 'on'
+    - service: notify.html5
+      data:
+        title: "{{ states.input_text.notifications_title_presence.state }}"
+        message: "{{ states.input_text.notifications_message_presence.state }}"
+
+- id: opening_cover_at_morning_away
+  alias: Ouverture matinale des volets (Absence)
+  trigger:
+    platform: time
+    at: '09:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'on'
+    - condition: state
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      state: 'closed'
+    - condition: state
+      entity_id: input_boolean.cover_mode
+      state: 'on'
+  action:
+      - service: script.positionner_volets
+        data_template:
+          position: 18 
+      - condition: template
+        value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
+      - service: script.ouverture_volets
+
+- id: netflix_mode
+  alias: Mode Netflix
+  trigger:
+    platform: state
+    entity_id: sensor.cast_app_name
+    to: 'Netflix'
+  condition:
+    condition: time
+    after: '20:30:00'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.salon
+    - service: switch.turn_on
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
