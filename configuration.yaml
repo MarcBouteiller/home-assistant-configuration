@@ -188,6 +188,10 @@ panel_iframe:
     title: Terminal
     icon: mdi:console
     url: !secret term_url
+  ide:
+    title: IDE
+    icon: mdi:playlist-edit
+    url: !secret ide_url
     
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
