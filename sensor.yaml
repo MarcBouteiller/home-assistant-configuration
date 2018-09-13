@@ -102,6 +102,12 @@
       icon_template: mdi:road-variant
       value_template: "{{ states.sensor.duree_waze_sii.attributes.route }}"
 
+    ## CAST
+    cast_app_name:
+      friendly_name: Application
+      icon_template: mdi:cast
+      value_template: "{{ states.media_player.chromecast_salon.attributes.app_name|default('empty') }}" 
+
 - platform: darksky
   api_key: !secret darksky_api_key
   forecast:
