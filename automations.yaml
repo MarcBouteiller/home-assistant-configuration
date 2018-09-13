@@ -253,3 +253,19 @@
       - condition: template
         value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
       - service: script.ouverture_volets
+  - id: netflix_mode
+    alias: Mode Netflix
+    trigger:
+      platform: state
+      entity_id: sensor.cast_app_name
+      to: 'Netflix'
+    condition:
+      condition: time
+      after: '20:30:00'
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.salon
+      - service: switch.turn_on
+        data:
+          entity_id: switch.neo_coolcam_power_plug_12a_switch_3
