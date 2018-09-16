@@ -525,3 +525,13 @@
     - service: switch.turn_on
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+
+- id: nuit_chambre_martin
+  alias: Extinction lumière Martin
+  trigger:
+    platform: time
+    at: '20:55:00'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.neo_coolcam_power_plug_12a_switch
