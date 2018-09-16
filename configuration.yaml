@@ -73,6 +73,7 @@ recorder:
       - media_player
       - sun
       - device_tracker
+      - switch
     entities:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
@@ -86,7 +87,6 @@ recorder:
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
       - sensor.broadlink_spx_power_sensor
-      - switch.prise_garage
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.fastcom_download
