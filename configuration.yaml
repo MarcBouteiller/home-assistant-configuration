@@ -43,6 +43,7 @@ updater:
 discovery:
   ignore:
     - google_cast
+    - yeelight
 
 device_tracker:
   - platform: bluetooth_tracker
