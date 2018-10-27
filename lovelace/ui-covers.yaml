@@ -1,0 +1,38 @@
+- title: Actions
+  type: entities
+  entities:
+    - script.ouverture_volets
+    - script.fermeture_volets
+    - type: divider
+    - type: call-service
+      icon: mdi:home
+      name: Positionner volets
+      action_name: Exécuter
+      service: script.positionner_volets
+      service_data:
+        position: 18
+    - input_number.covers_position
+
+- title: Sejour
+  type: entities
+  entities:
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+
+- title: Cuisine
+  type: entities
+  entities:
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+
+- title: Chambre RDC
+  type: entities
+  entities:
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+
+- title: Luminosité
+  type: history-graph
+  entities:
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance

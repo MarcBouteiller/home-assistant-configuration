@@ -1,0 +1,31 @@
+- title: Trajet Ouest France
+  type: entities
+  entities:
+    - sensor.duree_waze_of
+    - sensor.ouest_france_roads
+
+- title: Trajet SII
+  type: entities
+  entities:
+    - sensor.duree_waze_sii
+    - sensor.sii_roads
+
+- title: Prise garage
+  type: entities
+  entities:
+    - switch.prise_garage
+    - sensor.broadlink_spx_power_sensor
+    - sensor.value_day_car_charge
+    - sensor.price_day_car_charge
+
+- title: Energie Mensuelle
+  type: entities
+  entities:
+    - sensor.value_month_car_charge
+    - sensor.price_month_car_charge
+    - sensor.month_count_car_charge
+
+- title: Consommation
+  type: history-graph
+  entities:
+    - sensor.broadlink_spx_power_sensor

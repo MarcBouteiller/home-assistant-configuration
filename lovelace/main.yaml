@@ -1,0 +1,32 @@
+name: Nouvoitou
+views:
+  - title: Aperçu
+    icon: mdi:home-assistant
+    cards: !include ui-home.yaml
+
+  - title: Volets
+    icon: mdi:garage
+    cards: !include ui-covers.yaml
+
+  - title: Transport
+    icon: mdi:car-side
+    cards: !include ui-car.yaml
+  
+  - title: Meteo
+    icon: mdi:weather-partlycloudy
+    cards:
+      - type: weather-forecast
+        entity: weather.dark_sky
+
+  - title: Media
+    icon: mdi:cast
+    cards: !include ui-media.yaml
+  
+  - title: Monitoring
+    icon: mdi:server
+    cards: !include ui-monitoring.yaml
+ 
+  - title: Paramètres
+    icon: mdi:settings
+    cards: !include ui-settings.yaml
+

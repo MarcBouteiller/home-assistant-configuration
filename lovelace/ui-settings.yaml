@@ -1,0 +1,30 @@
+- title: Prix
+  type: entities
+  entities:
+    - input_number.elec_price
+  
+- title: Seuils
+  type: entities
+  entities:
+    - input_number.cloud_treshold
+    - input_number.open_cover_temperature_treshold
+
+- title: Notifications
+  type: entities
+  entities:
+    - input_boolean.notifications
+    - input_text.notifications_generic_title
+    - type: divider
+    - input_text.notifications_ha_start
+    - input_text.notifications_ha_stop
+    - type: divider
+    - input_text.notifications_title_presence
+    - input_text.notifications_message_presence
+    - type: divider
+    - input_text.notifications_title_away_mode_on
+    - input_text.notifications_message_away_mode_on
+    - type: divider
+    - input_text.notifications_title_away_mode_off
+    - input_text.notifications_message_away_mode_off
+    
+

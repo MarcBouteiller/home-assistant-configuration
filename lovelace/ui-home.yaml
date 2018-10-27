@@ -1,0 +1,60 @@
+- title: Actions
+  type: entities
+  entities:
+    - script.ouverture_volets
+    - script.fermeture_volets
+
+- title: Modes
+  type: entities
+  entities:
+    - input_boolean.night_mode
+    - input_boolean.away_mode
+    - input_boolean.cover_mode
+    - input_boolean.holiday_mode
+    - input_boolean.notifications
+
+- type: picture-entity
+  entity: camera.salon
+      
+- title: Températures
+  type: glance
+  entities:
+    - sensor.fibaro_system_fgms001_motion_sensor_temperature
+    - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+    - sensor.dark_sky_apparent_temperature
+
+- title: Lumières
+  type: entities
+  entities:
+    - entity: light.salon
+      name: Salon
+    - entity: switch.neo_coolcam_power_plug_12a_switch_3
+      name: Séjour
+    - entity: light.bandeau_led
+      name: LED Chambre
+    - entity: switch.neo_coolcam_power_plug_12a_switch
+      name: Martin
+    - entity: light.chambre_axelle
+      name: Axelle
+
+- title: Volets
+  type: entities
+  entities:
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+
+- type: media-control
+  entity: media_player.chromecast_salon
+
+- title: Prises
+  type: glance
+  entities:
+    - entity: switch.neo_coolcam_power_plug_12a_switch_2
+      name: Caméra
+    - entity: switch.prise_garage
+      name: Garage

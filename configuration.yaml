@@ -64,7 +64,7 @@ conversation:
 history:
 
 recorder:
-  purge_keep_days: 90
+  purge_keep_days: 60
   include:
     domains:
       - automation
@@ -194,7 +194,10 @@ panel_iframe:
     title: IDE
     icon: mdi:playlist-edit
     url: !secret ide_url
-    
+
+shell_command:
+  lovelace_gen: 'python /config/lovelace-gen.py'
+
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_text: !include input_text.yaml
