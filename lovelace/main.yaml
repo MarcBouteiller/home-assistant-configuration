@@ -14,9 +14,7 @@ views:
   
   - title: Meteo
     icon: mdi:weather-partlycloudy
-    cards:
-      - type: weather-forecast
-        entity: weather.dark_sky
+    cards: !include ui-weather.yaml
 
   - title: Media
     icon: mdi:cast

@@ -25,19 +25,27 @@
   sensors:
     ## CAR CHARGE
     value_day_car_charge:
+      entity_id: sensor.day_car_charge
       friendly_name: Durée de recharge
       icon_template: mdi:timer-sand
       value_template: "{{ states.sensor.day_car_charge.attributes.value }}"
     value_month_car_charge:
+      entity_id: sensor.month_car_charge
       friendly_name: Durée mensuelle
       icon_template: mdi:timer-sand
       value_template: "{{ states.sensor.month_car_charge.attributes.value }}"
     price_day_car_charge:
+      entity_id: 
+        - sensor.day_car_charge
+        - input_number.elec_price
       friendly_name: Coût de recharge
       unit_of_measurement: €
       icon_template: mdi:currency-eur
       value_template: "{{(states.sensor.day_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
     price_month_car_charge:
+      entity_id: 
+          - sensor.month_car_charge
+          - input_number.elec_price
       friendly_name: Coût de recharge mensuel
       icon_template: mdi:currency-eur
       unit_of_measurement: €
@@ -45,10 +53,12 @@
     
     ## SUN ##
     sunset:
+      entity_id: sun.sun
       friendly_name: Coucher du soleil
       icon_template: mdi:weather-sunset-down
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
     sunrise:
+      entity_id: sun.sun
       friendly_name: Lever du soleil
       icon_template: mdi:weather-sunset-up
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
@@ -93,17 +103,20 @@
 
     ## WAZE
     ouest_france_roads:
+      entity_id: sensor.duree_waze_of
       friendly_name: Routes Ouest France
       icon_template: mdi:road-variant
       value_template: "{{ states.sensor.duree_waze_of.attributes.route }}"
     
     sii_roads:
+      entity_id: sensor.duree_waze_sii
       friendly_name: Routes SII
       icon_template: mdi:road-variant
       value_template: "{{ states.sensor.duree_waze_sii.attributes.route }}"
 
     ## CAST
     cast_app_name:
+      entity_id: media_player.chromecast_salon
       friendly_name: Application
       icon_template: mdi:cast
       value_template: "{{ states.media_player.chromecast_salon.attributes.app_name|default('empty') }}" 
