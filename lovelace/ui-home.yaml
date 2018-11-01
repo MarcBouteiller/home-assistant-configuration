@@ -31,11 +31,11 @@
     - entity: switch.neo_coolcam_power_plug_12a_switch_3
       name: Séjour
     - entity: light.bandeau_led
-      name: LED Chambre
+      name: LED Sejour
     - entity: switch.neo_coolcam_power_plug_12a_switch
       name: Martin
-    - entity: light.chambre_axelle
-      name: Axelle
+    - entity: light.bureau
+      name: Bureau
 
 - title: Volets
   type: entities
