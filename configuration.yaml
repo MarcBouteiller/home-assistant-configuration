@@ -64,6 +64,7 @@ conversation:
 history:
 
 recorder:
+  db_url: mysql://hass:hadb@core-mariadb/homeassistant
   purge_keep_days: 60
   include:
     domains:
@@ -148,7 +149,7 @@ switch:
 cast:
   media_player:
     - host: 192.168.0.40
-    - host: 192.168.0.41
+    # - host: 192.168.0.41
 
 # Text to speech
 tts:
