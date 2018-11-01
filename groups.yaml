@@ -20,7 +20,7 @@ lights:
     - light.salon
     - switch.neo_coolcam_power_plug_12a_switch_3
     - switch.neo_coolcam_power_plug_12a_switch
-    - light.chambre_axelle
+    - light.bureau
     - light.bandeau_led
 
 switches:
