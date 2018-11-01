@@ -195,6 +195,10 @@ panel_iframe:
     title: IDE
     icon: mdi:playlist-edit
     url: !secret ide_url
+  components:
+    title: Components
+    icon: mdi:format-list-bulleted-type
+    url: https://www.home-assistant.io/components/
 
 shell_command:
   lovelace_gen: 'python /config/lovelace-gen.py'
