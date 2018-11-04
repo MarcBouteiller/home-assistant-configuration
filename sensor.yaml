@@ -44,13 +44,28 @@
       value_template: "{{(states.sensor.day_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
     price_month_car_charge:
       entity_id: 
-          - sensor.month_car_charge
-          - input_number.elec_price
+        - sensor.month_car_charge
+        - input_number.elec_price
       friendly_name: Coût de recharge mensuel
       icon_template: mdi:currency-eur
       unit_of_measurement: €
       value_template: "{{(states.sensor.month_car_charge.state|float * states.input_number.elec_price.state|float * 2.3) | round(2)}}"
-    
+    charge_estimated_time_minute:
+      entity_id: 
+        - input_number.battery_left
+        - input_number.battery_max
+      friendly_name: Temps de chargement
+      icon_template: mdi:timer-sand
+      unit_of_measurement: mn
+      value_template: "{{(states.input_number.battery_max.state|int - states.input_number.battery_left.state|int) / 100 * 19 / 2.2 * 60 }}"
+    charge_estimated_time_hour:
+      entity_id: 
+        - sensor.charge_estimated_time_minute
+      friendly_name: Temps de chargement
+      icon_template: mdi:timer-sand
+      unit_of_measurement: h
+      value_template: "{{states.charge_estimated_time_minute.state|int / 60}}"
+
     ## SUN ##
     sunset:
       entity_id: sun.sun

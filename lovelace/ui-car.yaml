@@ -17,6 +17,9 @@
     - sensor.broadlink_spx_power_sensor
     - sensor.value_day_car_charge
     - sensor.price_day_car_charge
+    - input_number.battery_left
+    - input_number.battery_max
+    - sensor.charge_estimated_time_hour
 
 - title: Energie Mensuelle
   type: entities

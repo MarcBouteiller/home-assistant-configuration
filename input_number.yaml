@@ -42,5 +42,26 @@ covers_position:
   mode: slider
   unit_of_measurement: '%'
   initial: 15
+  step: 1
   min: 0
   max: 100
+
+battery_left:
+  name: Batterie restante
+  icon: mdi:car-electric
+  mode: box
+  unit_of_measurement: '%'
+  initial: 50
+  step: 5
+  min: 0
+  max: 100
+
+battery_max:
+  name: Recharge max
+  icon: mdi:car-electric
+  mode: slider
+  unit_of_measurement: '%'
+  initial: 85
+  min: 50
+  max: 100
+  
