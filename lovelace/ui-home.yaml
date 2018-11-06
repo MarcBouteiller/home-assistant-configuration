@@ -37,17 +37,6 @@
     - entity: light.bureau
       name: Bureau
 
-- title: Volets
-  type: entities
-  entities:
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
-    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
-
 - type: media-control
   entity: media_player.chromecast_salon
 
