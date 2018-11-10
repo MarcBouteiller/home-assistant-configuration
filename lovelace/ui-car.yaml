@@ -1,14 +1,14 @@
-- title: Trajet Ouest France
-  type: entities
-  entities:
-    - sensor.duree_waze_of
-    - sensor.ouest_france_roads
-
 - title: Trajet SII
   type: entities
   entities:
     - sensor.duree_waze_sii
     - sensor.sii_roads
+
+- title: Trajet Ouest France
+  type: entities
+  entities:
+    - sensor.duree_waze_of
+    - sensor.ouest_france_roads
 
 - title: Prise garage
   type: entities
