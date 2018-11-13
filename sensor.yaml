@@ -57,7 +57,7 @@
       friendly_name: Temps de chargement
       icon_template: mdi:timer-sand
       unit_of_measurement: mn
-      value_template: "{{(states.input_number.battery_max.state|int - states.input_number.battery_left.state|int) / 100 * 19 / 2.2 * 60 }}"
+      value_template: "{{((states.input_number.battery_max.state|int - states.input_number.battery_left.state|int) / 100 * 19 / 2.2 * 60)|int }}"
     charge_estimated_time_hour:
       entity_id: 
         - sensor.charge_estimated_time_minute

@@ -283,3 +283,18 @@
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch
+
+- id: notify_route_marc
+  alias: Notification de la route (Marc)
+  trigger:
+    platform: time
+    at: '08:20:00'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+  action:
+    - service: notify.html5_honor_marc
+      data:
+        title: "Route vers SII"
+        message: "{{ states.sensor.sii_roads.state }}"
