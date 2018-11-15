@@ -120,7 +120,7 @@
       data:
         entity_id: input_boolean.garage_charging
     - delay: 
-        minutes: "{{states.charge_estimated_time_minute.state}}"
+        minutes: "{{states.charge_estimated_time_minute.state|int}}"
     - service: switch.turn_off
       data:
         entity_id: switch.prise_garage
