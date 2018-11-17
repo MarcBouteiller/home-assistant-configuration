@@ -118,12 +118,7 @@
   action:
     - service: input_boolean.turn_on
       data:
-        entity_id: input_boolean.garage_charging
-    - delay: 
-        minutes: "{{states.charge_estimated_time_minute.state}}"
-    - service: switch.turn_off
-      data:
-        entity_id: switch.prise_garage
+        entity_id: input_boolean.garage_charging   
  
 - id: car_charged
   alias: Voiture chargée
