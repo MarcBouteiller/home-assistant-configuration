@@ -269,7 +269,9 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.salon
+        entity_id: 
+          - light.salon
+          - light.bandeau_led        
     - service: switch.turn_on
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
@@ -299,7 +301,7 @@
         title: "Route vers SII"
         message: "{{ states.sensor.sii_roads.state }}"
 
-- id: night_mode_on_controller
+- id: remote_night_mode_on
   alias: Mode nuit Télécommande
   trigger:
     platform: event
@@ -312,3 +314,17 @@
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.night_mode
+
+- id: remote_open_cover
+  alias: Mode nuit Télécommande
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data: 
+      entity_id: zwave.hank_hkzwscn04_scene_controller
+      scene_id: 3
+      scene_data: 2
+  action:
+    - service: cover.open_cover
+      data:
+        entity_id: group.all_covers
