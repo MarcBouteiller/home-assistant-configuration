@@ -45,8 +45,9 @@
   action:
     - service: light.turn_off
       data:
-        - entity_id: light.salon
-        - entity_id: light.bandeau_led
+        entity_id: 
+          - light.salon
+          - light.bandeau_led
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
@@ -252,12 +253,12 @@
       entity_id: input_boolean.cover_mode
       state: 'on'
   action:
-      - service: script.positionner_volets
-        data_template:
-          position: 18 
-      - condition: template
-        value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
-      - service: script.ouverture_volets
+    - service: script.positionner_volets
+      data_template:
+        position: 18 
+    - condition: template
+      value_template: '{{ (states.sensor.dark_sky_daytime_high_temperature.state|float) < (states.input_number.open_cover_temperature_treshold.state|float) }}'
+    - service: script.ouverture_volets
 
 - id: netflix_mode
   alias: Mode Netflix
@@ -318,7 +319,7 @@
         entity_id: input_boolean.night_mode
 
 - id: remote_open_cover
-  alias: Mode nuit Télécommande
+  alias: Ouverture volets Télécommande
   trigger:
     platform: event
     event_type: zwave.scene_activated
