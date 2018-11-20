@@ -23,17 +23,18 @@
     entity_id: input_boolean.night_mode
     state: 'on'
   - condition: state
-    entity_id: light.salon
+    entity_id: light.bandeau_led
     state: 'off'
   action:
     - service: light.turn_on
       data:
-        entity_id: light.salon
-        brightness: 10
+        entity_id: light.bandeau_led
+        brightness: 5
+        color_name: orange
     - delay: 00:02:30
     - service: light.turn_off
       data:
-        entity_id: light.salon
+        entity_id: light.bandeau_led
 
 - id: night_mode_on
   alias: Mode nuit
@@ -44,7 +45,8 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.salon
+        - entity_id: light.salon
+        - entity_id: light.bandeau_led
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
