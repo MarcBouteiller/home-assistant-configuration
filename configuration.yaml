@@ -175,11 +175,10 @@ camera:
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
-  - platform: xiaomi
+  - platform: ffmpeg
     name: Sejour
-    host: '192.168.0.7'
-    model: 'xiaofang'
-    password: YOUR_PASSWORD
+    input: rtsp://192.168.0.7:554/unicast
+    extra_arguments: '-vf scale=800:450'
 
 zwave:
   usb_path: /dev/ttyACM0
