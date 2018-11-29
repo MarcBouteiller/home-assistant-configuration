@@ -163,6 +163,8 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
+ffmpeg:
+
 camera:
   - platform: generic
     name: Salon
@@ -173,6 +175,10 @@ camera:
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
+  - platform: ffmpeg
+    name: Sejour
+    input: rtsp://192.168.0.7:554/unicast
+    extra_arguments: '-vf scale=800:450'
 
 zwave:
   usb_path: /dev/ttyACM0
