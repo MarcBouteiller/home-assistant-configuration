@@ -197,3 +197,7 @@
   destination: Avenue Belle Fontaine, Cesson Sevigné, France
   region: 'EU'
   name: 'Durée Waze SII'
+
+- platform: seventeentrack
+  username: !secret 17track_user
+  password: !secret 17track_pass
