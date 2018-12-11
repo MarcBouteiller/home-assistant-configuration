@@ -23,6 +23,14 @@ lights:
     - light.bureau
     - light.bandeau_led
 
+leds_livingroom:
+  name: LED Salon
+  view: no
+  entities:
+    - light.bandeau_led
+    - light.salon
+    
+
 switches:
   name: Interrupteurs
   view: no

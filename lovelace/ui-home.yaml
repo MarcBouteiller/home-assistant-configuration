@@ -36,6 +36,9 @@
       name: Martin
     - entity: light.bureau
       name: Bureau
+    - type: divider
+    - entity: group.leds_livingroom
+      name: LEDs
 
 - type: media-control
   entity: media_player.chromecast_salon
