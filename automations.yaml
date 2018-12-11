@@ -164,7 +164,7 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5_honor_marc
+    - service: notify.html5_phone_marc
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
         message: "{{ states.input_text.notifications_ha_start.state }}"
@@ -176,7 +176,7 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5_honor_marc
+    - service: notify.html5_phone_marc
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
         message: "{{ states.input_text.notifications_ha_stop.state }}"
@@ -299,7 +299,7 @@
       entity_id: binary_sensor.workday_sensor
       state: 'on'
   action:
-    - service: notify.html5_honor_marc
+    - service: notify.html5_phone_marc
       data:
         title: "Route vers SII"
         message: "{{ states.sensor.sii_roads.state }}"
