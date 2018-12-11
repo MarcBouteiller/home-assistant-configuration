@@ -301,8 +301,8 @@
   action:
     - service: notify.html5_phone_marc
       data:
-        title: "Route vers SII"
-        message: "{{ states.sensor.sii_roads.state }}"
+        title: "Itineraires"
+        message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
 
 - id: remote_night_mode_on
   alias: Mode nuit Télécommande
