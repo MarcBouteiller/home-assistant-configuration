@@ -1,4 +1,4 @@
 - type: media-control
-  entity: media_player.chromecast_salon
+  entity: media_player.salon
 - type: media-control
   entity: media_player.chromecast_chambre

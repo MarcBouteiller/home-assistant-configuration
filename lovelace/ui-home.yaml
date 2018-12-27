@@ -41,7 +41,7 @@
       name: LEDs
 
 - type: media-control
-  entity: media_player.chromecast_salon
+  entity: media_player.salon
 
 - title: Prises
   type: glance
