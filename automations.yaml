@@ -104,7 +104,7 @@
   alias: Allumage prise
   trigger:
     platform: time
-    at: '00:00:00'
+    at: '22:00:00'
   action:
     - service: switch.turn_on
       data:
@@ -122,12 +122,14 @@
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.garage_charging
+    - service: script.notify_car_charging
     - delay: 
         minutes: "{{states.sensor.charge_estimated_time_minute.state}}"
     - service: switch.turn_off
       data:
         entity_id: switch.prise_garage
- 
+    - service: script.notify_car_charged
+
 - id: car_charged
   alias: Voiture chargée
   trigger:
@@ -140,6 +142,7 @@
         entity_id: input_boolean.garage_charging
     - delay: 00:01:00
     - service: script.eteindre_prise_garage
+    - service: script.notify_car_charged
 
 - id: main_cover_opened
   alias: Eteindre lumière

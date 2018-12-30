@@ -44,3 +44,19 @@ turn_off_tv:
       data:
         entity_id: input_number.tv_timer
         value: 30
+
+notify_car_charging:
+  alias: notifier chargement de la voiture
+  sequence:
+  - service: notify.html5
+    data:
+      title: "{{ states.input_text.notifications_generic_title.state }}"
+      message: "Voiture en charge : {{states.sensor.charge_estimated_time_hour.state }}h"
+
+notify_car_charged:
+  alias: notifier fin de chargement de la voiture
+  sequence:
+  - service: notify.html5
+    data:
+      title: "{{ states.input_text.notifications_generic_title.state }}"
+      message: "Voiture chargée en : {{states.sensor.day_car_charge.attributes.value }}"
