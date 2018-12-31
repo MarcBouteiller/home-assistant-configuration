@@ -60,3 +60,49 @@ notify_car_charged:
     data:
       title: "{{ states.input_text.notifications_generic_title.state }}"
       message: "Voiture chargée en : {{states.sensor.day_car_charge.attributes.value }}"
+
+led_countdown:
+  alias: decompte led
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: blue
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: white
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: red
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: blue
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: white
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: red
+        brightness: 255
+        transition: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.leds_livingroom
+        color: blue
+        brightness: 255
+        transition: 1
