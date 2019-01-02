@@ -39,7 +39,8 @@
     - type: divider
     - entity: group.leds_livingroom
       name: LEDs
-    - entity: light.spot_xiaomi_salon_1
+    - entity: group.leds_spot
+      name: Spots Salon
 
 - type: media-control
   entity: media_player.salon

@@ -24,12 +24,17 @@ lights:
     - light.bandeau_led
 
 leds_livingroom:
-  name: LED Salon
+  name: Lampes LED Salon
   view: no
   entities:
     - light.bandeau_led
     - light.salon
-    
+
+leds_spot:
+  name: Spots LED Salon
+  view: no
+  entities:
+    - light.spot_xiaomi_salon_1
 
 switches:
   name: Interrupteurs
