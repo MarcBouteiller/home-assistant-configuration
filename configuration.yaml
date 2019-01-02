@@ -136,7 +136,7 @@ light:
         name: Salon
       192.168.0.26:
         name: Bandeau LED
-  - platform: 
+  - platform: xiaomi_miio
     name: Spot Xiaomi salon 1
     host: 192.168.0.30
     token: !secret spot_1_token
