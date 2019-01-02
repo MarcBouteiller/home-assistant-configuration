@@ -35,6 +35,7 @@ leds_spot:
   view: no
   entities:
     - light.spot_xiaomi_salon_1
+    - light.spot_xiaomi_salon_2
 
 switches:
   name: Interrupteurs

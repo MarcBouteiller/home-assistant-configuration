@@ -37,10 +37,10 @@
     - entity: light.bureau
       name: Bureau
     - type: divider
-    - entity: group.leds_livingroom
-      name: LEDs
     - entity: group.leds_spot
       name: Spots Salon
+    - entity: group.leds_livingroom
+      name: LEDs
 
 - type: media-control
   entity: media_player.salon
