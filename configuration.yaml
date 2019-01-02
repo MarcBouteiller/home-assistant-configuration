@@ -136,6 +136,14 @@ light:
         name: Salon
       192.168.0.26:
         name: Bandeau LED
+      192.168.0.30:
+        name: spot 1
+      
+  # - platform: xiaomi_miio
+  #   name: Xiaomi Spot 1
+  #   host: 192.168.0.30
+  #   model: philips.light.downlight
+  #   token: !secret xiaomi_spot1_token
 
 switch:
   - platform: broadlink
