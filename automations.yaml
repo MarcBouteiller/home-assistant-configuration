@@ -128,7 +128,6 @@
     - service: switch.turn_off
       data:
         entity_id: switch.prise_garage
-    - service: script.notify_car_charged
 
 - id: car_charged
   alias: Voiture chargée
