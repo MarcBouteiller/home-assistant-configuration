@@ -7,6 +7,10 @@ views:
   - title: Volets
     icon: mdi:garage
     cards: !include ui-covers.yaml
+  
+  - title: Caméras
+    icon: mdi:cctv
+    cards: !include ui-cameras.yaml
 
   - title: Transport
     icon: mdi:car-side

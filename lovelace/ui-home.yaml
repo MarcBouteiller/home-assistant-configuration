@@ -1,3 +1,10 @@
+- type: horizontal-stack
+  cards:
+  - type: light
+    entity: group.leds_spot
+  - type: light
+    entity: group.leds_livingroom    
+
 - title: Actions
   type: entities
   entities:
@@ -12,10 +19,7 @@
     - input_boolean.cover_mode
     - input_boolean.holiday_mode
     - input_boolean.notifications
-
-- type: picture-entity
-  entity: camera.salon
-      
+     
 - title: Températures
   type: glance
   entities:
@@ -44,11 +48,3 @@
 
 - type: media-control
   entity: media_player.salon
-
-- title: Prises
-  type: glance
-  entities:
-    - entity: switch.neo_coolcam_power_plug_12a_switch_2
-      name: Caméra
-    - entity: switch.prise_garage
-      name: Garage
