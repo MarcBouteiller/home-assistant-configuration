@@ -347,6 +347,6 @@
       scene_id: 4
       scene_data: 0
   action:
-    - service: light.turn_on
+    - service: light.toggle
       data:
         entity_id: group.leds_spot
