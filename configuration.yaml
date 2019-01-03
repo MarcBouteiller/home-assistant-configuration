@@ -152,6 +152,11 @@ light:
     host: 192.168.0.32
     token: !secret spot_3_token
     model: philips.light.downlight
+  - platform: xiaomi_miio
+    name: Spot Xiaomi salon 4
+    host: 192.168.0.33
+    token: !secret spot_4_token
+    model: philips.light.downlight
 
 switch:
   - platform: broadlink
