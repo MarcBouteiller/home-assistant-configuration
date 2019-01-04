@@ -1,9 +1,9 @@
 - type: horizontal-stack
   cards:
   - type: light
-    entity: group.leds_spot
+    entity: light.spots_led
   - type: light
-    entity: group.leds_livingroom    
+    entity: light.livingrooms_led
 
 - title: Actions
   type: entities

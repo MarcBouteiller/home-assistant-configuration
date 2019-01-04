@@ -1,0 +1,44 @@
+- platform: yeelight
+  devices:
+    192.168.0.9:
+      name: Bureau
+    192.168.0.2:
+      name: Salon
+    192.168.0.26:
+      name: Bandeau LED
+
+- platform: xiaomi_miio
+  name: Spot Xiaomi salon 1
+  host: 192.168.0.30
+  token: !secret spot_1_token
+  model: philips.light.downlight
+- platform: xiaomi_miio
+  name: Spot Xiaomi salon 2
+  host: 192.168.0.31
+  token: !secret spot_2_token
+  model: philips.light.downlight
+- platform: xiaomi_miio
+  name: Spot Xiaomi salon 3
+  host: 192.168.0.32
+  token: !secret spot_3_token
+  model: philips.light.downlight
+- platform: xiaomi_miio
+  name: Spot Xiaomi salon 4
+  host: 192.168.0.33
+  token: !secret spot_4_token
+  model: philips.light.downlight
+
+- platform: group
+  name: spots_led
+  entities:
+  - light.spot_xiaomi_salon_1
+  - light.spot_xiaomi_salon_2
+  - light.spot_xiaomi_salon_3
+  - light.spot_xiaomi_salon_4
+
+- platform: group
+  name: livingrooms_led
+  entities:
+  - light.bandeau_led
+  - light.salon
+

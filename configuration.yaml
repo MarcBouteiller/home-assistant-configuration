@@ -127,37 +127,6 @@ map:
 # Track the sun
 sun:
 
-light:
-  - platform: yeelight
-    devices:
-      192.168.0.9:
-        name: Bureau
-      192.168.0.2:
-        name: Salon
-      192.168.0.26:
-        name: Bandeau LED
-
-  - platform: xiaomi_miio
-    name: Spot Xiaomi salon 1
-    host: 192.168.0.30
-    token: !secret spot_1_token
-    model: philips.light.downlight
-  - platform: xiaomi_miio
-    name: Spot Xiaomi salon 2
-    host: 192.168.0.31
-    token: !secret spot_2_token
-    model: philips.light.downlight
-  - platform: xiaomi_miio
-    name: Spot Xiaomi salon 3
-    host: 192.168.0.32
-    token: !secret spot_3_token
-    model: philips.light.downlight
-  - platform: xiaomi_miio
-    name: Spot Xiaomi salon 4
-    host: 192.168.0.33
-    token: !secret spot_4_token
-    model: philips.light.downlight
-
 switch:
   - platform: broadlink
     host: 192.168.0.25
@@ -228,6 +197,7 @@ panel_iframe:
 shell_command:
   lovelace_gen: 'python /config/lovelace-gen.py'
 
+light: !include light.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_text: !include input_text.yaml
