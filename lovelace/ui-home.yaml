@@ -2,8 +2,10 @@
   cards:
   - type: light
     entity: light.spots_led
+    name: Spots salon
   - type: light
     entity: light.livingrooms_led
+    name: Lampes salon
 
 - title: Actions
   type: entities
