@@ -1,6 +1,5 @@
 - type: picture-entity
   entity: camera.salon
-  tap_action:
-    service: switch.toggle
-    service_data:
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+
+- type: entity-button
+  entity: switch.neo_coolcam_power_plug_12a_switch_2
