@@ -1,5 +1,8 @@
 - type: picture-entity
   entity: camera.salon
 
+- type: picture-entity
+  entity: camera.sejour
+  
 - type: entity-button
   entity: switch.neo_coolcam_power_plug_12a_switch_2
