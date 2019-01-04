@@ -170,8 +170,7 @@ camera:
     limit_refetch_to_url_change: false
   - platform: ffmpeg
     name: Sejour
-    input: rtsp://192.168.0.7:554/unicast
-    extra_arguments: '-vf scale=800:450'
+    still_image_url: http://192.168.0.7/image.jpg
 
 zwave:
   usb_path: /dev/ttyACM0
