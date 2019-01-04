@@ -168,7 +168,7 @@ camera:
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
       {% endif %}
     limit_refetch_to_url_change: false
-  - platform: ffmpeg
+  - platform: generic
     name: Sejour
     still_image_url: http://192.168.0.7/image.jpg
 
