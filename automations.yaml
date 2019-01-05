@@ -338,8 +338,8 @@
       data:
         entity_id: group.all_covers
 
-- id: remote_open_cover
-  alias: Ouverture volets Télécommande
+- id: remote_spot_management
+  alias: Gestion des spots Télécommande
   trigger:
     platform: event
     event_type: zwave.scene_activated
@@ -348,6 +348,19 @@
       scene_id: 4
       scene_data: 0
   action:
-    - service: light.toggle
+    - service: input_select.select_next
       data:
-        entity_id: group.leds_spot
+        entity_id: input_select.spots_state
+
+- id: spot_management
+  alias: Gestion des spots
+  trigger:
+    platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: input_select.spots_state
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.spots_led
+        brightness: {{states.input_select.spots_state.state|int}}

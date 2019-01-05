@@ -53,7 +53,7 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
       hide_if_away: true
-  - platform: ble_tracker
+  - platform: bluetooth_le_tracker
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -200,6 +200,7 @@ light: !include light.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_text: !include input_text.yaml
+input_select: !include input_select.yaml
 sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
