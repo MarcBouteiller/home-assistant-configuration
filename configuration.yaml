@@ -27,7 +27,6 @@ lovelace:
 
 http:
   # Secrets are defined in the file secrets.yaml
-  api_password: !secret http_password
   base_url: !secret base_url
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   ssl_certificate: /ssl/fullchain.pem
