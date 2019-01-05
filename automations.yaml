@@ -361,6 +361,6 @@
       entity_id: input_select.spots_state
   action:
     - service: light.turn_on
-      data:
+      data_template:
         entity_id: light.spots_led
         brightness: {{states.input_select.spots_state.state|int}}
