@@ -17,14 +17,7 @@
     platform: state
     entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
     from: 'off'
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: input_boolean.night_mode
-    state: 'on'
-  - condition: state
-    entity_id: group.leds_livingroom
-    state: 'off'
+    to: 'on'  
   action:
     - service: light.turn_on
       data:
@@ -46,11 +39,14 @@
     - service: light.turn_off
       data:
         entity_id: 
-          - light.salon
-          - light.bandeau_led
+          - light.spots_led
+          - light.livingrooms_led
     - service: switch.turn_off
       data:
         entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    - service: homeassistant.turn_on
+      data:
+        entity_id: automation.veilleuse
 
 - id: night_mode_off
   alias: Lever
@@ -75,6 +71,9 @@
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.night_mode
+  - service: homeassistant.turn_off
+    data:
+      entity_id: automation.veilleuse
 
 # - id: leave_home
 #   alias: Absence
