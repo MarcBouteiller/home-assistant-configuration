@@ -54,6 +54,7 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
       hide_if_away: true
+  - platform: bluetooth_le_tracker
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
