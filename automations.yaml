@@ -352,15 +352,15 @@
       data:
         entity_id: input_select.spots_state
 
-- id: spot_management
-  alias: Gestion des spots
-  trigger:
-    platform: event
-    event_type: state_changed
-    event_data:
-      entity_id: input_select.spots_state
-  action:
-    - service: light.turn_on
-      entity_id: light.spots_led
-      data_template:
-        brightness: {{states.input_select.spots_state.state|int}}
+# - id: spot_management
+#   alias: Gestion des spots
+#   trigger:
+#     platform: event
+#     event_type: state_changed
+#     event_data:
+#       entity_id: input_select.spots_state
+#   action:
+#     - service: light.turn_on
+#       entity_id: light.spots_led
+#       data_template:
+#         brightness: {{states.input_select.spots_state.state|int}}
