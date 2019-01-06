@@ -1,9 +1,10 @@
 spots_state:
   name: éclairage spot
   options:
-    - 0
     - 1
+    - 25
     - 50
+    - 75
     - 100
   icon: mdi:brightness-6
   initial: 0

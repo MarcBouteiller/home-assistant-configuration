@@ -346,6 +346,20 @@
     event_data: 
       entity_id: zwave.hank_hkzwscn04_scene_controller
       scene_id: 4
+      scene_data: 2
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.spots_led
+
+- id: remote_spot_management
+  alias: Gestion des spots Télécommande
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data: 
+      entity_id: zwave.hank_hkzwscn04_scene_controller
+      scene_id: 4
       scene_data: 0
   action:
     - service: input_select.select_next
@@ -360,12 +374,7 @@
     event_data:
       entity_id: input_select.spots_state
   action:
-    - service_template: >-
-        {% if is_state('input_select.spots_state','0') %}
-          light.turn_off
-        {% else %}
-          light.turn_on
-        {% endif %}
+    - service: light.turn_on
       entity_id: light.spots_led
       data_template:
         brightness_pct: "{{states.input_select.spots_state.state|int}}"
