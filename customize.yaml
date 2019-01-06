@@ -44,6 +44,8 @@ cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6:
   friendly_name: Escalier
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
   friendly_name: Pano salon
+cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8:
+  friendly_name: Bureau
 
 # Sensors
 sensor.fibaro_system_fgms001_motion_sensor_temperature:
