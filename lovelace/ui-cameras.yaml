@@ -1,10 +1,15 @@
+- type: horizontal-stack
+  cards:
+    - type: entity-button
+      entity: switch.neo_coolcam_power_plug_12a_switch_2
+    - type: entity-button
+      entity: input_boolean.camera_bureau_state
+      icon: mdi:flash
+
 - type: picture-entity
   entity: camera.salon
   show_state: false
 
 - type: picture-entity
-  entity: camera.sejour
+  entity: camera.bureau
   show_state: false
-  
-- type: entity-button
-  entity: switch.neo_coolcam_power_plug_12a_switch_2

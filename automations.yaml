@@ -64,8 +64,8 @@
   - service: light.turn_on
     data:
       entity_id: light.livingrooms_led
-      brightness: 50
-      color: orange
+      brightness: 3
+      color_temp: 361
 
 - id: workday_night_mode_off
   alias: Lever

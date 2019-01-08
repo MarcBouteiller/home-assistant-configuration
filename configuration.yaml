@@ -169,8 +169,13 @@ camera:
       {% endif %}
     limit_refetch_to_url_change: false
   - platform: generic
-    name: Sejour
-    still_image_url: http://192.168.0.7/image.jpg
+    name: Bureau
+    still_image_url: >
+      {% if is_state('input_boolean.camera_bureau_state','on') %}
+        http://192.168.0.7/image.jpg
+      {% else %}
+        https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
+      {% endif %}
 
 zwave:
   usb_path: /dev/ttyACM0
