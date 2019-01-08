@@ -1,8 +1,10 @@
 - type: picture-entity
   entity: camera.salon
+  show_state: false
 
 - type: picture-entity
   entity: camera.sejour
+  show_state: false
   
 - type: entity-button
   entity: switch.neo_coolcam_power_plug_12a_switch_2

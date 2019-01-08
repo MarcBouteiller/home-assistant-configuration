@@ -30,7 +30,7 @@
         entity_id: group.leds_livingroom
 
 - id: night_mode_on
-  alias: Mode nuit
+  alias: Déclenchement Mode nuit
   trigger:
     platform: state
     entity_id: input_boolean.night_mode
@@ -48,8 +48,8 @@
       data:
         entity_id: automation.veilleuse
 
-- id: night_mode_on
-  alias: Mode nuit
+- id: night_mode_off
+  alias: Extinction Mode nuit
   trigger:
     platform: state
     entity_id: input_boolean.night_mode
@@ -58,6 +58,14 @@
   - service: homeassistant.turn_off
     data:
       entity_id: automation.veilleuse
+  - service: switch.turn_on
+    data:
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+  - service: light.turn_on
+    data:
+      entity_id: light.livingrooms_led
+      brightness: 50
+      color: orange
 
 - id: workday_night_mode_off
   alias: Lever
