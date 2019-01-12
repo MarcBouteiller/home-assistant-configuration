@@ -8,11 +8,11 @@
       entity: input_boolean.camera_sejour_state
       tap_action:
         action: toggle
-
-- type: picture-entity
-  entity: camera.salon
-  show_state: false
-
-- type: picture-entity
-  entity: camera.sejour
-  show_state: false
+    - type: vertical-stack
+      cards:
+        - type: picture-entity
+          entity: camera.salon
+          show_state: false
+        - type: picture-entity
+          entity: camera.sejour
+          show_state: false
