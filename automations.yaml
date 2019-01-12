@@ -26,8 +26,7 @@
         color_name: orange
     - delay: 00:02:30
     - service: light.turn_off
-      data:
-        entity_id: group.leds_livingroom
+      entity_id: group.leds_livingroom
 
 - id: night_mode_on
   alias: Déclenchement Mode nuit
@@ -37,16 +36,13 @@
     to: 'on'
   action:
     - service: light.turn_off
-      data:
-        entity_id: 
-          - light.spots_led
-          - light.livingrooms_led
+      entity_id: 
+        - light.spots_led
+        - light.livingrooms_led
     - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: homeassistant.turn_on
-      data:
-        entity_id: automation.veilleuse
+      entity_id: automation.veilleuse
 
 - id: night_mode_off
   alias: Extinction Mode nuit
@@ -56,11 +52,9 @@
     to: 'off'
   action:
   - service: homeassistant.turn_off
-    data:
-      entity_id: automation.veilleuse
+    entity_id: automation.veilleuse
   - service: switch.turn_on
-    data:
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    entity_id: switch.neo_coolcam_power_plug_12a_switch_3
   - service: light.turn_on
     data:
       entity_id: light.livingrooms_led
@@ -81,8 +75,7 @@
       state: 'off'
   action: 
   - service: input_boolean.turn_off
-    data:
-      entity_id: input_boolean.night_mode
+    entity_id: input_boolean.night_mode
   
 
 # - id: leave_home
@@ -116,8 +109,7 @@
     at: '22:00:00'
   action:
     - service: switch.turn_on
-      data:
-        entity_id: switch.prise_garage
+      entity_id: switch.prise_garage
     - delay: 00:05:00
     - service: script.eteindre_prise_garage
 
@@ -129,14 +121,12 @@
     above: 1500
   action:
     - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.garage_charging
+      entity_id: input_boolean.garage_charging
     - service: script.notify_car_charging
     - delay: 
         minutes: "{{states.sensor.charge_estimated_time_minute.state}}"
     - service: switch.turn_off
-      data:
-        entity_id: switch.prise_garage
+      entity_id: switch.prise_garage
 
 - id: car_charged
   alias: Voiture chargée
@@ -150,8 +140,7 @@
       state: 'on'
   action:
     - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.garage_charging
+      entity_id: input_boolean.garage_charging
     - delay: 00:01:00
     - service: script.eteindre_prise_garage
     - service: script.notify_car_charged
@@ -164,14 +153,11 @@
     to: 'open'
   action:
     - service: light.turn_off
-      data:
-        entity_id: light.salon
+      entity_id: light.salon
     - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.night_mode
+      entity_id: input_boolean.night_mode
 
 - id: ha_start
   alias: Démarrage Home Assistant
@@ -208,12 +194,9 @@
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
         message: "{{ states.input_text.notifications_message_away_mode_on.state }}"
-    - service: switch.turn_on
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
+    - service: script.turn_on_cameras
     - service: homeassistant.turn_off
-      data:
-        entity_id: group.all_lights
+      entity_id: group.all_lights
 
 - id: away_mode_deactivate
   alias: Absence désactivée
@@ -224,8 +207,7 @@
       to: 'off'
   action:
     - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_2
     - service: notify.html5
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
@@ -291,8 +273,7 @@
           - group.leds_spot
           - group.leds_livingroom        
     - service: switch.turn_on
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 
 - id: nuit_chambre_martin
   alias: Extinction lumière Martin
@@ -301,8 +282,7 @@
     at: '20:55:00'
   action:
     - service: switch.turn_off
-      data:
-        entity_id: switch.neo_coolcam_power_plug_12a_switch
+      entity_id: switch.neo_coolcam_power_plug_12a_switch
 
 - id: notify_route_marc
   alias: Notification de la route (Marc)

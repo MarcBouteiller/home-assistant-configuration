@@ -18,6 +18,6 @@ notifications:
   name: Notifications
   icon: mdi:message-alert
   initial: on
-camera_bureau_state:
-  name: Caméra bureau
+camera_sejour_state:
+  name: Caméra sejour
   icon: mdi:mdi:cctv

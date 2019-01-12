@@ -60,3 +60,11 @@ notify_car_charged:
     data:
       title: "{{ states.input_text.notifications_generic_title.state }}"
       message: "Voiture chargée en : {{states.sensor.day_car_charge.attributes.value }}"
+
+turn_on_cameras:
+  alias: Allumer caméras
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.camera_sejour_state

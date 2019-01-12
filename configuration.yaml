@@ -169,9 +169,9 @@ camera:
       {% endif %}
     limit_refetch_to_url_change: false
   - platform: generic
-    name: Bureau
+    name: Sejour
     still_image_url: >
-      {% if is_state('input_boolean.camera_bureau_state','on') %}
+      {% if is_state('input_boolean.camera_sejour_state','on') %}
         http://192.168.0.7/image.jpg
       {% else %}
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png

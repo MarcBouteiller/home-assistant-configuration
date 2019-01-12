@@ -2,14 +2,17 @@
   cards:
     - type: entity-button
       entity: switch.neo_coolcam_power_plug_12a_switch_2
+      tap_action:
+        action: toggle
     - type: entity-button
-      entity: input_boolean.camera_bureau_state
-      icon: mdi:flash
+      entity: input_boolean.camera_sejour_state
+      tap_action:
+        action: toggle
 
 - type: picture-entity
   entity: camera.salon
   show_state: false
 
 - type: picture-entity
-  entity: camera.bureau
+  entity: camera.sejour
   show_state: false
