@@ -7,11 +7,15 @@
     - sensor.fastcom_download
 
 - title: Raspberry
-  type: history-graph
-  entities:
-    - sensor.processor_use
-    - sensor.memory_use_percent
-    - sensor.disk_use_percent_
+  type: vertical-stack
+  cards:
+    - type: entities
+      entities:
+        - sensor.disk_use_percent_
+    - type: history-graph
+      entities:
+        - sensor.processor_use
+        - sensor.memory_use_percent
 
 - title: Batteries
   type: entities
