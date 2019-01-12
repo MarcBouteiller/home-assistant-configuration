@@ -11,7 +11,7 @@
   cards:
     - type: entities
       entities:
-        - sensor.disk_use_percent_
+        - sensor.disk_use_percent
     - type: history-graph
       entities:
         - sensor.processor_use
