@@ -3,32 +3,40 @@ views:
   - title: Aperçu
     icon: mdi:home-assistant
     cards: !include ui-home.yaml
+    path: home
 
   - title: Volets
     icon: mdi:garage
     cards: !include ui-covers.yaml
+    path: covers
   
   - title: Caméras
     icon: mdi:cctv
     cards: !include ui-cameras.yaml
+    path: cameras
 
   - title: Transport
     icon: mdi:car-side
     cards: !include ui-car.yaml
+    path: mobility
   
   - title: Meteo
     icon: mdi:weather-partlycloudy
     cards: !include ui-weather.yaml
+    path: forecast
 
   - title: Media
     icon: mdi:cast
     cards: !include ui-media.yaml
+    path: media
   
   - title: Monitoring
     icon: mdi:server
     cards: !include ui-monitoring.yaml
+    path: monitoring
  
   - title: Paramètres
     icon: mdi:settings
     cards: !include ui-settings.yaml
+    path: settings
 
