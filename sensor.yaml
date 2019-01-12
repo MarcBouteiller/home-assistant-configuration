@@ -105,15 +105,15 @@
         {% endif %}
     remote_hank_battery:
       friendly_name: Batterie Télécommande
-      value_template: "{{ state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')}}"
+      value_template: "{{ state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')}}"
       unit_of_measurement: '%'
       icon_template: >-
-        {% if state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')|int < 10 %}
+        {% if state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')|int < 10 %}
           mdi:battery-alert
-        {% elif is_state_attr('zwave.hank_hkzwscn04_scene_controller', 'battery_level', 100) %}
+        {% elif is_state_attr('zwave.hank_hkzw_scn04_scene_controller', 'battery_level', 100) %}
           mdi:battery
         {% else %}
-          mdi:battery-{{(state_attr('zwave.hank_hkzwscn04_scene_controller','battery_level')|int // 10) * 10}}
+          mdi:battery-{{(state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')|int // 10) * 10}}
         {% endif %}
 
     ## WAZE

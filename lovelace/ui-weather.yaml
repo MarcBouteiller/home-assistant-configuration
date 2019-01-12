@@ -1,0 +1,8 @@
+- type: weather-forecast
+  entity: weather.dark_sky
+
+- title: Heures du soleil
+  type: entities
+  entities:
+    - sensor.sunset
+    - sensor.sunrise
