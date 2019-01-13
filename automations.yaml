@@ -233,6 +233,7 @@
       data:
         title: "{{ states.input_text.notifications_title_presence.state }}"
         message: "{{ states.input_text.notifications_message_presence.state }}"
+        url: /cameras
 
 - id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)
@@ -301,6 +302,7 @@
       data:
         title: "Itineraires"
         message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
+        url: /mobility
 
 - id: remote_night_mode_on
   alias: Mode nuit Télécommande
