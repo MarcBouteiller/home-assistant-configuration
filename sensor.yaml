@@ -134,7 +134,7 @@
       entity_id: media_player.chromecast_salon
       friendly_name: Application
       icon_template: mdi:cast
-      value_template: "{{ states.media_player.chromecast_salon.attributes.app_name|default('empty') }}" 
+      value_template: "{{ states.media_player.salon.attributes.app_name|default('empty') }}" 
 
 - platform: darksky
   api_key: !secret darksky_api_key
