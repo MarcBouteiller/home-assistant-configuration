@@ -83,6 +83,7 @@ recorder:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
       - sensor.fibaro_system_fgms001_motion_sensor_temperature
       - sensor.fibaro_system_fgms001_motion_sensor_luminance
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature

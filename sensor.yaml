@@ -131,7 +131,7 @@
 
     ## CAST
     cast_app_name:
-      entity_id: media_player.chromecast_salon
+      entity_id: media_player.salon
       friendly_name: Application
       icon_template: mdi:cast
       value_template: "{{ states.media_player.salon.attributes.app_name|default('empty') }}" 
