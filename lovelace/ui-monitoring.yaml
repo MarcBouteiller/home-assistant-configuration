@@ -1,21 +1,59 @@
-- title: Internet
-  type: history-graph
-  entities:
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
-    - sensor.fastcom_download
-
-- title: Raspberry
-  type: vertical-stack
+- type: vertical-stack
   cards:
-    - type: entities
-      entities:
-        - sensor.disk_use_percent
-    - type: history-graph
-      entities:
-        - sensor.processor_use
-        - sensor.memory_use_percent
+   - type: horizontal-stack
+     cards:
+      - type: history-graph
+        title: Internet        
+        entities:
+            - sensor.speedtest_download
+            - sensor.speedtest_upload
+            - sensor.speedtest_ping
+            - sensor.fast_com_download
+      - type: vertical-stack
+        cards:
+          - type: gauge
+            entity: sensor.speedtest_download
+            name: Download
+            unit: MB/s
+            min: 0
+            max: 100
+            severity:
+              green: 85
+              yellow: 50
+              red: 0
+          - type: gauge
+            entity: sensor.speedtest_upload
+            name: Upload
+            unit: MB/s
+            min: 0
+            max: 100
+            severity:
+              green: 85
+              yellow: 50
+              red: 0         
+          - type: gauge
+            entity: sensor.fast_com_download
+            name: Netflix Perf
+            unit: MB/s
+            min: 0
+            max: 100
+            severity:
+              green: 85
+              yellow: 50
+              red: 0
+    
+   - type: horizontal-stack
+     cards:
+       - title: Raspberry
+         type: vertical-stack
+         cards:
+           - type: entities
+             entities:
+               - sensor.disk_use_percent
+           - type: history-graph
+             entities:
+               - sensor.processor_use
+               - sensor.memory_use_percent
 
 - title: Batteries
   type: entities
