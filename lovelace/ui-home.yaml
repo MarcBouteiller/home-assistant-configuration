@@ -1,3 +1,8 @@
+- type: glance
+  entities:    
+    - device_tracker.amazfit_bip_marc
+    - input_boolean.garage_charging
+
 - type: horizontal-stack
   cards:
   - type: light
