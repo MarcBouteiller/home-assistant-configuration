@@ -78,29 +78,29 @@
     entity_id: input_boolean.night_mode
   
 
-# - id: leave_home
-#   alias: Absence
-#   trigger:
-#     platform: template
-#     value_template: "{{not is_state('device_tracker.honor_7_marc', 'home') and not is_state('device_tracker.honor_7_eva', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
-#   action:
-#     - service: input_boolean.turn_on
-#       data:
-#         entity_id: input_boolean.away_mode
+- id: leave_home
+  alias: Absence
+  trigger:
+    platform: template
+    value_template: "{{not is_state('device_tracker.amazfit_bip_marc', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.away_mode
 
-# - id: coming_home
-#   alias: Retour
-#   trigger:   
-#     - platform: state
-#       entity_id: device_tracker.honor_7_marc
-#       to: 'home'
-#     - platform: state
-#       entity_id: device_tracker.honor_7_eva
-#       to: 'home'
-#   action:
-#     - service: input_boolean.turn_off
-#       data:
-#         entity_id: input_boolean.away_mode
+- id: coming_home
+  alias: Retour
+  trigger:   
+    - platform: state
+      entity_id: device_tracker.amazfit_bip_marc
+      to: 'home'
+    # - platform: state
+    #   entity_id: device_tracker.honor_7_eva
+    #   to: 'home'
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.away_mode
 
 - id: start_power
   alias: Allumage prise
