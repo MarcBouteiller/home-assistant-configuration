@@ -206,8 +206,7 @@
       from: 'on'
       to: 'off'
   action:
-    - service: switch.turn_off
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_2
+    - service: script.turn_off_cameras
     - service: notify.html5
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
