@@ -146,14 +146,14 @@
     - service: script.notify_car_charged
 
 - id: main_cover_opened
-  alias: Eteindre lumière
+  alias: Ouverture du volet salon
   trigger:
     platform: state
     entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
     to: 'open'
   action:
     - service: light.turn_off
-      entity_id: light.salon
+      entity_id: light.livingrooms_led
     - service: switch.turn_off
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: input_boolean.turn_off
@@ -298,12 +298,7 @@
       entity_id: input_boolean.holiday_mode
       state: 'off'
   action:
-    - service: notify.html5_phone_marc
-      data:
-        title: "Itineraires"
-        message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
-        data:
-          url: /mobility
+    - service: script.notify_marc_roads
 
 - id: remote_night_mode_on
   alias: Mode nuit Télécommande

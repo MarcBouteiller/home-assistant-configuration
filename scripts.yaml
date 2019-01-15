@@ -68,6 +68,7 @@ turn_on_cameras:
       entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
     - service: input_boolean.turn_on
       entity_id: input_boolean.camera_sejour_state
+
 turn_off_cameras:
   alias: Eteindre caméras
   sequence:
@@ -75,3 +76,13 @@ turn_off_cameras:
       entity_id: switch.neo_coolcam_power_plug_12a_switch_2    
     - service: input_boolean.turn_off
       entity_id: input_boolean.camera_sejour_state
+
+notify_marc_roads:
+  alias: Notifications des routes
+  sequence:
+    - service: notify.html5_phone_marc
+      data:
+        title: "Itineraires"
+        message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
+        data:
+          url: /mobility
