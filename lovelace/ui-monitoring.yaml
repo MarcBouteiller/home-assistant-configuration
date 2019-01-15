@@ -34,13 +34,13 @@
                 green: 85
                 yellow: 50
                 red: 0
-          - type: history-graph
-            title: Internet        
-            entities:
-              - sensor.speedtest_download
-              - sensor.speedtest_upload
-              - sensor.speedtest_ping
-              - sensor.fast_com_download
+            - type: history-graph
+              title: Internet        
+              entities:
+                - sensor.speedtest_download
+                - sensor.speedtest_upload
+                - sensor.speedtest_ping
+                - sensor.fast_com_download
     
     - type: horizontal-stack
       cards:
