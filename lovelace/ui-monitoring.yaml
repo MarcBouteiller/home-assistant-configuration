@@ -54,10 +54,12 @@
              entities:
                - sensor.processor_use
                - sensor.memory_use_percent
-
-- title: Batteries
-  type: entities
-  entities:
-    - sensor.smoke_sensor_upstair_battery
-    - sensor.motion_sensor_battery
-    - sensor.remote_hank_battery
+    
+    - type: horizontal-stack
+      cards:
+        - title: Batteries
+          type: entities
+          entities:
+            - sensor.smoke_sensor_upstair_battery
+            - sensor.motion_sensor_battery
+            - sensor.remote_hank_battery
