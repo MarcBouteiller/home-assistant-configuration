@@ -4,6 +4,7 @@ views:
     icon: mdi:home-assistant
     cards: !include ui-home.yaml
     path: home
+    panel: true
 
   - title: Volets
     icon: mdi:garage
