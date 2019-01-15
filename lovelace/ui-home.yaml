@@ -1,6 +1,7 @@
 - type: vertical-stack
   cards:
     - type: glance
+      columns: 6
       entities:    
         - entity: device_tracker.amazfit_bip_marc
           name: Marc
@@ -33,7 +34,7 @@
         - input_boolean.cover_mode
         - input_boolean.holiday_mode
         - input_boolean.notifications
-        
+
     - title: Lumières
       type: entities
       entities:
