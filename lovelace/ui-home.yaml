@@ -2,8 +2,13 @@
   cards:
     - type: glance
       entities:    
-        - device_tracker.amazfit_bip_marc
+        - entity: device_tracker.amazfit_bip_marc
+          name: Marc
+        - input_boolean.away_mode
         - input_boolean.garage_charging
+        - sensor.fibaro_system_fgms001_motion_sensor_temperature
+        - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+        - sensor.dark_sky_apparent_temperature
 
     - type: horizontal-stack
       cards:
@@ -29,13 +34,6 @@
         - input_boolean.holiday_mode
         - input_boolean.notifications
         
-    - title: Températures
-      type: glance
-      entities:
-        - sensor.fibaro_system_fgms001_motion_sensor_temperature
-        - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
-        - sensor.dark_sky_apparent_temperature
-
     - title: Lumières
       type: entities
       entities:
