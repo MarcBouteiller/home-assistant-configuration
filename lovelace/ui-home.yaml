@@ -1,57 +1,59 @@
-- type: glance
-  entities:    
-    - device_tracker.amazfit_bip_marc
-    - input_boolean.garage_charging
-
-- type: horizontal-stack
+- type: vertical-stack
   cards:
-  - type: light
-    entity: light.spots_led
-    name: Spots salon
-  - type: light
-    entity: light.livingrooms_led
-    name: Lampes salon
+    - type: glance
+      entities:    
+        - device_tracker.amazfit_bip_marc
+        - input_boolean.garage_charging
 
-- title: Actions
-  type: entities
-  entities:
-    - script.ouverture_volets
-    - script.fermeture_volets
+    - type: horizontal-stack
+      cards:
+      - type: light
+        entity: light.spots_led
+        name: Spots salon
+      - type: light
+        entity: light.livingrooms_led
+        name: Lampes salon
 
-- title: Modes
-  type: entities
-  entities:
-    - input_boolean.night_mode
-    - input_boolean.away_mode
-    - input_boolean.cover_mode
-    - input_boolean.holiday_mode
-    - input_boolean.notifications
-     
-- title: Températures
-  type: glance
-  entities:
-    - sensor.fibaro_system_fgms001_motion_sensor_temperature
-    - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
-    - sensor.dark_sky_apparent_temperature
+    - title: Actions
+      type: entities
+      entities:
+        - script.ouverture_volets
+        - script.fermeture_volets
 
-- title: Lumières
-  type: entities
-  entities:
-    - entity: light.salon
-      name: Salon
-    - entity: switch.neo_coolcam_power_plug_12a_switch_3
-      name: Séjour
-    - entity: light.bandeau_led
-      name: LED Sejour
-    - entity: switch.neo_coolcam_power_plug_12a_switch
-      name: Martin
-    - entity: light.bureau
-      name: Bureau
-    - type: divider
-    - entity: group.leds_spot
-      name: Spots Salon
-    - entity: group.leds_livingroom
-      name: LEDs
+    - title: Modes
+      type: entities
+      entities:
+        - input_boolean.night_mode
+        - input_boolean.away_mode
+        - input_boolean.cover_mode
+        - input_boolean.holiday_mode
+        - input_boolean.notifications
+        
+    - title: Températures
+      type: glance
+      entities:
+        - sensor.fibaro_system_fgms001_motion_sensor_temperature
+        - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+        - sensor.dark_sky_apparent_temperature
 
-- type: media-control
-  entity: media_player.salon
+    - title: Lumières
+      type: entities
+      entities:
+        - entity: light.salon
+          name: Salon
+        - entity: switch.neo_coolcam_power_plug_12a_switch_3
+          name: Séjour
+        - entity: light.bandeau_led
+          name: LED Sejour
+        - entity: switch.neo_coolcam_power_plug_12a_switch
+          name: Martin
+        - entity: light.bureau
+          name: Bureau
+        - type: divider
+        - entity: group.leds_spot
+          name: Spots Salon
+        - entity: group.leds_livingroom
+          name: LEDs
+
+    - type: media-control
+      entity: media_player.salon
