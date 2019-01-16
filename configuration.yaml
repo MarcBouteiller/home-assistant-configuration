@@ -185,10 +185,6 @@ zwave:
 binary_sensor:
   - platform: workday
     country: FRA
-  - platform: bayesian
-    prior: 0.5
-    observations:
-      - 
 
 panel_iframe:
   terminal:
