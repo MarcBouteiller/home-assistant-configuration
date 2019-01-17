@@ -88,7 +88,7 @@ notify_marc_roads:
           url: /mobility
 
 turn_on_light_when_coming_home:
-  alias: Allume les lumières en rentrant
+  alias: Allumage des lumières en rentrant
   sequence:
     - condition: state
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
@@ -97,3 +97,13 @@ turn_on_light_when_coming_home:
       entity_id: light.spots_led
     - service: switch.turn_on
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+
+turn_off_all_lights:
+  alias: Extinction de toutes les lumières
+  sequence:
+    - service: homeassistant.turn_off
+      entity_id: group.all_lights
+    - service: switch.turn_off
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    - service: switch.turn_off
+      entity_id: switch.neo_coolcam_power_plug_12a_switch
