@@ -51,7 +51,7 @@ battery_left:
   icon: mdi:car-electric
   mode: slider
   unit_of_measurement: '%'
-  initial: 50
+  initial: 30
   step: 5
   min: 0
   max: 100
