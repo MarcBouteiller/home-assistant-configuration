@@ -92,7 +92,7 @@ turn_on_light_when_coming_home:
   sequence:
     - condition: state
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
-      state: 'close'
+      state: 'closed'
     - service: ligth.turn_on
       entity_id: light.spots_led
     - service: switch.turn_on
