@@ -87,7 +87,7 @@ notify_marc_roads:
         data:
           url: /mobility
 
-turn_on_light_when_coming_home:
+turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant
   sequence:
     - condition: state

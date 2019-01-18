@@ -206,7 +206,7 @@
       to: 'off'
   action:
     - service: script.turn_off_cameras
-    - service: script.turn_on_light_when_coming_home
+    - service: script.turn_on_light_if_cover_closed
     - service: notify.html5
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
