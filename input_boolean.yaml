@@ -4,6 +4,9 @@ night_mode:
 away_mode:
   name: Absence
   icon: mdi:account-remove
+force_away_mode:
+  name: Absence manuel
+  icon: mdi:account-remove
 holiday_mode:
   name: Congés
   icon: mdi:sunglasses
