@@ -1,15 +1,21 @@
 - type: vertical-stack
   cards:
-    - type: glance
-      columns: 6
-      entities:    
+    - type: entity-filter
+      entities:
         - entity: device_tracker.amazfit_bip_marc
           name: Marc
         - input_boolean.away_mode
+        - input_boolean.night_mode
         - input_boolean.garage_charging
         - sensor.fibaro_system_fgms001_motion_sensor_temperature
         - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
         - sensor.dark_sky_apparent_temperature
+      state_filter:
+        - "on"
+        - "home"
+      card: 
+        type: glance
+        columns: 6
 
     - type: horizontal-stack
       cards:
