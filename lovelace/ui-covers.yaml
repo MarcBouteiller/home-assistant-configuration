@@ -21,6 +21,7 @@
   type: entities
   entities:
     - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+    - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_9
 
 - title: Actions
   type: entities
