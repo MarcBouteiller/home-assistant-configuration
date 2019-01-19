@@ -7,12 +7,12 @@
         - input_boolean.away_mode
         - input_boolean.night_mode
         - input_boolean.garage_charging
-        - sensor.fibaro_system_fgms001_motion_sensor_temperature
-        - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
-        - sensor.dark_sky_apparent_temperature
+        - group.all_covers
       state_filter:
         - "on"
         - "home"
+        - "closed"
+        - "open"
       card: 
         type: glance
         columns: 6
@@ -31,15 +31,6 @@
       entities:
         - script.ouverture_volets
         - script.fermeture_volets
-
-    - title: Modes
-      type: entities
-      entities:
-        - input_boolean.night_mode
-        - input_boolean.away_mode
-        - input_boolean.cover_mode
-        - input_boolean.holiday_mode
-        - input_boolean.notifications
 
     - title: Lumières
       type: entities
