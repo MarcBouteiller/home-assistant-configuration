@@ -185,11 +185,13 @@ zwave:
 binary_sensor:
   - platform: workday
     country: FRA
+
   - platform: bayesian
+    name: marc_home 
     prior: 0.4
     probability_threshold: 0.95
     observations:
-      - entity_id: 'input_boolean.force_away_mode'
+      - entity_id: 'input_boolean.force_presence'
         prob_given_true: 1.0
         platform: 'state'
         to_state: 'on'

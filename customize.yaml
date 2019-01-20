@@ -3,6 +3,9 @@ group.all_lights:
   hidden: false
   friendly_name: Lumières
 
+group.all_covers:
+  icon: mdi:garage
+
 # Switchs
 group.all_switches:
   hidden: false
