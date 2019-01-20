@@ -1,65 +1,62 @@
-- type: vertical-stack
+
+- type: horizontal-stack
   cards:
-    - type: horizontal-stack
-      cards:        
-        - type: horizontal-stack
-          cards:
-            - type: gauge
-              entity: sensor.speedtest_download
-              name: Download
-              unit: MB/s
-              min: 0
-              max: 100
-              severity:
-                green: 85
-                yellow: 50
-                red: 0
-            - type: gauge
-              entity: sensor.speedtest_upload
-              name: Upload
-              unit: MB/s
-              min: 0
-              max: 100
-              severity:
-                green: 85
-                yellow: 50
-                red: 0         
-            - type: gauge
-              entity: sensor.fast_com_download
-              name: Netflix Perf
-              unit: MB/s
-              min: 0
-              max: 100
-              severity:
-                green: 85
-                yellow: 50
-                red: 0
-            - type: history-graph
-              title: Internet        
-              entities:
-                - sensor.speedtest_download
-                - sensor.speedtest_upload
-                - sensor.speedtest_ping
-                - sensor.fast_com_download
+    - type: gauge
+      entity: sensor.speedtest_download
+      name: Download
+      unit: MB/s
+      min: 0
+      max: 100
+      severity:
+        green: 85
+        yellow: 50
+        red: 0
+    - type: gauge
+      entity: sensor.speedtest_upload
+      name: Upload
+      unit: MB/s
+      min: 0
+      max: 100
+      severity:
+        green: 85
+        yellow: 50
+        red: 0         
+    - type: gauge
+      entity: sensor.fast_com_download
+      name: Netflix Perf
+      unit: MB/s
+      min: 0
+      max: 100
+      severity:
+        green: 85
+        yellow: 50
+        red: 0
+- type: history-graph
+  title: Internet        
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.fast_com_download
     
-    - type: horizontal-stack
+- type: horizontal-stack
+  cards:
+    - title: Raspberry
+      type: vertical-stack
       cards:
-        - title: Raspberry
-          type: vertical-stack
-          cards:
-            - type: entities
-              entities:
-                - sensor.disk_use_percent
-            - type: history-graph
-              entities:
-                - sensor.processor_use
-                - sensor.memory_use_percent
-    
-    - type: horizontal-stack
-      cards:
-        - title: Batteries
-          type: entities
+        - type: entities
           entities:
-            - sensor.smoke_sensor_upstair_battery
-            - sensor.motion_sensor_battery
-            - sensor.remote_hank_battery
+            - sensor.disk_use_percent
+        - type: history-graph
+          entities:
+            - sensor.processor_use
+            - sensor.memory_use_percent
+    
+- type: horizontal-stack
+  cards:
+    - title: Batteries
+      type: entities
+      entities:
+        - sensor.smoke_sensor_upstair_battery
+        - sensor.motion_sensor_battery
+        - sensor.remote_hank_battery
