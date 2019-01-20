@@ -152,12 +152,14 @@
     entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
     to: 'open'
   action:
-    - service: light.turn_off
-      entity_id: light.livingrooms_led
-    - service: switch.turn_off
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: input_boolean.turn_off
       entity_id: input_boolean.night_mode
+    - service: light.turn_off
+      entity_id: 
+        - light.livingrooms_led
+        - light.spots_led
+    - service: switch.turn_off
+      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 
 - id: ha_start
   alias: Démarrage Home Assistant
