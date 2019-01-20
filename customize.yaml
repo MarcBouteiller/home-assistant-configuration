@@ -3,9 +3,6 @@ group.all_lights:
   hidden: false
   friendly_name: Lumières
 
-group.all_covers:
-  icon: mdi:garage
-
 # Switchs
 group.all_switches:
   hidden: false
@@ -33,6 +30,7 @@ group.actions:
 group.all_covers:
   hidden: false
   friendly_name: Volets
+  icon: mdi:garage
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
   friendly_name: Baie salon
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2:
