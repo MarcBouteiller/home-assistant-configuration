@@ -213,8 +213,8 @@ panel_iframe:
     icon: mdi:format-list-bulleted-type
     url: https://www.home-assistant.io/components/
 
-shell_command:
-  lovelace_gen: 'python /config/lovelace-gen.py'
+# shell_command:
+#   lovelace_gen: 'python /config/lovelace-gen.py'
 
 light: !include light.yaml
 input_boolean: !include input_boolean.yaml

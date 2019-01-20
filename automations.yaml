@@ -169,7 +169,6 @@
       data:
         title: "{{ states.input_text.notifications_generic_title.state }}"
         message: "{{ states.input_text.notifications_ha_start.state }}"
-    - service: shell_command.lovelace_gen
 
 - id: ha_stop
   alias: Arrêt Home Assistant
