@@ -30,7 +30,8 @@ group.actions:
 group.all_covers:
   hidden: false
   friendly_name: Volets
-  icon: mdi:garage
+  device_class: cover
+
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
   friendly_name: Baie salon
 cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2:
