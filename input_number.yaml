@@ -29,7 +29,7 @@ cloud_treshold:
 open_cover_temperature_treshold:
   name: Seuil température ouverture volets
   icon: mdi:temperature-celsius
-  initial: 22
+  initial: 24
   mode: box
   min: 18
   max: 30
