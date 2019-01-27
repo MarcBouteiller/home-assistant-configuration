@@ -98,7 +98,7 @@ recorder:
       - sensor.processor_use
       - sensor.memory_use_percent
       - sensor.load_15m
-      - sensor.disk_use_percent_
+      - sensor.disk_use_percent
       - sensor.smoke_sensor_upstair_battery
       - sensor.motion_sensor_battery
       - sensor.remote_hank_battery

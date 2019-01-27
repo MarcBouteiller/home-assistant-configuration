@@ -186,7 +186,7 @@ ha_monitor:
     - sensor.processor_use
     - sensor.memory_use_percent
     - sensor.load_15m
-    - sensor.disk_use_percent_
+    - sensor.disk_use_percent
 
 internet:
   view: no
