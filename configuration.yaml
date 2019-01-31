@@ -141,7 +141,7 @@ switch:
 cast:
   media_player:
     - host: 192.168.0.40
-    # - host: 192.168.0.41
+    - host: 192.168.0.41
 
 # Text to speech
 tts:
@@ -198,23 +198,15 @@ binary_sensor:
         platform: 'state'
         to_state: 'not_home'
 
-
 panel_iframe:
   terminal:
     title: Terminal
     icon: mdi:console
     url: !secret term_url
-  ide:
-    title: IDE
-    icon: mdi:playlist-edit
-    url: !secret ide_url
   components:
     title: Components
     icon: mdi:format-list-bulleted-type
     url: https://www.home-assistant.io/components/
-
-# shell_command:
-#   lovelace_gen: 'python /config/lovelace-gen.py'
 
 light: !include light.yaml
 input_boolean: !include input_boolean.yaml
@@ -226,3 +218,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zones.yaml
+
+logger:
+  logs:
+    homeassistant.components.cast.media_player: fatal
+
