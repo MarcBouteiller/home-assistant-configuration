@@ -221,5 +221,5 @@ zone: !include zones.yaml
 
 logger:
   logs:
-    homeassistant.components.cast.media_player: fatal
+    homeassistant.components.media_player: fatal
 
