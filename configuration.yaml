@@ -219,7 +219,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zones.yaml
 
-logger:
-  logs:
-    homeassistant.components.media_player: fatal
+# logger:
+#   logs:
+#     homeassistant.components.media_player: fatal
 
