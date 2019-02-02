@@ -20,6 +20,20 @@ positionner_volets:
         entity_id: group.all_covers
         position: "{{ position }}"
 
+fermeture_volets_nuit:
+  alias: Fermeture volets nuit
+  sequence:
+    - delay: 00:19
+    - condition: state
+      entity_id: input_boolean.cover_mode
+      state: 'on'
+    - service: notify.html5
+      data:
+        title: "{{ states.input_text.notifications_generic_title.state }}"
+        message: "Les volets vont se fermer" 
+    - delay: 00:00:30 
+    - service: script.fermeture_volets
+
 eteindre_prise_garage:
   alias: Eteindre prise du garage
   sequence:
