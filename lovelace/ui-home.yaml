@@ -4,6 +4,8 @@
       entities:
         - entity: device_tracker.amazfit_bip_marc
           name: Marc
+        - entity:  device_tracker.mi_band_2
+          name: Eva
         - input_boolean.away_mode
         - input_boolean.night_mode
         - input_boolean.garage_charging
