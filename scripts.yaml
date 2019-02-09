@@ -99,7 +99,7 @@ notify_marc_roads:
         title: "Itineraires"
         message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
         data:
-          url: /mobility
+          url: /lovelace/mobility
 
 turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant

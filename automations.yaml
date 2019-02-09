@@ -227,9 +227,9 @@
     - service: notify.html5
       data:
         title: "{{ states.input_text.notifications_title_presence.state }}"
-        message: "{ states.input_text.notifications_message_presence.state }}"
+        message: "{{ states.input_text.notifications_message_presence.state }}"
         data:
-          url: /cameras
+          url: /lovelace/cameras
 
 - id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)
