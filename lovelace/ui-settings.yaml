@@ -2,7 +2,8 @@
   type: entities
   entities:
     - input_boolean.night_mode
-    - input_boolean.away_mode
+    - input_boolean.force_away
+    - input_boolean.force_presence
     - input_boolean.cover_mode
     - input_boolean.holiday_mode
     - input_boolean.notifications

@@ -7,6 +7,9 @@ away_mode:
 force_presence:
   name: Présence manuelle
   initial: off
+force_away:
+  name: Absence manuelle
+  initial: off
 holiday_mode:
   name: Congés
   icon: mdi:sunglasses

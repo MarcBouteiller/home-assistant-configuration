@@ -102,7 +102,7 @@ recorder:
       - sensor.smoke_sensor_upstair_battery
       - sensor.motion_sensor_battery
       - sensor.remote_hank_battery
-      - binary_sensor.prob_away_mode
+      - binary_sensor.prob_presence_mode
 
 # View all events in a logbook
 logbook:
@@ -123,7 +123,7 @@ logbook:
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
       - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
       - switch.prise_garage
-      - binary_sensor.prob_away_mode
+      - binary_sensor.prob_presence_mode
 
 # Enables a map showing the location of tracked devices
 map:
@@ -189,14 +189,36 @@ binary_sensor:
     country: FRA
 
   - platform: bayesian
-    name: prob_away_mode 
+    name: prob_presence_mode 
     prior: 0.4
-    probability_threshold: 0.8
+    probability_threshold: 0.7
     observations:
       - entity_id: 'device_tracker.amazfit_bip_marc'
         prob_given_true: 0.7
         platform: 'state'
-        to_state: 'not_home'
+        to_state: 'home'
+      - entity_id: 'device_tracker.mi_band_2'
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.mi_marc'
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.mi_eva'
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'input_boolean.force_away'
+        prob_given_true: 1
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'input_boolean.force_presence'
+        prob_given_true: 1
+        platform: 'state'
+        to_state: 'on'
+      
+
 
 panel_iframe:
   terminal:
