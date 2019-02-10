@@ -71,27 +71,42 @@
   action: 
   - service: input_boolean.turn_off
     entity_id: input_boolean.night_mode
-  
+- id: toggle_force_presence_mode
+  trigger:
+    platform: state
+    entity_id: input_boolean.force_presence
+    from: 'off'
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.force_away
 
-# - id: leave_home
-#   alias: Absence
-#   trigger:
-#     platform: template
-#     value_template: "{{not is_state('device_tracker.amazfit_bip_marc', 'home') and is_state('switch.neo_coolcam_power_plug_12a_switch_2', 'off') }}"
-#   action:
-#     - service: input_boolean.turn_on
-#       data:
-#         entity_id: input_boolean.away_mode
+- id: toggle_force_away_mode
+  trigger:
+    platform: state
+    entity_id: input_boolean.force_away
+    from: 'off'
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.force_presence
+
+
+- id: leave_home
+  alias: Absence
+  trigger:
+    platform: template
+    value_template: "{{ (is_state('binary_sensor.prob_presence_mode', 'off') and is_state('input_boolean.force_presence', 'off')) or is_state('input_boolean.force_away', 'on') }}"
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.away_mode
 
 - id: coming_home
   alias: Retour
   trigger:   
-    - platform: state
-      entity_id: device_tracker.amazfit_bip_marc
-      to: 'home'
-    # - platform: state
-    #   entity_id: device_tracker.honor_7_eva
-    #   to: 'home'
+     platform: template
+     value_template: "{{ (is_state('binary_sensor.prob_presence_mode', 'on') or is_state('input_boolean.force_presence', 'off')) and is_state('input_boolean.force_away', 'off') }}"
   action:
     - service: input_boolean.turn_off
       data:
