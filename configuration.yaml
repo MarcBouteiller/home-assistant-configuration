@@ -191,14 +191,14 @@ binary_sensor:
   - platform: bayesian
     name: prob_presence_mode 
     prior: 0.4
-    probability_threshold: 0.85
+    probability_threshold: 0.8
     observations:
       - entity_id: 'device_tracker.amazfit_bip_marc'
         prob_given_true: 0.9
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.mi_band_2'
-        prob_given_true: 0.8
+        prob_given_true: 0.9
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.mi_marc'
