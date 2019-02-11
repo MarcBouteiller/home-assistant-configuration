@@ -202,11 +202,11 @@ binary_sensor:
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.mi_marc'
-        prob_given_true: 0.6
+        prob_given_true: 0.9
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.mi_eva'
-        prob_given_true: 0.6
+        prob_given_true: 0.9
         platform: 'state'
         to_state: 'home'
 
