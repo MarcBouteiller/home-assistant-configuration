@@ -63,7 +63,7 @@ conversation:
 history:
 
 recorder:
-  # db_url: mysql://hass:hadb@core-mariadb/homeassistant
+  db_url: mysql://hass:hadb@core-mariadb/homeassistant
   purge_keep_days: 60
   include:
     domains:
