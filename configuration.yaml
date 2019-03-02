@@ -210,6 +210,13 @@ binary_sensor:
         platform: 'state'
         to_state: 'home'
 
+speedtestdotnet:
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+fastdotcom:
 
 panel_iframe:
   terminal:
