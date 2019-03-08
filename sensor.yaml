@@ -145,7 +145,7 @@
     - temperature_high
     - temperature_low
     - uv_index
-  update_interval: '00:30'
+  scan_interval: '00:30'
 
 - platform: history_stats
   name: month_count_car_charge
