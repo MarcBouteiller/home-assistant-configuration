@@ -177,14 +177,14 @@
   name: prise_garage
 
 - platform: waze_travel_time
-  origin: !secret waze_home_origin
-  destination: rue du breil, Rennes, France
+  origin: zone.home
+  destination: zone.of
   region: 'EU'
   name: 'Durée Waze OF'
 
 - platform: waze_travel_time
-  origin: !secret waze_home_origin
-  destination: Avenue Belle Fontaine, Cesson Sevigné, France
+  origin: zone.home
+  destination: zone.sii
   region: 'EU'
   name: 'Durée Waze SII'
 
