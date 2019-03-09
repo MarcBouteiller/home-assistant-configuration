@@ -71,7 +71,9 @@
   action: 
   - service: input_boolean.turn_off
     entity_id: input_boolean.night_mode
+    
 - id: toggle_force_presence_mode
+  alias: force presence
   trigger:
     platform: state
     entity_id: input_boolean.force_presence
@@ -82,6 +84,7 @@
       entity_id: input_boolean.force_away
 
 - id: toggle_force_away_mode
+  alias: force absence
   trigger:
     platform: state
     entity_id: input_boolean.force_away
@@ -90,7 +93,6 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.force_presence
-
 
 - id: leave_home
   alias: Absence
