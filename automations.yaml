@@ -173,6 +173,17 @@
     - service: switch.turn_off
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
 
+- id: desk_cover_opened
+  alias: Ouverture du volet bureau
+  trigger:
+    platform: state
+    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+    to: 'open'
+  action:
+    - service: light.turn_off
+      entity_id: 
+        - light.bureau
+
 - id: ha_start
   alias: Démarrage Home Assistant
   trigger:
