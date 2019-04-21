@@ -229,6 +229,14 @@ panel_iframe:
     title: Components
     icon: mdi:format-list-bulleted-type
     url: https://www.home-assistant.io/components/
+  plex:
+    title: Plex
+    icon: mdi:plex
+    url: !secret plex_url
+  transmission:
+    title: Transmission
+    icon: mdi:cloud-download
+    url: !secret transmission_url
 
 light: !include light.yaml
 input_boolean: !include input_boolean.yaml
