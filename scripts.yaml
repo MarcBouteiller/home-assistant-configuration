@@ -70,8 +70,8 @@ notify_car_charging:
 notify_car_charged:
   alias: notifier fin de chargement de la voiture
   sequence:
-  - service: notify.html5
-    data:
+  - service: script.notify
+    data_template:
       title: "{{ states.input_text.notifications_generic_title.state }}"
       message: "Voiture chargée en : {{states.sensor.day_car_charge.attributes.value }}"
 
@@ -94,12 +94,10 @@ turn_off_cameras:
 notify_marc_roads:
   alias: Notifications des routes
   sequence:
-    - service: notify.html5_phone_marc
-      data:
-        title: "Itineraires"
+    - service: script.notify
+      data_template:
+        title: "Itinéraires"
         message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
-        data:
-          url: /lovelace/mobility
 
 turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant
@@ -130,9 +128,18 @@ notify:
   sequence: 
     service: notify.slack
     data_template:
-      target: "{{target|default('#domotique')}}"
-      attachments:
-        - title: "{{title|default('')}}"
-          text: "{{message}}"
-          color: "{{criticity|default('#03a9f4')}}"
+      message: ""
+      target: 
+        - "{{target|default('#domotique')}}"
+      data:
+        attachments:
+          - title: "{{title|default('')}}"
+            text: "{{message}}"
+            color: "{{criticity|default('#03a9f4')}}"
 
+test_notify:
+  sequence:
+    service: script.notify
+    data_template:
+      title: "TEST"
+      message: "Ceci est un test :construction_worker:"
