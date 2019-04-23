@@ -124,3 +124,15 @@ turn_off_all_lights:
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: switch.turn_off
       entity_id: switch.neo_coolcam_power_plug_12a_switch
+
+notify:
+  alias: notificateur slack
+  sequence: 
+    service: notify.slack
+    data_template:
+      target: "{{target|default('#domotique')}}"
+      attachments:
+        - title: "{{title|default('')}}"
+          text: "{{message}}"
+          color: "{{criticity|default('#03a9f4')}}"
+
