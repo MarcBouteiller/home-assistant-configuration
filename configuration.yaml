@@ -149,12 +149,6 @@ cast:
 tts:
   - platform: google
 
-notify:
-  - name: html5
-    platform: html5
-    gcm_api_key: !secret gcm_api_key
-    gcm_sender_id: !secret gcm_sender_id
-
 # Cloud
 cloud:
 
@@ -240,6 +234,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zones.yaml
+notify: !include notify.yaml
 
 # logger:
 #   logs:
