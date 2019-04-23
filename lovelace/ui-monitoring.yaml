@@ -47,6 +47,8 @@
         - type: entities
           entities:
             - sensor.disk_use_percent
+            - sensor.memory_use_percent
+            - sensor.processor_use
         - type: history-graph
           entities:
             - sensor.processor_use
