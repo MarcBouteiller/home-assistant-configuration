@@ -107,6 +107,9 @@ turn_on_light_if_cover_closed:
     - condition: state
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       state: 'closed'
+    - condition: state
+      entity_id: input_boolean.night_mode
+      state: 'off'
     - service: light.turn_on
       entity_id: light.spots_led
     - service: switch.turn_on
