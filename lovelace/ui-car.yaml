@@ -14,7 +14,7 @@
   type: entities
   entities:
     - switch.prise_garage
-    - sensor.broadlink_spx_power_sensor
+    - sensor.power_prise_garage
     - sensor.value_day_car_charge
     - sensor.price_day_car_charge
     - input_number.battery_left
@@ -31,4 +31,4 @@
 - title: Consommation
   type: history-graph
   entities:
-    - sensor.broadlink_spx_power_sensor
+    - sensor.power_prise_garage

@@ -12,6 +12,10 @@
 
 - platform: template
   sensors:
+    power_prise_garage:
+      entity_id: switch.prise_garage
+      icon_template: mdi:power-plug
+      value_template: "{{ states.switch.prise_garage.attributes.current_power_w|default(0) }}"
     ## CAR CHARGE
     value_day_car_charge:
       entity_id: sensor.day_car_charge
@@ -172,7 +176,7 @@
     hours: 24
 
 - platform: statistics
-  entity_id: sensor.broadlink_spx_power_sensor  
+  entity_id: sensor.power_prise_garage  
   name: prise_garage
 
 - platform: waze_travel_time

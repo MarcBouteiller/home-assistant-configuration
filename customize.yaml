@@ -58,7 +58,7 @@ sensor.fibaro_system_fgsd002_smoke_sensor_temperature:
   friendly_name: Etage
 sensor.month_count_car_charge:
   friendly_name: Nombre de recharge
-sensor.broadlink_spx_power_sensor:
+sensor.power_prise_garage:
   friendly_name: Energie Prise Garage
 
 script.fermeture_volets:

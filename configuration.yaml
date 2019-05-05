@@ -89,7 +89,7 @@ recorder:
       - sensor.fibaro_system_fgms001_motion_sensor_luminance
       - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
       - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
-      - sensor.broadlink_spx_power_sensor
+      - sensor.power_prise_garage
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.fastcom_download
