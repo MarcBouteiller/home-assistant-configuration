@@ -2,5 +2,5 @@
   name: slack
   api_key: !secret slack_oauth_token
   default_channel: '#domotique'
-  username: 'Home Assistant'
+  username: 'HA'
   icon: ':homeassistant:'

@@ -93,6 +93,7 @@ notify_marc_roads:
   sequence:
     - service: script.notify
       data_template:
+        target: "@UJ3RKSDT2"
         message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
 
 turn_on_light_if_cover_closed:
