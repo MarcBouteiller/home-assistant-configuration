@@ -226,6 +226,7 @@ panel_iframe:
     url: https://www.home-assistant.io/components/
 
 light: !include light.yaml
+yeelight: !include yeelight.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_text: !include input_text.yaml

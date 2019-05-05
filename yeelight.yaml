@@ -1,0 +1,7 @@
+devices:
+  192.168.0.9:
+    name: Bureau
+  192.168.0.2:
+    name: Salon
+  192.168.0.26:
+    name: Bandeau LED
