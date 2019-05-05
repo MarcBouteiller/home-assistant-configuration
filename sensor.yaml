@@ -6,16 +6,12 @@
     - type: processor_use
     - type: load_15m
 
-# - platform: broadlink_power
-#   host: 192.168.0.25
-#   mac: '34:EA:34:9D:27:5C'
-
 - platform: template
   sensors:
     power_prise_garage:
       entity_id: switch.prise_garage
       icon_template: mdi:power-plug
-      value_template: "{{ states.switch.prise_garage.attributes.current_power_w|default(0) }}"
+      value_template: "{{ states.switch.prise_garage.attributes.current_power_w|default(0)|float }}"
     ## CAR CHARGE
     value_day_car_charge:
       entity_id: sensor.day_car_charge
