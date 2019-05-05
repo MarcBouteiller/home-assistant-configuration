@@ -190,10 +190,10 @@
     - platform: homeassistant
       event: start
   action:
-    - service: notify.html5_phone_marc
-      data:
-        title: "{{ states.input_text.notifications_generic_title.state }}"
+    - service: script.notify
+      data_template:
         message: "{{ states.input_text.notifications_ha_start.state }}"
+        target: '#monitoring'
 
 - id: ha_stop
   alias: Arrêt Home Assistant
@@ -201,9 +201,9 @@
     - platform: homeassistant
       event: shutdown
   action:
-    - service: notify.html5_phone_marc
-      data:
-        title: "{{ states.input_text.notifications_generic_title.state }}"
+    - service: script.notify
+      data_template:
+        target: "#monitoring"
         message: "{{ states.input_text.notifications_ha_stop.state }}"
 
 - id: away_mode_activate
@@ -214,9 +214,8 @@
       from: 'off'
       to: 'on'
   action:
-    - service: notify.html5
-      data:
-        title: "{{ states.input_text.notifications_generic_title.state }}"
+    - service: script.notify
+      data_template:
         message: "{{ states.input_text.notifications_message_away_mode_on.state }}"
     - service: script.turn_on_cameras
     - service: script.turn_off_all_lights
@@ -231,9 +230,8 @@
   action:
     - service: script.turn_off_cameras
     - service: script.turn_on_light_if_cover_closed
-    - service: notify.html5
-      data:
-        title: "{{ states.input_text.notifications_generic_title.state }}"
+    - service: script.notify
+      data_template:
         message: "{{ states.input_text.notifications_message_away_mode_off.state }}"
 
 - id: presence_detection
@@ -252,12 +250,10 @@
       data:
         entity_id: camera.salon
         filename: "tmp/snap_{{now()}}.jpg"    
-    - service: notify.html5
-      data:
+    - service: script.notify
+      data_template:
         title: "{{ states.input_text.notifications_title_presence.state }}"
         message: "{{ states.input_text.notifications_message_presence.state }}"
-        data:
-          url: /lovelace/cameras
 
 - id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)
