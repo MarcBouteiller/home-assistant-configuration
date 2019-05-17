@@ -133,6 +133,26 @@ notify:
           - title: "{{title|default('')}}"
             text: "{{message}}"
             color: "{{criticity|default('#03a9f4')}}"
+        # file:
+        #   path: "{{file}}"
+
+notify_high_temperature:
+  alias: notification temperature haute
+  sequence:
+    - service: script.notify
+      data_template:
+        title: ":sunny: Alerte de température"
+        criticity: "warning"
+        message: "La température du RDC est de {{states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state}}°C"
+
+notify_low_temperature:
+  alias: notification temperature basse
+  sequence:
+    - service: script.notify
+      data_template:
+        title: ":snowflake: Alerte de température"
+        criticity: "warning"
+        message: "La température du RDC est de {{states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state}}°C"
 
 test_notify:
   sequence:
@@ -140,3 +160,4 @@ test_notify:
     data_template:
       #title: "TEST"
       message: "Ceci est un test :construction_worker:"
+      # file: "/config/tmp/test.jpg"

@@ -65,3 +65,20 @@ battery_max:
   min: 50
   max: 100
   
+high_alert_temperature:
+  name: Seuil haut de température
+  icon: mdi:thermometer-chevron-up
+  mode: box
+  unit_of_measurement: '°C'
+  initial: 24
+  min: 20
+  max: 40
+
+low_alert_temperature:
+  name: Seuil bas de température
+  icon: mdi:thermometer-chevron-down
+  mode: box
+  unit_of_measurement: '°C'
+  initial: 17
+  min: 10
+  max: 19

@@ -388,3 +388,19 @@
       entity_id: light.spots_led
       data_template:
         brightness_pct: "{{states.input_select.spots_state.state|int}}"
+
+- id: low_temperature_alert
+  alias: Alerte basse température
+  trigger:
+    platform: template
+    value_template: "{{ (states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state|float) <= (states.input_number.low_alert_temperature.state|float) }}"
+  action:
+    - service: notify.notify_low_temperature
+
+- id: high_temperature_alert
+  alias: Alerte haute température
+  trigger:
+    platform: template
+    value_template: "{{ (states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state|float) >= (states.input_number.high_alert_temperature.state|float) }}"
+  action:
+    - service: notify.notify_high_temperature
