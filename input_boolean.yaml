@@ -6,10 +6,10 @@ away_mode:
   icon: mdi:account-remove
 force_presence:
   name: Présence manuelle
-  initial: off
+  icon: mdi:account-plus
 force_away:
   name: Absence manuelle
-  initial: off
+  icon: mdi:account-off-outline
 holiday_mode:
   name: Congés
   icon: mdi:sunglasses
