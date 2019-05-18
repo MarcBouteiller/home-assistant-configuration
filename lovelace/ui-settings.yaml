@@ -18,6 +18,8 @@
   entities:
     - input_number.cloud_treshold
     - input_number.open_cover_temperature_treshold
+    - input_number.low_alert_temperature
+    - input_number.high_alert_temperature
 
 - title: Notifications
   type: entities
