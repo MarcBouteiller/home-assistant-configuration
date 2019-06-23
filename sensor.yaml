@@ -107,17 +107,11 @@
         {% endif %}
 
     ## WAZE
-    ouest_france_roads:
-      entity_id: sensor.duree_waze_of
-      friendly_name: Routes Ouest France
+    waze_dm_roads:
+      entity_id: sensor.waze_dm
+      friendly_name: Routes DEVmachine
       icon_template: mdi:road-variant
-      value_template: "{{ states.sensor.duree_waze_of.attributes.route }}"
-    
-    sii_roads:
-      entity_id: sensor.duree_waze_sii
-      friendly_name: Routes SII
-      icon_template: mdi:road-variant
-      value_template: "{{ states.sensor.duree_waze_sii.attributes.route }}"
+      value_template: "{{ states.sensor.waze_dm.attributes.route }}"
 
     ## CAST
     cast_app_name:
@@ -178,15 +172,9 @@
 
 - platform: waze_travel_time
   origin: zone.home
-  destination: zone.of
+  destination: zone.DEVmachine
   region: 'EU'
-  name: 'Durée Waze OF'
-
-- platform: waze_travel_time
-  origin: zone.home
-  destination: zone.sii
-  region: 'EU'
-  name: 'Durée Waze SII'
+  name: 'waze dm'
 
 - platform: seventeentrack
   username: !secret 17track_user

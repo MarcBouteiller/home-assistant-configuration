@@ -3,9 +3,9 @@
   longitude: !secret zone.home.longitude
   radius: 250
   icon: mdi:home
-- name: SII
-  latitude: 48.1289107
-  longitude: -1.6255767
+- name: DEVmachine
+  latitude: 48.1167213
+  longitude: -1.6104493
   radius: 250
   icon: mdi:briefcase
 - name: CA St Martin
@@ -18,8 +18,3 @@
   longitude: -1.6917782
   radius: 250
   icon: mdi:bank
-- name: OF
-  latitude: 48.0936905
-  longitude: -1.6283874
-  radius: 150
-  icon: mdi:newspaper

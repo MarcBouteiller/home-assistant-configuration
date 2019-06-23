@@ -75,7 +75,6 @@ car:
     - group.car_switch
     - group.car_switch_month
     - group.travel
-    - sensor.waze_ouest_france
 
 car_switch:
   view: no
@@ -93,13 +92,6 @@ car_switch_month:
     - sensor.value_month_car_charge
     - sensor.price_month_car_charge
     - sensor.month_count_car_charge
-
-travel:
-  name: Trajets
-  view: no
-  entities:
-    - sensor.waze_duree_ouest_france
-    - sensor.ouest_france_roads
 
 #### METEO
 meteo:

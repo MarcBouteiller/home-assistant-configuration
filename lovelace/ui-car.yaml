@@ -1,14 +1,8 @@
-- title: Trajet SII
+- title: Trajet DEVmachine
   type: entities
   entities:
-    - sensor.duree_waze_sii
-    - sensor.sii_roads
-
-- title: Trajet Ouest France
-  type: entities
-  entities:
-    - sensor.duree_waze_of
-    - sensor.ouest_france_roads
+    - sensor.waze_dm
+    - sensor.waze_dm_roads
 
 - title: Prise garage
   type: entities
