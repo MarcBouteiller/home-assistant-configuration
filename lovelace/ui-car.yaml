@@ -1,8 +1,10 @@
 - title: Trajet DEVmachine
   type: entities
   entities:
-    - sensor.waze_dm
-    - sensor.waze_dm_roads
+    - entity: sensor.waze_dm
+      name: Durée
+    - entity: sensor.waze_dm_roads
+      name: Itinéraire
 
 - title: Prise garage
   type: entities

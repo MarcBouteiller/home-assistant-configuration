@@ -94,7 +94,7 @@ notify_marc_roads:
     - service: script.notify
       data_template:
         target: "@UJ3RKSDT2"
-        message: "SII: {{ states.sensor.sii_roads.state }}\nOF: {{ states.sensor.ouest_france_roads.state }}"
+        message: "DM: {{ states.sensor.waze_dm_roads.state }}({{ states.sensor.waze_dm.state }}mn)"
 
 turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant
