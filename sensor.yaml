@@ -31,6 +31,13 @@
       unit_of_measurement: kW
       icon_template: mdi:gas-station
       value_template: "{{(states.sensor.day_car_charge.state|float * 2.2) | round(2)}}"
+    power_month_car_charge:
+      entity_id: 
+        - sensor.month_car_charge
+      friendly_name: Consommation
+      unit_of_measurement: kW
+      icon_template: mdi:gas-station
+      value_template: "{{(states.sensor.month_car_charge.state|float * 2.2) | round(2)}}"
     price_day_car_charge:
       entity_id: 
         - sensor.day_car_charge

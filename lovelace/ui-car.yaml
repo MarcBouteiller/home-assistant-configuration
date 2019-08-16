@@ -21,9 +21,10 @@
 - title: Energie Mensuelle
   type: entities
   entities:
-    - sensor.value_month_car_charge
-    - sensor.price_month_car_charge
     - sensor.month_count_car_charge
+    - sensor.value_month_car_charge
+    - sensor.power_month_car_charge
+    - sensor.price_month_car_charge
 
 - title: Consommation
   type: history-graph
