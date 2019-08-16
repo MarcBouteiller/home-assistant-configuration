@@ -95,6 +95,8 @@ recorder:
       - sensor.fast_com_download
       - sensor.month_car_charge
       - sensor.day_car_charge
+      - sensor.power_month_car_charge
+      - sensor.power_day_car_charge
       - sensor.processor_use
       - sensor.memory_use_percent
       - sensor.load_15m

@@ -30,3 +30,10 @@
   type: history-graph
   entities:
     - sensor.power_prise_garage
+
+- title: Historique de consommation
+  type: history-graph
+  hours_to_show: 480
+  entities:
+    - sensor.power_month_car_charge
+    - sensor.power_day_car_charge
