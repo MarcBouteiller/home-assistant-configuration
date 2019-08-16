@@ -24,6 +24,13 @@
       friendly_name: Durée mensuelle
       icon_template: mdi:timer-sand
       value_template: "{{ states.sensor.month_car_charge.attributes.value }}"
+    power_day_car_charge:
+      entity_id: 
+        - sensor.day_car_charge
+      friendly_name: Coût de recharge
+      unit_of_measurement: kW
+      icon_template: mdi:gas-station
+      value_template: "{{(states.sensor.day_car_charge.state|float * 2.2) | round(2)}}"
     price_day_car_charge:
       entity_id: 
         - sensor.day_car_charge

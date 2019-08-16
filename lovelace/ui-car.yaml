@@ -12,6 +12,7 @@
     - switch.prise_garage
     - sensor.power_prise_garage
     - sensor.value_day_car_charge
+    - sensor.power_day_car_charge
     - sensor.price_day_car_charge
     - input_number.battery_left
     - input_number.battery_max
