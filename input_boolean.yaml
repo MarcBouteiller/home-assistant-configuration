@@ -26,9 +26,4 @@ notifications:
   initial: on
 camera_sejour_state:
   name: Caméra sejour
-  icon: mdi:cctv
-  templates:
-    icon_color: >
-      if (state === 'on') return '#fdd835';
-      return '#44739e';
-    
+  icon: mdi:mdi:cctv
