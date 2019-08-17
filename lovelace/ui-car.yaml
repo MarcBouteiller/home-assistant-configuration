@@ -12,6 +12,7 @@
     - switch.prise_garage
     - sensor.power_prise_garage
     - sensor.value_day_car_charge
+    - sensor.power_day_car_charge
     - sensor.price_day_car_charge
     - input_number.battery_left
     - input_number.battery_max
@@ -20,11 +21,19 @@
 - title: Energie Mensuelle
   type: entities
   entities:
-    - sensor.value_month_car_charge
-    - sensor.price_month_car_charge
     - sensor.month_count_car_charge
+    - sensor.value_month_car_charge
+    - sensor.power_month_car_charge
+    - sensor.price_month_car_charge
 
 - title: Consommation
   type: history-graph
   entities:
     - sensor.power_prise_garage
+
+- title: Historique de consommation
+  type: history-graph
+  hours_to_show: 480
+  entities:
+    - sensor.power_month_car_charge
+    - sensor.power_day_car_charge

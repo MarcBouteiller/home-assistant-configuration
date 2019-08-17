@@ -179,16 +179,7 @@ ha_monitor:
     - sensor.memory_use_percent
     - sensor.load_15m
     - sensor.disk_use_percent
-
-internet:
-  view: no
-  name: Internet
-  entities: 
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
-    - sensor.fastcom_download
-
+    
 battery:
   view: no
   name: Batteries
