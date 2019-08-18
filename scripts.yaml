@@ -23,14 +23,14 @@ positionner_volets:
 fermeture_volets_nuit:
   alias: Fermeture volets nuit
   sequence:
-    - delay: 00:19
     - condition: state
       entity_id: input_boolean.cover_mode
       state: 'on'
     - service: script.notify
       data_template:
         message: "Les volets vont se fermer" 
-    - delay: 00:00:30 
+    - delay: 00:01:00 #1 minute to answer
+    - delay: '00:{{ states.input_number.closing_covers_delay.state | int }}:00'  
     - service: script.fermeture_volets
 
 eteindre_prise_garage:
@@ -121,7 +121,7 @@ turn_off_all_lights:
       entity_id: switch.neo_coolcam_power_plug_12a_switch
 
 notify:
-  alias: notificateur slack
+  alias: Slack notificator
   sequence: 
     service: notify.slack
     data_template:
@@ -135,6 +135,29 @@ notify:
             color: "{{criticity|default('#03a9f4')}}"
         # file:
         #   path: "{{file}}"
+
+notify_action:
+  alias: Slack notificator with actions
+  sequence: 
+    service: notify.slack
+    data_template:
+      message: ""
+      target: 
+        - "{{target|default('#domotique')}}"
+      data:
+        attachments:
+          - title: "{{title|default('')}}"
+            text: "{{message}}"
+            color: "{{criticity|default('#03a9f4')}}"
+            actions:
+              - name: ok
+                text: OK
+                type: button
+                value: 0
+              - name: ten
+                text: Dans 10 min
+                type: button
+                value: 10
 
 notify_high_temperature:
   alias: notification temperature haute
