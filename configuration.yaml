@@ -19,6 +19,9 @@ homeassistant:
 frontend:
   themes: !include themes.yaml
 
+#Enable REST API
+api:
+
 # Enables configuration UI
 config:
 
