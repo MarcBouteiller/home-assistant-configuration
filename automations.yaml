@@ -14,7 +14,8 @@
   action:
     - service: input_number.set_value
       entity: input_number.closing_covers_delay
-      value: {{trigger.json.actions[0].value}}
+      data_template:
+        value: "{{ trigger.json.actions[0].value }}"
 
 - id: veilleuse
   alias: Veilleuse
