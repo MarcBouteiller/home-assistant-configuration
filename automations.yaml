@@ -13,8 +13,8 @@
       webhook_id: haslack
   action:
     - service: input_number.set_value
-      entity: input_number.closing_covers_delay
       data_template:
+        entity: input_number.closing_covers_delay
         value: "{{ trigger.json.actions[0].value }}"
 
 - id: veilleuse
