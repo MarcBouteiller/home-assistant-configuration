@@ -24,3 +24,4 @@ notifications_generic_title:
 
 temp_text:
   name: Temporary text
+  max: 255

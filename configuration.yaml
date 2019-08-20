@@ -25,6 +25,8 @@ api:
 # Enables configuration UI
 config:
 
+python_script:
+  
 lovelace:
   mode: yaml
 
