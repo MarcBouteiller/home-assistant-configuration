@@ -21,3 +21,6 @@ notifications_message_away_mode_off:
 
 notifications_generic_title:
   name: Titre générique de notification
+
+temp_text:
+  name: Temporary text
