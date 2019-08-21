@@ -16,7 +16,7 @@
     - service: input_number.set_value
       data_template:
         entity_id: input_number.closing_covers_delay
-        value_template: "{{ trigger.query.delay }}"
+        value: "{{ trigger.query.delay }}"
 
 - id: veilleuse
   alias: Veilleuse
