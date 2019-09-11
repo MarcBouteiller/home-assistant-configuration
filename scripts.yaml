@@ -149,6 +149,7 @@ notify_action:
           - title: "{{title|default('')}}"
             text: "{{message}}"
             color: "{{criticity|default('#03a9f4')}}"
+            callback_id: "callback-cover",
             actions:
               - name: ok
                 text: OK
