@@ -17,7 +17,10 @@
       data_template:
         entity_id: input_number.closing_covers_delay
         value: "{{ trigger.data.payload | regex_findall_index('\"value\":\"(.*?)\"', 0) | float }}"
-      
+    - service: rest_command.callback
+      data_template:
+        callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) }}"
+
 - id: veilleuse
   alias: Veilleuse
   trigger:

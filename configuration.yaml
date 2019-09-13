@@ -220,6 +220,10 @@ speedtestdotnet:
 
 fastdotcom:
 
+rest_command:
+  callback:
+    url: "{{ callback_url }}"
+
 panel_iframe:
   terminal:
     title: Terminal
