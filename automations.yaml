@@ -22,7 +22,7 @@
         value: "{{ trigger.data.payload | regex_findall_index('\"value\":\"(.*?)\"', 0) | float }}"
     - service: rest_command.callback
       data_template:
-        callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | | regex_replace('/{3}','') }}"
+        callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | regex_replace('/{3}','') }}"
 
 - id: veilleuse
   alias: Veilleuse
