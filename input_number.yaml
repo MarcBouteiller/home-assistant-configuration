@@ -87,5 +87,5 @@ closing_covers_delay:
   name: délai fermeture volets
   initial: 0
   unit_of_measurement: 'mn'
-  min: 0
+  min: -1
   max: 60

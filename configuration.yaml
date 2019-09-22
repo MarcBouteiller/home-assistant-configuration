@@ -223,6 +223,9 @@ fastdotcom:
 rest_command:
   callback:
     url: "{{ callback_url }}"
+    method: post
+    content_type: application/json
+    payload: "{{ payload }}"
 
 panel_iframe:
   terminal:

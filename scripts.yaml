@@ -20,7 +20,7 @@ positionner_volets:
         entity_id: group.all_covers
         position: "{{ position }}"
 
-fermeture_volets_nuit:
+sunset_closing_covers:
   alias: Fermeture volets nuit
   sequence:
     - condition: state
@@ -32,6 +32,11 @@ fermeture_volets_nuit:
     - delay: 00:01:00 #1 minute to answer
     - delay: '00:{{ states.input_number.closing_covers_delay.state | int }}:00'  
     - service: script.fermeture_volets
+    # Reset the value at end
+    - service: input_number.set_value
+      entity_id: input_number.closing_covers_delay
+      value: 0
+
 
 eteindre_prise_garage:
   alias: Eteindre prise du garage
@@ -159,6 +164,47 @@ notify_action:
                 text: Dans 10 min
                 type: button
                 value: 10
+
+notify_closing_covers:
+  alias: Notifie la fermeture des volets
+  sequence: 
+    service: notify.slack
+    data_template:
+      message: ""
+      target: 
+        - "{{target|default('#domotique')}}"
+      data:
+        attachments:
+          - title: "{{title|default('')}}"
+            text: "{{message}}"
+            color: "{{criticity|default('#03a9f4')}}"
+            callback_id: "callback-cover"
+            actions:
+              - name: ok
+                text: OK
+                type: button
+                value: 0
+              - name: ten
+                text: Dans 10 min
+                type: button
+                value: 10thirty
+              - name: twenty
+                text: Dans 20 min
+                type: button
+                value: 20
+              - name: stop
+                text: Stop !
+                type: button
+                value: -1
+
+callback_covers_notification:
+  alias: Retour de la réponse de fermeture des volets
+  sequence:
+    service: rest_command.callback
+    data_template:
+      url: "{{ callback_url }}"
+      payload: '{ "replace_original": true, "text": "{{mesage}}"}'
+      
 
 notify_high_temperature:
   alias: notification temperature haute
