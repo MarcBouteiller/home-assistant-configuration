@@ -25,7 +25,7 @@
     # Answer the slack action
     - service: script.callback_covers_notification
       data_template:
-        callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | regex_replace('/{3}','') }}"
+        callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | regex_replace('/{3}','') | regex_replace('\\\\')  }}"
         message: >
           {% if (states.input_number.closing_covers_delay.state)|int > 0 %}
             Ok ! Je repousse de {{states.input_number.closing_covers_delay.state}} min.

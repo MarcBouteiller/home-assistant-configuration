@@ -188,7 +188,7 @@ notify_closing_covers:
               - name: ten
                 text: Dans 10 min
                 type: button
-                value: 10thirty
+                value: 10
               - name: twenty
                 text: Dans 20 min
                 type: button
