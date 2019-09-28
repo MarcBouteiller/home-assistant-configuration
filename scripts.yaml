@@ -207,7 +207,7 @@ callback_covers_notification:
     - service: rest_command.callback
       data_template:
         url: "{{ callback_url }}"
-        payload: "{ \"replace_original\": true, \"text\": \"{{mesage}}\"}"
+        payload: "{ \"replace_original\": true, \"text\": \"{{message}}\"}"
       
 
 notify_high_temperature:

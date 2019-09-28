@@ -17,9 +17,6 @@
     - service: system_log.write
       data_template:
         message: "{{ trigger.data.payload }}"
-    - service: system_log.write
-      data_template:
-        message: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | regex_replace('/{3}','') | replace('\\/', '/') }}"
     # Set the value 
     - service: input_number.set_value
       data_template:
