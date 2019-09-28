@@ -201,10 +201,13 @@ notify_closing_covers:
 callback_covers_notification:
   alias: Retour de la réponse de fermeture des volets
   sequence:
-    service: rest_command.callback
-    data_template:
-      url: "{{ callback_url }}"
-      payload: '{ "replace_original": true, "text": "{{mesage}}"}'
+    - service: system_log.write
+      data_template:
+        message: "{{ callback_url }}"
+    - service: rest_command.callback
+      data_template:
+        url: "{{ callback_url }}"
+        payload: "{ \"replace_original\": true, \"text\": \"{{mesage}}\"}"
       
 
 notify_high_temperature:
