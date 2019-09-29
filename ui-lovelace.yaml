@@ -22,7 +22,7 @@ views:
     path: mobility
   
   - title: Meteo
-    icon: mdi:weather-partlycloudy
+    icon: mdi:weather-partly-cloudy
     cards: !include lovelace/ui-weather.yaml
     path: forecast
 
