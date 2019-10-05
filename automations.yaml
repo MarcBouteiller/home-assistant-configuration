@@ -42,7 +42,13 @@
     entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
     from: 'off'
     to: 'on'  
+  condition:
+    condition: state
+    entity_id: input_boolean.veilleuse
+    state: 'off'
   action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.veilleuse
     - service: light.turn_on
       data:
         entity_id: group.leds_livingroom
@@ -51,6 +57,8 @@
     - delay: 00:02:30
     - service: light.turn_off
       entity_id: group.leds_livingroom
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.veilleuse
 
 - id: night_mode_on
   alias: Déclenchement Mode nuit

@@ -27,3 +27,7 @@ notifications:
 camera_sejour_state:
   name: Caméra sejour
   icon: mdi:mdi:cctv
+veilleuse:
+  name: veilleuse
+  icon: mdi:spotlight-beam
+  initial: off
