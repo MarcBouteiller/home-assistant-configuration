@@ -161,6 +161,13 @@
       entity_id: switch.prise_garage
     - delay: 00:05:00
     - service: script.eteindre_prise_garage
+    - condition: state
+      entity_id: input_boolean.garage_charging
+      state: 'off'
+    - service: script.notify
+      data_template:
+        criticity: warning
+        message: "La voiture n'est pas en charge !"
 
 - id: car_charging
   alias: Recharge voiture
