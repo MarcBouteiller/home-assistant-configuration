@@ -167,7 +167,7 @@
     - service: script.notify
       data_template:
         criticity: warning
-        message: "La voiture n'est pas en charge !"
+        message: "La voiture n'est pas branchée !"
 
 - id: car_charging
   alias: Recharge voiture
