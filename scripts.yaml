@@ -3,21 +3,21 @@ fermeture_volets:
   sequence:
     - service: cover.close_cover
       data:
-        entity_id: group.all_covers
+        entity_id: all
 
 ouverture_volets:
   alias: Ouverture volets
   sequence:
     - service: cover.open_cover
       data:
-        entity_id: group.all_covers
+        entity_id: all
 
 positionner_volets:
   alias: Positionner les volets
   sequence:
     - service: cover.set_cover_position
       data_template:
-        entity_id: group.all_covers
+        entity_id: all
         position: "{{ position }}"
 
 sunset_closing_covers:
@@ -119,8 +119,8 @@ turn_on_light_if_cover_closed:
 turn_off_all_lights:
   alias: Extinction de toutes les lumières
   sequence:
-    - service: homeassistant.turn_off
-      entity_id: group.all_lights
+    - service: light.turn_off
+      entity_id: all
     - service: switch.turn_off
       entity_id: switch.neo_coolcam_power_plug_12a_switch_3
     - service: switch.turn_off
