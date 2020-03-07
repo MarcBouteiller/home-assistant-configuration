@@ -392,8 +392,8 @@
       data:
         entity_id: group.all_covers
 
-- id: remote_spot_management
-  alias: Gestion des spots Télécommande
+- id: remote_spot_management_off
+  alias: Turn off 
   trigger:
     platform: event
     event_type: zwave.scene_activated
@@ -406,8 +406,8 @@
       data:
         entity_id: light.spots_led
 
-- id: remote_spot_management
-  alias: Gestion des spots Télécommande
+- id: remote_spot_management_next
+  alias: Remote change spot lights
   trigger:
     platform: event
     event_type: zwave.scene_activated
