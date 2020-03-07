@@ -390,7 +390,7 @@
   action:
     - service: cover.open_cover
       data:
-        entity_id: group.all_covers
+        entity_id: all
 
 - id: remote_spot_management_off
   alias: Turn off 
