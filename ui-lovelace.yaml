@@ -1,4 +1,7 @@
 name: Nouvoitou
+resources:
+  - url: /www/community/lovelace-auto-entities/auto-entities.js
+    type: module
 views:
   - title: Aperçu
     icon: mdi:home-assistant
