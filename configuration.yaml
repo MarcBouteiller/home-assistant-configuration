@@ -55,7 +55,6 @@ device_tracker:
     interval_seconds: 30
     new_device_defaults:
       track_new_devices: false
-      hide_if_away: true
   - platform: bluetooth_le_tracker
     track_new_devices: true
 
