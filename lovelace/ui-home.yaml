@@ -49,3 +49,13 @@
           name: Bureau       
     - type: media-control
       entity: media_player.salon
+    - type: custom:auto-entities
+      card:
+        type: entities
+        title: Livraison
+      show_empty: false
+      filter:
+        include:
+          - entity_id:  sensor.*track_package_*
+            options:
+              secondary-info: last-changed
