@@ -479,7 +479,7 @@
 
 
 - id: notify_package_undelivered
-  alias: Notifier colis livre
+  alias: Notifier colis non livre
   trigger:
     platform: state
     entity_id: sensor.seventeentrack_packages_undelivered
