@@ -27,6 +27,9 @@ config:
 
 lovelace:
   mode: yaml
+  resources:
+  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+    type: module    
 
 http:
   # Secrets are defined in the file secrets.yaml
