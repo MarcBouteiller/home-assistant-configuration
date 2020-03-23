@@ -456,7 +456,7 @@
     entity_id: sensor.seventeentrack_packages_in_transit
   condition:
     - condition: template
-      value_template: '{{trigger.to_state.state > 0 and trigger.to_state.state > trigger.from_state.state }}'
+      value_template: '{{trigger.to_state.state|int > 0 and trigger.to_state.state|int > trigger.from_state.state|int }}'
   action:
     - service: script.notify
       data_template:
@@ -470,7 +470,7 @@
     entity_id: sensor.seventeentrack_packages_delivered
   condition:
     - condition: template
-      value_template: '{{trigger.to_state.state > 0 and trigger.to_state.state > trigger.from_state.state }}'
+      value_template: '{{trigger.to_state.state|int > 0 and trigger.to_state.state|int > trigger.from_state.state|int }}'
   action:
     - service: script.notify
       data_template:
@@ -485,7 +485,7 @@
     entity_id: sensor.seventeentrack_packages_undelivered
   condition:
     - condition: template
-      value_template: '{{trigger.to_state.state > 0 and trigger.to_state.state > trigger.from_state.state }}'
+      value_template: '{{trigger.to_state.state|int > 0 and trigger.to_state.state|int > trigger.from_state.state|int }}'
   action:
     - service: script.notify
       data_template:
@@ -499,7 +499,7 @@
     entity_id: sensor.seventeentrack_packages_ready_to_be_picked_up
   condition:
     - condition: template
-      value_template: '{{trigger.to_state.state > 0 and trigger.to_state.state > trigger.from_state.state }}'
+      value_template: '{{trigger.to_state.state|int > 0 and trigger.to_state.state|int > trigger.from_state.state|int }}'
   action:
     - service: script.notify
       data_template:
