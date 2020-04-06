@@ -506,3 +506,14 @@
         criticity: success
         message: "Un colis est en attente de retrait !"
 
+- id: open_desk_cover_intent
+  alias: Ouverture volet bureau intent
+  trigger:
+    platform: event
+    event_type: rhasspy_SetCoverState
+    event_data:
+      name: bureau
+      state: ouvre
+  action:
+    - service: cover.open_cover
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
