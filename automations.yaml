@@ -517,3 +517,15 @@
   action:
     - service: cover.open_cover
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+
+- id: close_desk_cover_intent
+  alias: Fermeture volet bureau intent
+  trigger:
+    platform: event
+    event_type: rhasspy_SetCoverState
+    event_data:
+      name: bureau
+      state: ferme
+  action:
+    - service: cover.open_cover
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
