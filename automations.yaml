@@ -506,6 +506,18 @@
         criticity: success
         message: "Un colis est en attente de retrait !"
 
+- id: rhasspy_listening
+  alias: rhasspy écoute
+  trigger:
+    platform: webhook
+    webhook_id: rhasspy_awake
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.bandeau_led
+        brightness: 255
+        color_name: blue   
+
 - id: open_desk_cover_intent
   alias: Ouverture volet bureau intent
   trigger:
@@ -515,9 +527,12 @@
       name: bureau
       state: ouvre
   action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bandeau_led
     - service: cover.open_cover
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
-
+    
 - id: close_desk_cover_intent
   alias: Fermeture volet bureau intent
   trigger:
@@ -527,5 +542,8 @@
       name: bureau
       state: ferme
   action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bandeau_led
     - service: cover.open_cover
       entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
