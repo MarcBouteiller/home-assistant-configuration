@@ -138,7 +138,7 @@ notify:
         blocks:
           - type: section
             text: 
-              type: mrkdown
+              type: mrkdwn
               emoji: true
               text: "*{{title|default('')}}*"
           - type: section
