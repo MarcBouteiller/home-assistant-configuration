@@ -139,12 +139,10 @@ notify:
           - type: section
             text: 
               type: mrkdwn
-              emoji: true
               text: "*{{title|default('')}}*"
           - type: section
             text:
               type: plain_text
-              emoji: true
               text: "{{message}}"
 
         # file:
