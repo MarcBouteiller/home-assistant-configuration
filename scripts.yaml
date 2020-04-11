@@ -131,14 +131,22 @@ notify:
   sequence: 
     service: notify.slack
     data_template:
-      message: ""
+      # message: ""
       target: 
         - "{{target|default('#domotique')}}"
       data:
-        attachments:
-          - title: "{{title|default('')}}"
-            text: "{{message}}"
-            color: "{{criticity|default('#03a9f4')}}"
+        blocks:
+          - type: section
+            text: 
+              type: mrkdown
+              emoji: true
+              text: "*{{title|default('')}}*"
+          - type: section
+            text:
+              type: plain_text
+              emoji: true
+              text: "{{message}}"
+
         # file:
         #   path: "{{file}}"
 
