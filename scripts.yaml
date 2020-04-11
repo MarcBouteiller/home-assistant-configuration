@@ -238,9 +238,10 @@ test_notify:
   sequence:
     service: script.notify
     data_template:
-      #title: "TEST"
+      title: "TEST"
       message: "Ceci est un test :construction_worker:"
-      # file: "/config/tmp/test.jpg"
+      data:
+        file: "/config/tmp/snapshot_sejour_1.jpg"
 
 snapshot_cameras:
   sequence:
@@ -254,3 +255,16 @@ snapshot_cameras:
       data:
         entity_id: camera.salon
         filename: 'tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
+
+notify_snapshot_cameras:
+  sequence:
+    - service: script.snapshot_cameras
+    - service: notify.slack
+      data:
+        message: ""
+        file: "/config/tmp/snapshot_sejour_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg"
+    - service: notify.slack
+      data:
+        message: ""
+        file: "/config/tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg"
+    

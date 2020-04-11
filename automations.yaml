@@ -290,14 +290,11 @@
       entity_id: input_boolean.away_mode
       state: 'on'
   action:
-    - service: camera.snapshot
-      data:
-        entity_id: camera.salon
-        filename: "tmp/snap_{{now()}}.jpg"    
     - service: script.notify
       data_template:
         title: "{{ states.input_text.notifications_title_presence.state }}"
         message: "{{ states.input_text.notifications_message_presence.state }}"
+    - service: script.notify_snapshot_cameras
 
 - id: opening_cover_at_morning_away
   alias: Ouverture matinale des volets (Absence)
