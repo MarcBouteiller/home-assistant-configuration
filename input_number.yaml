@@ -89,3 +89,9 @@ closing_covers_delay:
   unit_of_measurement: 'mn'
   min: -1
   max: 60
+
+snapshot_cameras_counter:
+  name: compteur snapshot sejour
+  initial: 0
+  min: 0
+  max: 10000

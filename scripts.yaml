@@ -241,3 +241,14 @@ test_notify:
       #title: "TEST"
       message: "Ceci est un test :construction_worker:"
       # file: "/config/tmp/test.jpg"
+
+snapshot_cameras:
+  sequence:
+    - service: input_number.increment
+      entity_id: input_number.snapshot_cameras_counter
+    - service: camera.snapshot
+      entity_id: camera.sejour
+      filename: 'tmp/snapshot_sejour_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
+    - service: camera.snapshot
+      entity_id: camera.salon
+      filename: 'tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
