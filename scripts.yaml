@@ -260,11 +260,11 @@ notify_snapshot_cameras:
   sequence:
     - service: script.snapshot_cameras
     - service: notify.slack
+      message: ""
       data:
-        message: ""
         file: "/config/tmp/snapshot_sejour_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg"
     - service: notify.slack
+      message: ""
       data:
-        message: ""
         file: "/config/tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg"
     
