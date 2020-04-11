@@ -247,8 +247,10 @@ snapshot_cameras:
     - service: input_number.increment
       entity_id: input_number.snapshot_cameras_counter
     - service: camera.snapshot
-      entity_id: camera.sejour
-      filename: 'tmp/snapshot_sejour_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
+      data:
+        entity_id: camera.sejour
+        filename: 'tmp/snapshot_sejour_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
     - service: camera.snapshot
-      entity_id: camera.salon
-      filename: 'tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
+      data:
+        entity_id: camera.salon
+        filename: 'tmp/snapshot_salon_{{states.input_number.snapshot_cameras_counter.state|int}}.jpg'
