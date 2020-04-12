@@ -138,8 +138,8 @@ notify:
         blocks:
           - type: section
             text: 
-              type: mrkdwn
-              text: "*{{title|default('')}}*"
+              type: plain_text
+              text: "{{title|default('Nouvelle notification')}}"
           - type: section
             text:
               type: plain_text
