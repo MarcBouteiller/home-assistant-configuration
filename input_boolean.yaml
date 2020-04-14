@@ -16,14 +16,12 @@ holiday_mode:
 cover_mode:
   name: Volets auto
   icon: mdi:brightness-auto
-  initial: on
 garage_charging:
   name: En charge
   icon: mdi:battery-charging-30
 notifications:
   name: Notifications
   icon: mdi:message-alert
-  initial: on
 camera_sejour_state:
   name: Caméra sejour
   icon: mdi:mdi:cctv
