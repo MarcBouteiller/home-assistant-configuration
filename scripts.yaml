@@ -139,7 +139,7 @@ notify:
           - type: section
             text: 
               type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
-              text: "{{ title if ((title | length) > 0) else message }}"
+              text: "{{ ('*' + title + '*') if ((title | length) > 0) else message }}"
           - type: section
             text:
               type: plain_text
