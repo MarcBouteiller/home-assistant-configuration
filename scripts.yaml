@@ -135,17 +135,15 @@ notify:
       target: 
         - "{{target|default('#domotique')}}"
       data:
-        blocks: >
-          {% if title %}
+        blocks:
           - type: section
             text: 
-              type: plain_text
-              text: "{{title|default('Nouvelle notification')}}"
-          {% endif %}
+              type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
+              text: "{{ title if ((title | length) > 0) else message }}"
           - type: section
             text:
               type: plain_text
-              text: "{{message}}"
+              text: "{{ message if ((title | length) > 0) else '' }}"
 
         # file:
         #   path: "{{file}}"
