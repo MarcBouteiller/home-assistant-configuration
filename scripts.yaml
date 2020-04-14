@@ -143,7 +143,7 @@ notify:
           - type: section
             text:
               type: plain_text
-              text: "{{ message if ((title | length) > 0) else '' }}"
+              text: "{{ message if ((title | length) > 0) else '---' }}"
 
         # file:
         #   path: "{{file}}"
