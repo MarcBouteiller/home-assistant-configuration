@@ -25,12 +25,8 @@ api:
 # Enables configuration UI
 config:
 
-lovelace:
-  mode: yaml
-  resources:
-  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
-    type: module    
-
+lovelace: !include lovelace.yaml
+  
 http:
   # Secrets are defined in the file secrets.yaml
   base_url: !secret base_url
