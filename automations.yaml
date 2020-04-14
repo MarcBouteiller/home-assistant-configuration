@@ -27,7 +27,7 @@
       data_template:
         callback_url: "{{ trigger.data.payload | regex_findall_index('\"response_url\":\"(.*?)\"', 0) | regex_replace('%5C') | regex_replace('/{3}','') | replace('\\/', '/')  }}"
         message: >
-          {% if (states.input_number.closing_covers_delay.state)|int > 0 %}
+          s if (states.input_number.closing_covers_delay.state)|int > 0 %}
             Ok ! Je repousse de {{states.input_number.closing_covers_delay.state}} min.
           {% elif is_state('input_number.closing_covers_delay', 0) %}
             Ok ! On se laisse faire :)

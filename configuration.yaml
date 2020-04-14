@@ -93,6 +93,7 @@ recorder:
       - sensor.power_prise_garage
       - sensor.speedtest_download
       - sensor.speedtest_upload
+      - sensor.speedtest_ping
       - sensor.fast_com_download
       - sensor.month_car_charge
       - sensor.day_car_charge

@@ -31,8 +31,8 @@
         green: 85
         yellow: 50
         red: 0
-- type: history-graph
-  title: Internet        
+- type: custom:mini-graph-card
+  name: Internet        
   entities:
     - sensor.speedtest_download
     - sensor.speedtest_upload
