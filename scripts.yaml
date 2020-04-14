@@ -135,18 +135,20 @@ notify:
       target: 
         - "{{target|default('#domotique')}}"
       data:
-        blocks:
-          - type: section
-            text: 
-              type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
-              text: "{{ ('*' + title + '*') if ((title | length) > 0) else message }}"
-          - type: section
-            text:
-              type: plain_text
-              text: "{{ message if ((title | length) > 0) else '---' }}"
-
-        # file:
-        #   path: "{{file}}"
+        attachments:
+          - title: "{{title|default('')}}"
+            text: "{{message}}"
+            color: "{{criticity|default('#03a9f4')}}"
+      # data:
+      #   blocks:
+      #     - type: section
+      #       text: 
+      #         type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
+      #         text: "{{ ('*' + title + '*') if ((title | length) > 0) else message }}"
+      #     - type: section
+      #       text:
+      #         type: plain_text
+      #         text: "{{ message if ((title | length) > 0) else '---' }}"
 
 notify_action:
   alias: Slack notificator with actions
