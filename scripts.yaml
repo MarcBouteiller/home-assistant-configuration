@@ -135,11 +135,13 @@ notify:
       target: 
         - "{{target|default('#domotique')}}"
       data:
-        blocks:
+        blocks: >
+          {% if title %}
           - type: section
             text: 
               type: plain_text
               text: "{{title|default('Nouvelle notification')}}"
+          {% endif %}
           - type: section
             text:
               type: plain_text
