@@ -1,5 +1,6 @@
 
 - type: horizontal-stack
+  title: Internet
   cards:
     - type: gauge
       entity: sensor.speedtest_download
@@ -32,7 +33,7 @@
         yellow: 50
         red: 0
 - type: custom:mini-graph-card
-  name: Internet        
+  name: Débits
   entities:
     - sensor.speedtest_download
     - sensor.speedtest_upload
@@ -49,7 +50,7 @@
             - sensor.disk_use_percent
             - sensor.memory_use_percent
             - sensor.processor_use
-        - type: history-graph
+        - type: custom:mini-graph-card
           entities:
             - sensor.processor_use
             - sensor.memory_use_percent
