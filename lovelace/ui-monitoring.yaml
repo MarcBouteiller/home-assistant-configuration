@@ -33,6 +33,7 @@
         yellow: 50
         red: 0
 - type: custom:mini-graph-card
+  hour24: true
   name: Débits
   entities:
     - sensor.speedtest_download
@@ -51,6 +52,8 @@
             - sensor.memory_use_percent
             - sensor.processor_use
         - type: custom:mini-graph-card
+          hour24: true
+          extrema: true
           entities:
             - sensor.processor_use
             - sensor.memory_use_percent
