@@ -23,7 +23,7 @@
             operator: ">=" 
         card: 
           type: glance
-          columns: 8
+          columns: 6
 
     - type: horizontal-stack
       cards:
