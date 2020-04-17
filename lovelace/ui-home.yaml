@@ -1,23 +1,29 @@
 - type: vertical-stack
   cards:
-    - type: entity-filter
-      entities:
-        - entity: device_tracker.amazfit_bip_marc
-          name: Marc
-        - entity:  device_tracker.mi_band_2
-          name: Eva
-        - input_boolean.away_mode
-        - input_boolean.night_mode
-        - input_boolean.garage_charging
-        - group.all_covers
-      state_filter:
-        - "on"
-        - "home"
-        - "closed"
-        - "open"
-      card: 
-        type: glance
-        columns: 6
+    - type: horizontal-stack
+      cards:
+      - type: entity-filter
+        entities:
+          - entity: device_tracker.amazfit_bip_marc
+            name: Marc
+          - entity:  device_tracker.mi_band_2
+            name: Eva
+          - input_boolean.away_mode
+          - input_boolean.night_mode
+          - input_boolean.garage_charging
+          - sensor.dark_sky_apparent_temperature
+          - sensor.fibaro_system_fgms001_motion_sensor_temperature
+          - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+        state_filter:
+          - value: "on"
+          - value: "home"
+          - value: "closed"
+          - value: "open"
+          - value: -20
+            operator: ">=" 
+        card: 
+          type: glance
+          columns: 8
 
     - type: horizontal-stack
       cards:
@@ -28,11 +34,14 @@
         entity: light.livingrooms_led
         name: Lampes salon
 
-    - title: Actions
-      type: entities
-      entities:
-        - script.ouverture_volets
-        - script.fermeture_volets
+    - type: horizontal-stack
+      cards:
+        - type: button
+          icon: mdi:window-shutter
+          entity: script.fermeture_volets
+        - type: button
+          icon: mdi:window-shutter-open
+          entity: script.ouverture_volets
 
     - title: Lumières
       type: entities
