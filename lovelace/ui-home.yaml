@@ -38,10 +38,14 @@
       cards:
         - type: button
           icon: mdi:window-shutter
-          tap_action: script.fermeture_volets
+          tap_action:
+            action: call-service 
+            service: script.fermeture_volets
         - type: button
           icon: mdi:window-shutter-open
-          tap_action: script.ouverture_volets
+          tap_action:
+            action: call-service 
+            service: script.ouverture_volets
 
     - title: Lumières
       type: entities
