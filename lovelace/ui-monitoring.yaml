@@ -65,14 +65,10 @@
       entities:
         - entity: sensor.fibaro_system_fgms001_motion_sensor_battery_level
           name: Motion sensor
-          type: custom:battery-entity
         - entity: sensor.fibaro_system_fgsd002_smoke_sensor_battery_level
           name: Smoke sensor étage
-          type: custom:battery-entity
         - entity: sensor.fibaro_system_fgms001_motion_sensor_battery_level_2
           name: Smoke sensor RDC
-          type: custom:battery-entity
         - entity: sensor.hank_hkzw_scn04_scene_controller_battery_level
           name: Télécommande
-          type: custom:battery-entity
         
