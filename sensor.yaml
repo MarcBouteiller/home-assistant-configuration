@@ -82,44 +82,6 @@
       icon_template: mdi:weather-sunset-up
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%d/%m/%Y %H:%M',true)}}"
 
-    ## BATTERIES ##
-    smoke_sensor_upstair_battery:
-      friendly_name: Batterie détecteur fumée étage
-      value_template: "{{ state_attr('zwave.fibaro_system_fgsd002_smoke_sensor','battery_level') }}"
-      unit_of_measurement: '%'
-      icon_template: >-
-        {% if state_attr('zwave.fibaro_system_fgsd002_smoke_sensor','battery_level')|int < 10 %}
-          mdi:battery-alert
-        {% elif is_state_attr('zwave.fibaro_system_fgsd002_smoke_sensor', 'battery_level', 100) %}
-          mdi:battery
-        {% else %}
-          mdi:battery-{{(state_attr('zwave.fibaro_system_fgsd002_smoke_sensor','battery_level')|int // 10) * 10}}
-        {% endif %}
-    motion_sensor_battery:
-      friendly_name: Batterie Motion Sensor
-      value_template: "{{ state_attr('zwave.fibaro_system_fgms001_motion_sensor','battery_level')}}"
-      unit_of_measurement: '%'
-      icon_template: >-
-        {% if state_attr('zwave.fibaro_system_fgms001_motion_sensor','battery_level')|int < 10 %}
-          mdi:battery-alert
-        {% elif is_state_attr('zwave.fibaro_system_fgms001_motion_sensor', 'battery_level', 100) %}
-          mdi:battery
-        {% else %}
-          mdi:battery-{{(state_attr('zwave.fibaro_system_fgms001_motion_sensor','battery_level')|int // 10) * 10}}
-        {% endif %}
-    remote_hank_battery:
-      friendly_name: Batterie Télécommande
-      value_template: "{{ state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')}}"
-      unit_of_measurement: '%'
-      icon_template: >-
-        {% if state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')|int < 10 %}
-          mdi:battery-alert
-        {% elif is_state_attr('zwave.hank_hkzw_scn04_scene_controller', 'battery_level', 100) %}
-          mdi:battery
-        {% else %}
-          mdi:battery-{{(state_attr('zwave.hank_hkzw_scn04_scene_controller','battery_level')|int // 10) * 10}}
-        {% endif %}
-
     ## WAZE
     waze_dm_roads:
       entity_id: sensor.waze_dm
