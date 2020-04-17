@@ -59,7 +59,7 @@
             - sensor.memory_use_percent
     
 - type: horizontal-stack
-  name: Batteries
+  title: Batteries
   cards:
     - type: entities
       entities:
