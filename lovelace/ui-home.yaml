@@ -11,7 +11,8 @@
           - input_boolean.away_mode
           - input_boolean.night_mode
           - input_boolean.garage_charging
-          - sensor.dark_sky_apparent_temperature
+          - entity: sensor.dark_sky_apparent_temperature
+            name: Extérieur
           - sensor.fibaro_system_fgms001_motion_sensor_temperature
           - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
         state_filter:
@@ -38,11 +39,13 @@
       cards:
         - type: button
           icon: mdi:window-shutter
+          name: Fermeture volets
           tap_action:
             action: call-service 
             service: script.fermeture_volets
         - type: button
           icon: mdi:window-shutter-open
+          name: Ouverture volets
           tap_action:
             action: call-service 
             service: script.ouverture_volets
