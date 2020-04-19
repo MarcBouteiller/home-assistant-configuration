@@ -2,7 +2,5 @@ mode: yaml
 resources:
   - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
     type: module    
-  - url: /hacsfiles/lovelace-battery-entity/battery-entity.js?v=0.2
-    type: module
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module

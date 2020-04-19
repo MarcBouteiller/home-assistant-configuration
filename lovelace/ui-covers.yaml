@@ -39,6 +39,6 @@
     - input_number.covers_position
 
 - title: Luminosité
-  type: history-graph
+  type: custom:mini-graph-card
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_luminance
