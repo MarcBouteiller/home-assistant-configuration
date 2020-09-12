@@ -140,7 +140,7 @@ notify:
       #       text: "{{message}}"
       #       color: "{{criticity|default('#03a9f4')}}"
       data:
-        blocks:
+        blocks_template:
           - type: section
             text: 
               type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
