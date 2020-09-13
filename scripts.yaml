@@ -131,7 +131,8 @@ notify:
   sequence: 
     service: notify.slack
     data_template:
-      message: ""
+      message: "{{message}}"
+      title: "{{title}}"
       target: 
         - "{{target|default('#domotique')}}"
       # data:
