@@ -137,13 +137,6 @@ map:
 # Track the sun
 sun:
 
-switch:
-  - platform: broadlink
-    mac: '34:EA:34:9D:27:5C'
-    switches:
-      - name: Prise garage
-      
-
 cast:
   media_player:
     - host: 192.168.0.40
