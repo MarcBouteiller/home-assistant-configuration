@@ -32,7 +32,7 @@ sunset_closing_covers:
     - delay: 00:01:00 #1 minute to answer
     - delay: '00:{{ states.input_number.closing_covers_delay.state | int }}:00'  
     - service: script.fermeture_volets
-    # Reset the value at end
+    # Reset the value at end
     - service: input_number.set_value
       data:
         entity_id: input_number.closing_covers_delay
@@ -130,24 +130,26 @@ notify:
   alias: Slack notificator
   sequence: 
     service: notify.slack
-    data:
+    data_template:
       message: "{{message}}"
       title: "{{title}}"
       target: 
         - "{{target|default('#domotique')}}"
-      blocks_template: >
-        {% if (title | length) > 0 %}
-        - type: section
-          text: 
-            type: mrkdwn
-            text: "*{{ title }}*"
-        {% endif %}
-        {% if (message | length) > 0 %}
-        - type: section
-          text:
-            type: plain_text
-            text: "{{ message }}"
-        {% endif %}
+      # data:
+      #   attachments:
+      #     - title: "{{title|default('')}}"
+      #       text: "{{message}}"
+      #       color: "{{criticity|default('#03a9f4')}}"
+      data:
+        blocks_template:
+          - type: section
+            text: 
+              type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
+              text: "{{ ('*' + title + '*') if ((title | length) > 0) else message }}"
+          - type: section
+            text:
+              type: plain_text
+              text: "{{ message if ((title | length) > 0) else '---' }}"
 
 notify_action:
   alias: Slack notificator with actions
