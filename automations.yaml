@@ -195,7 +195,12 @@
     - platform: event
       event_type: car_charge_started
   action:
-    - service_template: "input_boolean.turn_{{ trigger.event.data.state ? 'on' : 'off' }}"
+    - service_template: >
+        {% if trigger.event.data.state %}
+          input_boolean.turn_on
+        {% else %}
+          input_boolean.turn_off
+        {% endif %}
       entity_id: input_boolean.car_charging
 
 - id: car_charging
