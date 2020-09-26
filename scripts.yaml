@@ -130,7 +130,7 @@ notify:
   alias: Slack notificator
   sequence: 
     service: notify.slack
-    data_template:
+    data:
       message: "{{message}}"
       title: "{{title}}"
       target: 
