@@ -135,16 +135,19 @@ notify:
       title: "{{title}}"
       target: 
         - "{{target|default('#domotique')}}"
-      data:
-        blocks_template:
-          - type: section
-            text: 
-              type: "{{ 'mrkdwn' if ((title | length) > 0) else 'plain_text' }}"
-              text: "{{ ('*' + title + '*') if ((title | length) > 0) else message }}"
-          - type: section
-            text:
-              type: plain_text
-              text: "{{ message if ((title | length) > 0) else '---' }}"
+      blocks_template: >
+        {% if (title | length) > O %}
+        - type: section
+          text: 
+            type: mrkdwn
+            text: "*{{ title }}*"
+        {% endif %}
+        {% if (message | length) > 0 %}
+        - type: section
+          text:
+            type: plain_text
+            text: "{{ message }}"
+        {% endif %}
 
 notify_action:
   alias: Slack notificator with actions
