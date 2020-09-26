@@ -136,7 +136,7 @@ notify:
       target: 
         - "{{target|default('#domotique')}}"
       blocks_template: >
-        {% if (title | length) > O %}
+        {% if (title | length) > 0 %}
         - type: section
           text: 
             type: mrkdwn
