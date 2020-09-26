@@ -164,7 +164,7 @@
         minutes: 5
     - event: car_charge_started
       event_data:
-        state: {{ wait.completed }}
+        state: "{{ wait.completed }}"
     
 - id: notify_car_charging
   alias: Notification Charge voiture

@@ -135,11 +135,6 @@ notify:
       title: "{{title}}"
       target: 
         - "{{target|default('#domotique')}}"
-      # data:
-      #   attachments:
-      #     - title: "{{title|default('')}}"
-      #       text: "{{message}}"
-      #       color: "{{criticity|default('#03a9f4')}}"
       data:
         blocks_template:
           - type: section
