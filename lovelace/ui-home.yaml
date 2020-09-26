@@ -10,7 +10,7 @@
             name: Eva
           - input_boolean.away_mode
           - input_boolean.night_mode
-          - input_boolean.garage_charging
+          - input_boolean.car_charging
           - entity: sensor.dark_sky_apparent_temperature
             name: Extérieur
           - sensor.fibaro_system_fgms001_motion_sensor_temperature

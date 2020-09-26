@@ -151,23 +151,52 @@
       data:
         entity_id: input_boolean.away_mode
 
-- id: start_power
-  alias: Allumage prise
+- id: start_charging_car
+  alias: Recharge voiture
   trigger:
     platform: time
     at: '22:00:00'
   action:
     - service: switch.turn_on
       entity_id: switch.prise_garage
-    - delay: 00:05:00
-    - service: script.eteindre_prise_garage
-    - condition: state
-      entity_id: input_boolean.garage_charging
-      state: 'off'
-    - service: script.notify
-      data_template:
-        criticity: warning
-        message: "La voiture n'est pas branchée !"
+    - wait_template: "{{ states.sensor.power_prise_garage.state|int > 1500}}"
+      timeout: 
+        minutes: 5
+    - event: car_charge_started
+      event_data:
+        state: {{ wait.completed }}
+    
+- id: notify_car_charging
+  alias: Notification Charge voiture
+  trigger:
+    - platform: event
+      event_type: car_charge_started
+  action:
+    - choose: 
+        - conditions:
+            - condition: template
+              value_template: "{{ !trigger.event.data.state }}"
+          sequence:
+            - service: script.notify
+              data_template:
+                criticity: warning
+                message: "La voiture n'est pas branchée !"
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.state }}"
+          sequence:
+            - service: script.notify
+              data_template:
+                message: ":electric_plug: La voiture est en charge !"
+
+- id: set_car_charging_state
+  alias: definir etat de charge voiture
+  trigger:
+    - platform: event
+      event_type: car_charge_started
+  action:
+    - service: "input_boolean.turn_{{ trigger.event.data.state ? 'on' : 'off' }}"
+      entity_id: input_boolean.car_charging
 
 - id: car_charging
   alias: Recharge voiture
@@ -177,7 +206,7 @@
     above: 1500
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.garage_charging
+      entity_id: input_boolean.car_charging
     - service: script.notify_car_charging
     - delay: 
         minutes: "{{states.sensor.charge_estimated_time_minute.state}}"
@@ -192,11 +221,11 @@
     below: 500
   condition:
     - condition: state
-      entity_id: input_boolean.garage_charging
+      entity_id: input_boolean.car_charging
       state: 'on'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.garage_charging
+      entity_id: input_boolean.car_charging
     - delay: 00:01:00
     - service: script.eteindre_prise_garage
     - service: script.notify_car_charged

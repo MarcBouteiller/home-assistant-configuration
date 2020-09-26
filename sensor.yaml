@@ -119,7 +119,7 @@
 
 - platform: history_stats
   name: month_count_car_charge
-  entity_id: input_boolean.garage_charging
+  entity_id: input_boolean.car_charging
   state: 'on'
   type: count
   start: '{{ now().replace(day=1).replace(hour=0).replace(minute=0).replace(second=0) }}'
@@ -127,7 +127,7 @@
 
 - platform: history_stats
   name: month_car_charge
-  entity_id: input_boolean.garage_charging
+  entity_id: input_boolean.car_charging
   state: 'on'
   type: time
   start: '{{ now().replace(day=1).replace(hour=0).replace(minute=0).replace(second=0) }}'
@@ -135,7 +135,7 @@
 
 - platform: history_stats
   name: day_car_charge
-  entity_id: input_boolean.garage_charging
+  entity_id: input_boolean.car_charging
   state: 'on'
   type: time
   end: '{{ now() }}'
