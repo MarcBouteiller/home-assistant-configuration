@@ -32,29 +32,29 @@ group.all_covers:
   friendly_name: Volets
   device_class: cover
 
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level:
+cover.fgrm222_roller_shutter_controller_2_level:
   friendly_name: Baie salon
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2:
+cover.fgrm222_roller_shutter_controller_2_level_2:
   friendly_name: Porte cuisine
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3:
+cover.fgrm222_roller_shutter_controller_2_level_3:
   friendly_name: Chambre RDC
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4:
+cover.fgrm222_roller_shutter_controller_2_level_4:
   friendly_name: Cuisine  
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5:
+cover.fgrm222_roller_shutter_controller_2_level_5:
   friendly_name: Séjour
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6:
+cover.fgrm222_roller_shutter_controller_2_level_6:
   friendly_name: Escalier
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7:
+cover.fgrm222_roller_shutter_controller_2_level_7:
   friendly_name: Pano salon
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8:
+cover.fgrm222_roller_shutter_controller_2_level_8:
   friendly_name: Bureau
-cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_9:
+cover.fgrm222_roller_shutter_controller_2_level_9:
   friendly_name: Chambre Martin
 
 # Sensors
-sensor.fibaro_system_fgms001_motion_sensor_temperature:
+sensor.fgms001_motion_sensor_temperature:
   friendly_name: RDC
-sensor.fibaro_system_fgsd002_smoke_sensor_temperature:
+sensor.fgsd002_smoke_sensor_temperature:
   friendly_name: Etage
 sensor.month_count_car_charge:
   friendly_name: Nombre de recharge

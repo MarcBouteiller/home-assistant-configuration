@@ -39,7 +39,7 @@
   alias: Veilleuse
   trigger:
     platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    entity_id: binary_sensor.fgms001_motion_sensor_sensor
     from: 'off'
     to: 'on'  
   condition:
@@ -239,7 +239,7 @@
   alias: Ouverture du volet salon
   trigger:
     platform: state
-    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+    entity_id: cover.fgrm222_roller_shutter_controller_2_level
     to: 'open'
   action:
     - service: input_boolean.turn_off
@@ -255,7 +255,7 @@
   alias: Ouverture du volet bureau
   trigger:
     platform: state
-    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+    entity_id: cover.fgrm222_roller_shutter_controller_2_level_8
     to: 'open'
   action:
     - service: light.turn_off
@@ -316,7 +316,7 @@
   alias: Detection de présence
   trigger:
     platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    entity_id: binary_sensor.fgms001_motion_sensor_sensor
     from: 'off'
     to: 'on'
   condition:
@@ -340,7 +340,7 @@
       entity_id: input_boolean.away_mode
       state: 'on'
     - condition: state
-      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      entity_id: cover.fgrm222_roller_shutter_controller_2_level
       state: 'closed'
     - condition: state
       entity_id: input_boolean.cover_mode
@@ -468,7 +468,7 @@
   alias: Alerte basse température
   trigger:
     platform: template
-    value_template: "{{ (states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state|float) <= (states.input_number.low_alert_temperature.state|float) }}"
+    value_template: "{{ (states.sensor.fgms001_motion_sensor_temperature.state|float) <= (states.input_number.low_alert_temperature.state|float) }}"
   action:
     - service: script.notify_low_temperature
 
@@ -476,7 +476,7 @@
   alias: Alerte haute température
   trigger:
     platform: template
-    value_template: "{{ (states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state|float) >= (states.input_number.high_alert_temperature.state|float) }}"
+    value_template: "{{ (states.sensor.fgms001_motion_sensor_temperature.state|float) >= (states.input_number.high_alert_temperature.state|float) }}"
   action:
     - service: script.notify_high_temperature
 
@@ -562,7 +562,7 @@
       data:
         entity_id: light.bandeau_led
     - service: cover.open_cover
-      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+      entity_id: cover.fgrm222_roller_shutter_controller_2_level_8
     
 - id: close_desk_cover_intent
   alias: Fermeture volet bureau intent
@@ -577,4 +577,4 @@
       data:
         entity_id: light.bandeau_led
     - service: cover.open_cover
-      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
+      entity_id: cover.fgrm222_roller_shutter_controller_2_level_8

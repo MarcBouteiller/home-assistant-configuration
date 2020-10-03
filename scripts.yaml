@@ -106,7 +106,7 @@ turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant
   sequence:
     - condition: state
-      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      entity_id: cover.fgrm222_roller_shutter_controller_2_level
       state: 'closed'
     - condition: state
       entity_id: input_boolean.night_mode
@@ -221,7 +221,7 @@ notify_high_temperature:
       data_template:
         title: ":sunny: Il commence à faire chaud dans la maison"
         criticity: "warning"
-        message: "La température du RDC est de {{states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state}}°C"
+        message: "La température du RDC est de {{states.sensor.fgms001_motion_sensor_temperature.state}}°C"
 
 notify_low_temperature:
   alias: notification temperature basse
@@ -230,7 +230,7 @@ notify_low_temperature:
       data_template:
         title: ":snowflake: Ca se rafraîchit par ici"
         criticity: "warning"
-        message: "La température du RDC est de {{states.sensor.fibaro_system_fgms001_motion_sensor_temperature.state}}°C"
+        message: "La température du RDC est de {{states.sensor.fgms001_motion_sensor_temperature.state}}°C"
 
 test_notify:
   sequence:
