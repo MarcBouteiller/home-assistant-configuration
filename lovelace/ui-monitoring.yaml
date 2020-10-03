@@ -69,6 +69,6 @@
           name: Smoke sensor étage
         - entity: sensor.fgsd002_smoke_sensor_battery_level_2
           name: Smoke sensor RDC
-        - entity: sensor.hank_hkzw_scn04_scene_controller_battery_level
+        - entity: sensor.hkzw_scn04_scene_controller_battery_level
           name: Télécommande
         
