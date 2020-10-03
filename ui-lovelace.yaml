@@ -36,6 +36,6 @@ views:
     path: monitoring
  
   - title: Paramètres
-    icon: mdi:settings
+    icon: mdi:tune
     cards: !include lovelace/ui-settings.yaml
     path: settings
