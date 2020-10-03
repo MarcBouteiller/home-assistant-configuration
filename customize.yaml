@@ -7,11 +7,11 @@ group.all_lights:
 group.all_switches:
   hidden: false
   friendly_name: Interrupteurs
-switch.neo_coolcam_power_plug_12a_switch:
+switch.nas_wr01z_plug_12a_switch:
   friendly_name: Lumière Martin
-switch.neo_coolcam_power_plug_12a_switch_2:
+switch.nas_wr01z_plug_12a_switch_2:
   friendly_name: Prise caméra
-switch.neo_coolcam_power_plug_12a_switch_3:
+switch.nas_wr01z_plug_12a_switch_3:
   friendly_name: Lumière séjour
 switch.switch:
   hidden: true

@@ -160,7 +160,7 @@ camera:
   - platform: generic
     name: Salon
     still_image_url: >
-      {% if is_state('switch.neo_coolcam_power_plug_12a_switch_2','on') %}
+      {% if is_state('switch.nas_wr01z_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png

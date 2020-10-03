@@ -55,11 +55,11 @@
       entities:
         - entity: light.salon
           name: Salon
-        - entity: switch.neo_coolcam_power_plug_12a_switch_3
+        - entity: switch.nas_wr01z_plug_12a_switch_3
           name: Séjour
         - entity: light.bandeau_led
           name: LED Sejour
-        - entity: switch.neo_coolcam_power_plug_12a_switch
+        - entity: switch.nas_wr01z_plug_12a_switch
           name: Martin
         - entity: light.bureau
           name: Bureau       

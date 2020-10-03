@@ -72,7 +72,7 @@
         - light.spots_led
         - light.livingrooms_led
     - service: switch.turn_off
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.nas_wr01z_plug_12a_switch_3
     - service: homeassistant.turn_on
       entity_id: automation.veilleuse
 
@@ -86,7 +86,7 @@
   - service: homeassistant.turn_off
     entity_id: automation.veilleuse
   - service: switch.turn_on
-    entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+    entity_id: switch.nas_wr01z_plug_12a_switch_3
   - service: light.turn_on
     data:
       entity_id: light.livingrooms_led
@@ -249,7 +249,7 @@
         - light.livingrooms_led
         - light.spots_led
     - service: switch.turn_off
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.nas_wr01z_plug_12a_switch_3
 
 - id: desk_cover_opened
   alias: Ouverture du volet bureau
@@ -369,7 +369,7 @@
           - light.spots_led
           - light.livingrooms_led
     - service: switch.turn_on
-      entity_id: switch.neo_coolcam_power_plug_12a_switch_3
+      entity_id: switch.nas_wr01z_plug_12a_switch_3
 
 - id: nuit_chambre_martin
   alias: Extinction lumière Martin
@@ -378,7 +378,7 @@
     at: '20:45:00'
   action:
     - service: switch.turn_off
-      entity_id: switch.neo_coolcam_power_plug_12a_switch
+      entity_id: switch.nas_wr01z_plug_12a_switch
 
 - id: notify_route_marc
   alias: Notification de la route (Marc)

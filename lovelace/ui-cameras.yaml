@@ -3,7 +3,7 @@
   - type: horizontal-stack
     cards:
       - type: entity-button
-        entity: switch.neo_coolcam_power_plug_12a_switch_2
+        entity: switch.nas_wr01z_plug_12a_switch_2
         tap_action:
           action: toggle
       - type: entity-button
