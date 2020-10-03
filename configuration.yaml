@@ -175,9 +175,6 @@ camera:
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png
       {% endif %}
 
-zwave:
-  usb_path: /dev/ttyACM0
-
 binary_sensor:
   - platform: workday
     country: FRA
