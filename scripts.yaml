@@ -82,7 +82,7 @@ turn_on_cameras:
   alias: Allumer caméras
   sequence:
     - service: switch.turn_on
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_2    
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_2    
     - service: input_boolean.turn_on
       entity_id: input_boolean.camera_sejour_state
 
@@ -90,7 +90,7 @@ turn_off_cameras:
   alias: Eteindre caméras
   sequence:
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_2    
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_2    
     - service: input_boolean.turn_off
       entity_id: input_boolean.camera_sejour_state
 
@@ -106,7 +106,7 @@ turn_on_light_if_cover_closed:
   alias: Allumage des lumières en rentrant
   sequence:
     - condition: state
-      entity_id: cover.fgrm222_roller_shutter_controller_2_level
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       state: 'closed'
     - condition: state
       entity_id: input_boolean.night_mode
@@ -114,7 +114,7 @@ turn_on_light_if_cover_closed:
     - service: light.turn_on
       entity_id: light.spots_led
     - service: switch.turn_on
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
 
 turn_off_all_lights:
   alias: Extinction de toutes les lumières
@@ -122,9 +122,9 @@ turn_off_all_lights:
     - service: light.turn_off
       entity_id: all
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
 
 notify:
   alias: Slack notificator

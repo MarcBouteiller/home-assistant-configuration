@@ -78,14 +78,14 @@ recorder:
       - device_tracker
       - switch
     entities:
-      - cover.fgrm222_roller_shutter_controller_2_level
-      - cover.fgrm222_roller_shutter_controller_2_level_2
-      - cover.fgrm222_roller_shutter_controller_2_level_3
-      - cover.fgrm222_roller_shutter_controller_2_level_4
-      - cover.fgrm222_roller_shutter_controller_2_level_5
-      - cover.fgrm222_roller_shutter_controller_2_level_6
-      - cover.fgrm222_roller_shutter_controller_2_level_7
-      - cover.fgrm222_roller_shutter_controller_2_level_8
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
       - sensor.fgms001_motion_sensor_temperature
       - sensor.fgms001_motion_sensor_luminance
       - sensor.fgsd002_smoke_sensor_temperature
@@ -119,13 +119,13 @@ logbook:
       - sun
       - device_tracker
     entities:
-      - cover.fgrm222_roller_shutter_controller_2_level
-      - cover.fgrm222_roller_shutter_controller_2_level_2
-      - cover.fgrm222_roller_shutter_controller_2_level_3
-      - cover.fgrm222_roller_shutter_controller_2_level_4
-      - cover.fgrm222_roller_shutter_controller_2_level_5
-      - cover.fgrm222_roller_shutter_controller_2_level_6
-      - cover.fgrm222_roller_shutter_controller_2_level_7
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_2
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_3
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_4
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_5
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_6
+      - cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_7
       - switch.prise_garage
       - binary_sensor.prob_presence_mode
 
@@ -160,7 +160,7 @@ camera:
   - platform: generic
     name: Salon
     still_image_url: >
-      {% if is_state('switch.nas_wr01z_power_plug_12a_switch_2','on') %}
+      {% if is_state('switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_2','on') %}
         http://192.168.0.8/image.jpg
       {% else %}
         https://raw.githubusercontent.com/MarcBouteiller/home-assistant-configuration/master/assets/camera-off.png

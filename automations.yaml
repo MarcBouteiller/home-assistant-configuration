@@ -72,7 +72,7 @@
         - light.spots_led
         - light.livingrooms_led
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
     - service: homeassistant.turn_on
       entity_id: automation.veilleuse
 
@@ -86,7 +86,7 @@
   - service: homeassistant.turn_off
     entity_id: automation.veilleuse
   - service: switch.turn_on
-    entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+    entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
   - service: light.turn_on
     data:
       entity_id: light.livingrooms_led
@@ -239,7 +239,7 @@
   alias: Ouverture du volet salon
   trigger:
     platform: state
-    entity_id: cover.fgrm222_roller_shutter_controller_2_level
+    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
     to: 'open'
   action:
     - service: input_boolean.turn_off
@@ -249,13 +249,13 @@
         - light.livingrooms_led
         - light.spots_led
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
 
 - id: desk_cover_opened
   alias: Ouverture du volet bureau
   trigger:
     platform: state
-    entity_id: cover.fgrm222_roller_shutter_controller_2_level_8
+    entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
     to: 'open'
   action:
     - service: light.turn_off
@@ -340,7 +340,7 @@
       entity_id: input_boolean.away_mode
       state: 'on'
     - condition: state
-      entity_id: cover.fgrm222_roller_shutter_controller_2_level
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level
       state: 'closed'
     - condition: state
       entity_id: input_boolean.cover_mode
@@ -369,7 +369,7 @@
           - light.spots_led
           - light.livingrooms_led
     - service: switch.turn_on
-      entity_id: switch.nas_wr01z_power_plug_12a_switch_3
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
 
 - id: nuit_chambre_martin
   alias: Extinction lumière Martin
@@ -378,7 +378,7 @@
     at: '20:45:00'
   action:
     - service: switch.turn_off
-      entity_id: switch.nas_wr01z_power_plug_12a_switch
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
 
 - id: notify_route_marc
   alias: Notification de la route (Marc)
@@ -401,7 +401,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hkzw_scn04_scene_controller
+      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller
       scene_id: 1
       scene_data: 0
   action:
@@ -415,7 +415,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hkzw_scn04_scene_controller
+      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller
       scene_id: 3
       scene_data: 2
   action:
@@ -429,7 +429,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hkzw_scn04_scene_controller
+      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller
       scene_id: 4
       scene_data: 2
   action:
@@ -443,7 +443,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hkzw_scn04_scene_controller
+      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller
       scene_id: 4
       scene_data: 0
   action:
@@ -562,7 +562,7 @@
       data:
         entity_id: light.bandeau_led
     - service: cover.open_cover
-      entity_id: cover.fgrm222_roller_shutter_controller_2_level_8
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
     
 - id: close_desk_cover_intent
   alias: Fermeture volet bureau intent
@@ -577,4 +577,4 @@
       data:
         entity_id: light.bandeau_led
     - service: cover.open_cover
-      entity_id: cover.fgrm222_roller_shutter_controller_2_level_8
+      entity_id: cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_8
