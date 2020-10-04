@@ -227,7 +227,7 @@ panel_iframe:
     url: https://www.home-assistant.io/components/
 
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/serial/by-id/usb-0658_0200_12345678-9012-3456-7890-123456789012-if00
 
 
 light: !include light.yaml
