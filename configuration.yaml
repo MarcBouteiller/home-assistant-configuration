@@ -226,6 +226,10 @@ panel_iframe:
     icon: mdi:format-list-bulleted-type
     url: https://www.home-assistant.io/components/
 
+zwave:
+  usb_path: /dev/ttyACM0
+
+
 light: !include light.yaml
 yeelight: !include yeelight.yaml
 input_boolean: !include input_boolean.yaml
