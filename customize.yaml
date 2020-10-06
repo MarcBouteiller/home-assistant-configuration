@@ -52,9 +52,9 @@ cover.fibaro_system_fgrm222_roller_shutter_controller_2_level_9:
   friendly_name: Chambre Martin
 
 # Sensors
-sensor.fgms001_motion_sensor_temperature:
+sensor.fibaro_system_fgms001_motion_sensor_temperature:
   friendly_name: RDC
-sensor.fgsd002_smoke_sensor_temperature:
+sensor.fibaro_system_fgsd002_smoke_sensor_temperature:
   friendly_name: Etage
 sensor.month_count_car_charge:
   friendly_name: Nombre de recharge

@@ -63,11 +63,11 @@
   cards:
     - type: entities
       entities:
-        - entity: sensor.fgms001_motion_sensor_battery_level
+        - entity: sensor.fibaro_system_fgms001_motion_sensor_battery_level
           name: Motion sensor
-        - entity: sensor.fgsd002_smoke_sensor_battery_level
+        - entity: sensor.fibaro_system_fgsd002_smoke_sensor_battery_level
           name: Smoke sensor étage
-        - entity: sensor.fgsd002_smoke_sensor_battery_level_2
+        - entity: sensor.fibaro_system_fgsd002_smoke_sensor_battery_level_2
           name: Smoke sensor RDC
         - entity: sensor.hank_electronics_ltd_hkzw_scn04_scene_controller_battery_level
           name: Télécommande

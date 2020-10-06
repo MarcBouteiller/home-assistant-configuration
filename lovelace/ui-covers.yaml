@@ -42,4 +42,4 @@
 - title: Luminosité
   type: custom:mini-graph-card
   entities:
-    - sensor.fgms001_motion_sensor_luminance
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance
