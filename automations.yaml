@@ -85,13 +85,6 @@
   action:
   - service: homeassistant.turn_off
     entity_id: automation.veilleuse
-  - service: switch.turn_on
-    entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
-  - service: light.turn_on
-    data:
-      entity_id: light.livingrooms_led
-      brightness: 3
-      color_temp: 361
 
 - id: workday_night_mode_off
   alias: Lever
@@ -108,6 +101,13 @@
   action: 
   - service: input_boolean.turn_off
     entity_id: input_boolean.night_mode
+  - service: switch.turn_on
+    entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
+  - service: light.turn_on
+    data:
+      entity_id: light.livingrooms_led
+      brightness: 3
+      color_temp: 361
     
 - id: toggle_force_presence_mode
   alias: force presence
