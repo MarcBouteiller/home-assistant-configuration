@@ -25,6 +25,8 @@ api:
 # Enables configuration UI
 config:
 
+
+
 lovelace: !include lovelace.yaml
   
 http:
@@ -42,6 +44,9 @@ http:
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
+
+# Home Assistant Companion App
+mobile_app:
 
 # Discover some devices automatically
 discovery:
