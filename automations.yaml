@@ -51,12 +51,12 @@
       entity_id: input_boolean.veilleuse
     - service: light.turn_on
       data:
-        entity_id: group.leds_livingroom
+        entity_id: light.livingrooms_led
         brightness: 5
         color_name: orange
     - delay: 00:02:30
     - service: light.turn_off
-      entity_id: group.leds_livingroom
+      entity_id: light.livingrooms_led
     - service: input_boolean.turn_off
       entity_id: input_boolean.veilleuse
 

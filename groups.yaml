@@ -1,5 +1,0 @@
-leds_livingroom:
-  name: Lampes LED Salon
-  entities:
-    - light.bandeau_led
-    - light.salon
