@@ -144,8 +144,8 @@ sun:
 
 cast:
   media_player:
-    - host: 192.168.0.40
-    - host: 192.168.0.41
+    - uuid: cb36423e-257d-e430-caa3-daf289a6b7c3
+    - uuid: 188af25f-ccb2-efba-1471-3c05aa2e645b
 
 # Text to speech
 tts:
