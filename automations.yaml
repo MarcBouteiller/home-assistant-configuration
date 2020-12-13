@@ -231,9 +231,11 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.car_charging
-    - delay: 00:01:00
-    - service: script.eteindre_prise_garage
+    - service: switch.turn_off
+      data:
+        entity_id: switch.prise_garage
     - service: script.notify_car_charged
+
 
 - id: main_cover_opened
   alias: Ouverture du volet salon

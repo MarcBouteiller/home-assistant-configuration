@@ -32,22 +32,11 @@ sunset_closing_covers:
     - delay: 00:01:00 #1 minute to answer
     - delay: '00:{{ states.input_number.closing_covers_delay.state | int }}:00'  
     - service: script.fermeture_volets
-    # Reset the value at end
+    # Reset the value at end
     - service: input_number.set_value
       data:
         entity_id: input_number.closing_covers_delay
         value: 0
-
-
-eteindre_prise_garage:
-  alias: Eteindre prise du garage
-  sequence:
-    - condition: numeric_state
-      entity_id: sensor.power_prise_garage
-      below: 10
-    - service: switch.turn_off
-      data:
-        entity_id: switch.prise_garage
 
 turn_off_tv:
   alias: Minuteur Chromecast
