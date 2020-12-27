@@ -110,6 +110,8 @@ recorder:
       - sensor.disk_use_percent
       - sensor.smoke_sensor_upstair_battery
       - sensor.motion_sensor_battery
+      - sensor.fibaro_system_fgms001_motion_sensor_battery_level
+      - sensor.nodon_id_rf_crc_3_1_00_octan_remote_battery_level
       - sensor.remote_hank_battery
       - binary_sensor.prob_presence_mode
 

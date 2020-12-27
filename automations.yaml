@@ -403,9 +403,8 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller_2
-      scene_id: 1
-      scene_data: 0
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 30
   action:
     - service: input_boolean.turn_on
       data:
@@ -417,9 +416,8 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller_2
-      scene_id: 3
-      scene_data: 2
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 12
   action:
     - service: cover.open_cover
       data:
@@ -431,9 +429,8 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller_2
-      scene_id: 4
-      scene_data: 2
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 42
   action:
     - service: light.turn_off
       data:
@@ -445,11 +442,23 @@
     platform: event
     event_type: zwave.scene_activated
     event_data: 
-      entity_id: zwave.hank_electronics_ltd_hkzw_scn04_scene_controller_2
-      scene_id: 4
-      scene_data: 0
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 20
   action:
     - service: input_select.select_next
+      data:
+        entity_id: input_select.spots_state
+
+- id: remote_spot_management_prev
+  alias: Remote change spot lights
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data: 
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 40
+  action:
+    - service: input_select.select_previous
       data:
         entity_id: input_select.spots_state
 

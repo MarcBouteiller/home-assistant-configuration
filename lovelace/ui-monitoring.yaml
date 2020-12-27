@@ -71,4 +71,5 @@
           name: Smoke sensor RDC
         - entity: sensor.hank_electronics_ltd_hkzw_scn04_scene_controller_battery_level_2
           name: Télécommande
-        
+        - entity : sensor.nodon_id_rf_crc_3_1_00_octan_remote_battery_level  
+          name: Télécommande Nodeon
