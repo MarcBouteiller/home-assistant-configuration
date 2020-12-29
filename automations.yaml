@@ -370,7 +370,7 @@
         entity_id: 
           - light.spots_led
           - light.livingrooms_led
-    - service: switch.turn_on
+    - service: switch.turn_off
       entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch_3
 
 - id: nuit_chambre_martin
