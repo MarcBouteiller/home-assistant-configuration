@@ -471,7 +471,7 @@
       entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
       scene_id: 23
   action:
-    - service: input_select.select_previous
+    - service: input_select.select_next
       data:
         entity_id: input_select.leds_state
 
