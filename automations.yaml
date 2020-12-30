@@ -462,6 +462,34 @@
       data:
         entity_id: input_select.spots_state
 
+- id: remote_leds_management_plus
+  alias: Remote change leds lights
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data: 
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 23
+  action:
+    - service: input_select.select_previous
+      data:
+        entity_id: input_select.leds_state
+
+
+- id: remote_leds_management_minus
+  alias: Remote turn off led lights
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data: 
+      entity_id: zwave.nodon_id_rf_crc_3_1_00_octan_remote
+      scene_id: 43
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.livingrooms_led
+
+
 - id: spot_management
   alias: Gestion des spots
   trigger:
@@ -474,6 +502,19 @@
       entity_id: light.spots_led
       data_template:
         brightness_pct: "{{states.input_select.spots_state.state|int}}"
+
+- id: leds_brightness_management
+  alias: Gestion des lampes led
+  trigger:
+    platform: event
+    event_type: state_changed
+    event_data:
+      entity_id: input_select.leds_state
+  action:
+    - service: light.turn_on
+      entity_id: light.livingrooms_led
+      data_template:
+        brightness_pct: "{{states.input_select.leds_state.state|int}}"
 
 - id: low_temperature_alert
   alias: Alerte basse température

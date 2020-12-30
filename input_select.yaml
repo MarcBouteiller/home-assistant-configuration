@@ -1,5 +1,13 @@
 spots_state:
-  name: éclairage spot
+  name: intensité spots salon
+  options:
+    - 1
+    - 50
+    - 100
+  icon: mdi:brightness-6
+
+leds_state:
+  name: intensité leds salon
   options:
     - 1
     - 50
